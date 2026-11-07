@@ -110,7 +110,8 @@ export async function retrieveResources(
       const km = distanceKm === null ? null : Math.round(Number(distanceKm) * 10) / 10;
       return { ...r, distanceKm: km, costLabel: costLabel(r.costType), score: scoreResource(r, km, ctx, opts.scheduleNeeds) };
     })
-    .sort((a, b) => b.score - a.score || (a.distanceKm ?? 99) - (b.distanceKm ?? 99))
+    // Ties: nearer first, then name, so the order is stable.
+    .sort((a, b) => b.score - a.score || (a.distanceKm ?? 99) - (b.distanceKm ?? 99) || a.name.localeCompare(b.name))
     .slice(0, TOP_N);
 
   return { results, relaxed: [...relaxed] };
