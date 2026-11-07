@@ -1,0 +1,31 @@
+id,display_name,neighbourhood,postal_code,children_age_ranges,children_genders,parent_gender
+fam_001,Grace L.,Parkview,T2H 2C7,10-13,Girl,Woman
+fam_002,Aisha M.,Parkview,T2J 4C1,0-2|14-17,Girl|Boy,Woman
+fam_003,Maria J.,Parkview,T2H 2Z3,3-5|6-9|10-13,Girl|Girl|Girl,Woman
+fam_004,Rosa L.,Maple Hollow,T2B 7L2,3-5|6-9|14-17,Boy|Girl|Boy,Woman
+fam_005,Fatima J.,Lakeside,T3E 7Y7,3-5|10-13,Girl|Boy,Woman
+fam_006,Mei F.,Lakeside,T3C 7Z2,0-2,Girl,Woman
+fam_007,Ethan K.,Cedar Ridge,T3B 7H8,0-2|6-9|14-17,Boy|Boy|Girl,Woman
+fam_008,Daniel G.,Parkview,T2J 3P3,0-2|14-17,Girl|Boy,Woman
+fam_009,Bianca B.,Parkview,T2H 4Y2,0-2|6-9,Boy|Girl,Woman
+fam_010,Kenji T.,Riverbend,T2C 7J9,3-5|14-17,Boy|Girl,Woman
+fam_011,Sam C.,Cedar Ridge,T3B 6A9,6-9|10-13,Girl|Girl,Woman
+fam_012,Leila C.,Maple Hollow,T2A 9K5,0-2,Boy,Woman
+fam_013,Diego P.,Maple Hollow,T2A 6S7,0-2|10-13|14-17,Boy|Girl|Girl,Woman
+fam_014,Priya L.,Parkview,T2H 2K4,,,Woman
+fam_015,Colin W.,Riverbend,T2E 1C4,0-2|10-13,Boy|Girl,Woman
+fam_016,Tasha P.,Riverbend,T2C 9V3,0-2|3-5|10-13,Girl|Boy|Girl,Woman
+fam_017,Andre S.,Maple Hollow,T2A 9W3,0-2|6-9,,Woman
+fam_018,Tariq C.,Riverbend,T2C 4R2,,,Man
+fam_019,Amara J.,Cedar Ridge,T3A 4N4,14-17,Girl,Woman
+fam_020,Liam T.,Maple Hollow,T2B 5G6,0-2|3-5|14-17,Boy|Girl|Boy,Man
+fam_021,Ben T.,Parkview,T2J 1X5,14-17,Boy,Man
+fam_022,Omar J.,Maple Hollow,T2A 9V5,3-5|10-13|14-17,Girl|Girl|Boy,Man
+fam_023,Hannah F.,Parkview,T2H 8X7,0-2|14-17,Girl|Non-binary,Woman
+fam_024,Chloe B.,Maple Hollow,T2A 6J4,3-5|14-17,Girl|Girl,Woman
+fam_025,Jamal A.,Riverbend,T2E 3N7,3-5|14-17,Boy|Boy,Man
+fam_026,Yuna R.,Parkview,T2H 6M4,0-2|10-13,Boy|Girl,Woman
+fam_027,Noor A.,Cedar Ridge,T3B 2L3,6-9|10-13|14-17,Boy|Boy|Girl,Woman
+fam_028,Sofia D.,Lakeside,T3C 7Y4,6-9,Prefer not to say,Woman
+fam_029,Nadia L.,Parkview,T2H 2M9,3-5|6-9,Boy|Boy,Woman
+fam_030,Marcus F.,Riverbend,T2E 5R9,3-5|10-13,Girl|Boy,Man
