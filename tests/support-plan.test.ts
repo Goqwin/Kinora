@@ -54,6 +54,26 @@ describe("buildSupportPlan", () => {
     expect(r.results.length).toBeGreaterThan(0); // results still come back
   });
 
+  it.each([
+    ["empty text", "", []],
+    ["two words", "need daycare", ["childcare"]],
+  ])("skips Gemini for %s: keyword intent, plan null, not a fallback", async (_, text, cats) => {
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    const r = await buildSupportPlan({ text, onboarding }, null);
+    expect(warn).not.toHaveBeenCalled(); // no Gemini attempt (it would fail and warn here)
+    warn.mockRestore();
+    expect(r.intent.categories).toEqual(cats);
+    expect(r.plan).toBeNull();
+    expect(r.usedFallback).toBe(false);
+    expect(r.results.length).toBeGreaterThan(0);
+  });
+
+  it("still flags crisis in short text", async () => {
+    const r = await buildSupportPlan({ text: "feeling suicidal", onboarding }, null);
+    expect(r.crisis).toBe(true);
+    expect(r.crisisResources.map((c) => c.id)).toContain("suicide-crisis-line");
+  });
+
   it("saves nothing for anonymous users", async () => {
     await buildSupportPlan({ text: NIGHT_SHIFT, onboarding }, null);
     expect(savePlan).not.toHaveBeenCalled();

@@ -8,7 +8,7 @@
  *  - "eligible" claims are softened to "may be eligible"
  * Returns null if nothing valid remains. Never throws. Does not save anything.
  */
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, ThinkingLevel } from "@google/genai";
 import { z } from "zod";
 import type { RankedResource } from "./retrieve";
 import type { StructuredIntent } from "./types";
@@ -39,6 +39,8 @@ Rules:
 - Never invent resources, eligibility rules, phone numbers, emails or URLs. Do not include any contact details.
 - No legal, medical or mental-health advice. Only point to the listed resources.
 - Say "may be eligible", never that the parent "is eligible".
+- Write title, reason and firstStep in need.language (an ISO 639-1 code; English if null). Keep resource names as given.
+  In other languages use the plain equivalent of "may be eligible" (e.g. Spanish "podría calificar"), never "is eligible".
 - 3 to 6 steps. priority 1 = do first.
 - title: short. reason: one line on why this fits their situation. firstStep: one short action, e.g. "Ask about evening spots".`;
 
@@ -54,6 +56,8 @@ async function callGemini(prompt: string, signal: AbortSignal): Promise<string> 
       responseMimeType: "application/json",
       responseJsonSchema: PLAN_JSON_SCHEMA,
       temperature: 0.2,
+      // Lowest thinking level Gemini 3 allows: faster, and these are simple JSON tasks.
+      thinkingConfig: { thinkingLevel: ThinkingLevel.MINIMAL },
       abortSignal: signal,
     },
   });
@@ -115,7 +119,10 @@ export async function generatePlan(
   if (!resources.length) return null;
   const allowed = new Set(resources.map((r) => r.id));
   const prompt = JSON.stringify({
-    need: { categories: intent.categories, kidsAges: intent.kidsAges, budget: intent.budget, scheduleNeeds: intent.scheduleNeeds, summary: intent.summary },
+    need: {
+      categories: intent.categories, kidsAges: intent.kidsAges, budget: intent.budget,
+      scheduleNeeds: intent.scheduleNeeds, summary: intent.summary, language: intent.language ?? "en",
+    },
     resources: resources.slice(0, 10).map(toPlanRecord),
   });
 
