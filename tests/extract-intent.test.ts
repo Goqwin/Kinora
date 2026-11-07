@@ -20,6 +20,17 @@ describe("redactPii", () => {
     expect(out).toContain("[postal code]");
   });
 
+  it.each([
+    ["I'm Dana and I need daycare", "I'm [name] and I need daycare"],
+    ["I’m Dana", "I’m [name]"],
+    ["Hi, I am Priya Singh", "Hi, I am [name]"],
+    ["You can call me Sam", "You can call me [name]"],
+    ["This is Omar, a single dad", "This is [name], a single dad"],
+    ["i'm tired and this is hard", "i'm tired and this is hard"], // lowercase: untouched
+  ])("redacts self-introductions: %j", (input, expected) => {
+    expect(redactPii(input)).toBe(expected);
+  });
+
   it("keeps kids' ages and ordinary words", () => {
     expect(redactPii(NIGHT_SHIFT)).toBe(NIGHT_SHIFT);
   });

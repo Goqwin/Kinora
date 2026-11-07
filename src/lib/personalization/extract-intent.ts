@@ -25,7 +25,10 @@ export function redactPii(text: string): string {
       /\b\d{1,6}[a-z]?\s+(?:[A-Za-z0-9.'-]+\s+){0,4}(?:street|st|avenue|ave|road|rd|boulevard|blvd|drive|dr|way|crescent|cres|court|ct|lane|ln|trail|place|pl|close|gate|green|heights|park|square)\b\.?(?:\s+(?:nw|ne|sw|se))?/gi,
       "[address]",
     )
-    .replace(/\b(my name is|i am called|i'm called)\s+[\w'-]+/gi, "$1 [name]");
+    .replace(/\b(my name is|i am called|i'm called)\s+[\w'-]+/gi, "$1 [name]")
+    // "I'm Dana", "this is Dana", "call me Dana". Capitalised word only, so a
+    // false positive like "I'm Tired" is possible (accepted).
+    .replace(/\b(I'm|I’m|I am|[Cc]all me|[Tt]his is)\s+[A-Z][\w'-]*(\s+[A-Z][\w'-]*)?/g, "$1 [name]");
 }
 
 const SYSTEM = `You classify a single parent's request for support in Calgary into JSON.
@@ -123,7 +126,7 @@ export async function extractIntent(
     else console.warn("extract-intent: invalid Gemini output, using fallback:", parsed.error.issues.map((i) => i.path.join(".")));
   } catch (e) {
     // Timeout, network, missing key or bad JSON. Log the error type only.
-    console.warn("extract-intent: Gemini failed, using fallback:", e instanceof Error ? e.name : typeof e);
+    console.warn("extract-intent: Gemini failed, using fallback:", e instanceof Error ? e.name : typeof e, (e as { status?: number })?.status ?? "");
   }
   if (!intent) return { intent: keywordIntent(rawText), intentSource: "fallback" };
 
