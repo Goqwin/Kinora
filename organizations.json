@@ -1,0 +1,396 @@
+[
+  {
+    "id": "org_001",
+    "name": "Little Sprouts Early Learning",
+    "type": "Daycare",
+    "neighbourhood": "Maple Hollow",
+    "address": "341 Willow Rd",
+    "postal_code": "T2B 1C9",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Licensed full-day child care for infants and preschoolers with play-based learning, hot lunches, and flexible hours for shift workers."
+  },
+  {
+    "id": "org_002",
+    "name": "Sunny Days Child Care",
+    "type": "Daycare",
+    "neighbourhood": "Riverbend",
+    "address": "106 Sunrise Blvd",
+    "postal_code": "T2C 9J1",
+    "suitable_ages": [
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Half-day and full-day preschool with a sliding-scale fee for low-income families."
+  },
+  {
+    "id": "org_003",
+    "name": "Rainbow Playhouse Out-of-School Care",
+    "type": "Daycare",
+    "neighbourhood": "Parkview",
+    "address": "98 Pine Crescent",
+    "postal_code": "T2J 2K2",
+    "suitable_ages": [
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Before- and after-school care with homework help, snacks, and holiday day camps."
+  },
+  {
+    "id": "org_004",
+    "name": "Drop-In Playroom",
+    "type": "Daycare",
+    "neighbourhood": "Cedar Ridge",
+    "address": "574 Pine Crescent",
+    "postal_code": "T3A 2K1",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Short-term drop-in child care (up to 3 hours) so parents can attend appointments or run errands."
+  },
+  {
+    "id": "org_005",
+    "name": "Single Parents Circle",
+    "type": "Support program",
+    "neighbourhood": "Maple Hollow",
+    "address": "600 Meadow Ct",
+    "postal_code": "T2B 1K1",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly peer support meetups for single parents with a shared meal, guest speakers, and free child-minding on site."
+  },
+  {
+    "id": "org_006",
+    "name": "Moms Together Peer Group",
+    "type": "Support program",
+    "neighbourhood": "Lakeside",
+    "address": "580 Willow Rd",
+    "postal_code": "T3E 7G9",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "Woman"
+    ],
+    "description": "Women-only peer group offering friendship, parenting workshops, and monthly wellness mornings."
+  },
+  {
+    "id": "org_007",
+    "name": "Dads Connect",
+    "type": "Support program",
+    "neighbourhood": "Riverbend",
+    "address": "130 Meadow Ct",
+    "postal_code": "T2E 9H2",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "Man"
+    ],
+    "description": "Support group for fathers raising kids on their own, with parenting skills sessions and weekend family activities."
+  },
+  {
+    "id": "org_008",
+    "name": "Parent Respite Nights",
+    "type": "Support program",
+    "neighbourhood": "Parkview",
+    "address": "605 Meadow Ct",
+    "postal_code": "T2H 6E9",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Monthly evenings where trained volunteers care for kids so parents can rest; includes dinner for the children."
+  },
+  {
+    "id": "org_009",
+    "name": "Calm Harbour Parent Wellness",
+    "type": "Support program",
+    "neighbourhood": "Cedar Ridge",
+    "address": "739 Birch Ave",
+    "postal_code": "T3A 4V9",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free group counselling and stress-management workshops for parents, with evening and online options."
+  },
+  {
+    "id": "org_010",
+    "name": "Family Wellness Child Services",
+    "type": "Child services",
+    "neighbourhood": "Riverbend",
+    "address": "447 Sunrise Blvd",
+    "postal_code": "T2E 8P5",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Family counselling, parenting coaching, and referrals to community resources for families facing hardship."
+  },
+  {
+    "id": "org_011",
+    "name": "Young Minds Counselling",
+    "type": "Child services",
+    "neighbourhood": "Parkview",
+    "address": "264 Willow Rd",
+    "postal_code": "T2H 2Y5",
+    "suitable_ages": [
+      "6-9",
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Child and youth counselling covering anxiety, school stress, grief, and family change."
+  },
+  {
+    "id": "org_012",
+    "name": "Early Years Development Clinic",
+    "type": "Child services",
+    "neighbourhood": "Maple Hollow",
+    "address": "547 Oak Lane",
+    "postal_code": "T2B 8M2",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Developmental screening, speech and language support, and early intervention for young children."
+  },
+  {
+    "id": "org_013",
+    "name": "Regional Family Support Office",
+    "type": "Government assistance",
+    "neighbourhood": "Riverbend",
+    "address": "130 Station Rd",
+    "postal_code": "T2E 3N3",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Help applying for child benefits, income support, and emergency assistance; walk-ins and appointments."
+  },
+  {
+    "id": "org_014",
+    "name": "Child Care Subsidy Office",
+    "type": "Government assistance",
+    "neighbourhood": "Maple Hollow",
+    "address": "965 Oak Lane",
+    "postal_code": "T2B 1C9",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Eligibility checks and applications for child care fee subsidies, with a same-day pre-screening service."
+  },
+  {
+    "id": "org_015",
+    "name": "Housing Assistance Intake Centre",
+    "type": "Government assistance",
+    "neighbourhood": "Lakeside",
+    "address": "596 Sunrise Blvd",
+    "postal_code": "T3E 6Z8",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Intake for rental assistance, affordable housing waitlists, and eviction-prevention support."
+  },
+  {
+    "id": "org_016",
+    "name": "Neighbourhood Outreach Hub",
+    "type": "Outreach",
+    "neighbourhood": "Cedar Ridge",
+    "address": "603 Oak Lane",
+    "postal_code": "T3A 2L8",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Drop-in centre connecting families to food, clothing, transit passes, and local services, with a friendly front desk."
+  },
+  {
+    "id": "org_017",
+    "name": "Community Food Pantry & Meal Share",
+    "type": "Outreach",
+    "neighbourhood": "Maple Hollow",
+    "address": "723 Birch Ave",
+    "postal_code": "T2A 5Y8",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly grocery hampers and a community dinner open to all families, no questions asked."
+  },
+  {
+    "id": "org_018",
+    "name": "Newcomer Family Welcome Centre",
+    "type": "Outreach",
+    "neighbourhood": "Parkview",
+    "address": "301 Pine Crescent",
+    "postal_code": "T2J 1T6",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Settlement support, language classes, and family events for people new to the country."
+  },
+  {
+    "id": "org_019",
+    "name": "Family Legal Aid Clinic",
+    "type": "Outreach",
+    "neighbourhood": "Riverbend",
+    "address": "182 Meadow Ct",
+    "postal_code": "T2C 8B4",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free legal advice on custody, support payments, and tenancy, offered by volunteer lawyers twice a week."
+  },
+  {
+    "id": "org_020",
+    "name": "Girls Rising Youth Club",
+    "type": "Youth program",
+    "neighbourhood": "Lakeside",
+    "address": "796 Harbour Dr",
+    "postal_code": "T3C 4R7",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Girl"
+    ],
+    "description": "After-school club for girls with mentoring, coding workshops, and outdoor activities."
+  },
+  {
+    "id": "org_021",
+    "name": "Big Steps Boys Mentorship",
+    "type": "Youth program",
+    "neighbourhood": "Cedar Ridge",
+    "address": "948 Oak Lane",
+    "postal_code": "T3A 3T7",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Boy"
+    ],
+    "description": "Mentoring and sports for boys, paired with trained volunteer mentors."
+  },
+  {
+    "id": "org_022",
+    "name": "Saturday Kids Activity Club",
+    "type": "Youth program",
+    "neighbourhood": "Parkview",
+    "address": "572 Harbour Dr",
+    "postal_code": "T2H 7X5",
+    "suitable_ages": [
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free weekend arts, games, and sports sessions run by neighbourhood volunteers."
+  },
+  {
+    "id": "org_023",
+    "name": "Youth Drop-In Centre",
+    "type": "Youth program",
+    "neighbourhood": "Maple Hollow",
+    "address": "733 Pine Crescent",
+    "postal_code": "T2B 7K3",
+    "suitable_ages": [
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Safe evening drop-in space for teens with snacks, homework help, and a counsellor on site."
+  },
+  {
+    "id": "org_024",
+    "name": "Parent & Child Swim and Play",
+    "type": "Youth program",
+    "neighbourhood": "Riverbend",
+    "address": "94 Willow Rd",
+    "postal_code": "T2C 4K1",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly parent-and-child swim sessions followed by a playgroup; a good first step for isolated parents."
+  }
+]

@@ -1,0 +1,25 @@
+id,name,type,neighbourhood,address,postal_code,suitable_ages,suitable_genders,description
+org_001,Little Sprouts Early Learning,Daycare,Maple Hollow,341 Willow Rd,T2B 1C9,0-2|3-5,All,"Licensed full-day child care for infants and preschoolers with play-based learning, hot lunches, and flexible hours for shift workers."
+org_002,Sunny Days Child Care,Daycare,Riverbend,106 Sunrise Blvd,T2C 9J1,3-5,All,Half-day and full-day preschool with a sliding-scale fee for low-income families.
+org_003,Rainbow Playhouse Out-of-School Care,Daycare,Parkview,98 Pine Crescent,T2J 2K2,6-9|10-13,All,"Before- and after-school care with homework help, snacks, and holiday day camps."
+org_004,Drop-In Playroom,Daycare,Cedar Ridge,574 Pine Crescent,T3A 2K1,0-2|3-5,All,Short-term drop-in child care (up to 3 hours) so parents can attend appointments or run errands.
+org_005,Single Parents Circle,Support program,Maple Hollow,600 Meadow Ct,T2B 1K1,Adults,All,"Weekly peer support meetups for single parents with a shared meal, guest speakers, and free child-minding on site."
+org_006,Moms Together Peer Group,Support program,Lakeside,580 Willow Rd,T3E 7G9,Adults,Woman,"Women-only peer group offering friendship, parenting workshops, and monthly wellness mornings."
+org_007,Dads Connect,Support program,Riverbend,130 Meadow Ct,T2E 9H2,Adults,Man,"Support group for fathers raising kids on their own, with parenting skills sessions and weekend family activities."
+org_008,Parent Respite Nights,Support program,Parkview,605 Meadow Ct,T2H 6E9,0-2|3-5|6-9|10-13,All,Monthly evenings where trained volunteers care for kids so parents can rest; includes dinner for the children.
+org_009,Calm Harbour Parent Wellness,Support program,Cedar Ridge,739 Birch Ave,T3A 4V9,Adults,All,"Free group counselling and stress-management workshops for parents, with evening and online options."
+org_010,Family Wellness Child Services,Child services,Riverbend,447 Sunrise Blvd,T2E 8P5,0-2|3-5|6-9|10-13|14-17|Adults,All,"Family counselling, parenting coaching, and referrals to community resources for families facing hardship."
+org_011,Young Minds Counselling,Child services,Parkview,264 Willow Rd,T2H 2Y5,6-9|10-13|14-17,All,"Child and youth counselling covering anxiety, school stress, grief, and family change."
+org_012,Early Years Development Clinic,Child services,Maple Hollow,547 Oak Lane,T2B 8M2,0-2|3-5,All,"Developmental screening, speech and language support, and early intervention for young children."
+org_013,Regional Family Support Office,Government assistance,Riverbend,130 Station Rd,T2E 3N3,Adults,All,"Help applying for child benefits, income support, and emergency assistance; walk-ins and appointments."
+org_014,Child Care Subsidy Office,Government assistance,Maple Hollow,965 Oak Lane,T2B 1C9,Adults,All,"Eligibility checks and applications for child care fee subsidies, with a same-day pre-screening service."
+org_015,Housing Assistance Intake Centre,Government assistance,Lakeside,596 Sunrise Blvd,T3E 6Z8,Adults,All,"Intake for rental assistance, affordable housing waitlists, and eviction-prevention support."
+org_016,Neighbourhood Outreach Hub,Outreach,Cedar Ridge,603 Oak Lane,T3A 2L8,0-2|3-5|6-9|10-13|14-17|Adults,All,"Drop-in centre connecting families to food, clothing, transit passes, and local services, with a friendly front desk."
+org_017,Community Food Pantry & Meal Share,Outreach,Maple Hollow,723 Birch Ave,T2A 5Y8,0-2|3-5|6-9|10-13|14-17|Adults,All,"Weekly grocery hampers and a community dinner open to all families, no questions asked."
+org_018,Newcomer Family Welcome Centre,Outreach,Parkview,301 Pine Crescent,T2J 1T6,0-2|3-5|6-9|10-13|14-17|Adults,All,"Settlement support, language classes, and family events for people new to the country."
+org_019,Family Legal Aid Clinic,Outreach,Riverbend,182 Meadow Ct,T2C 8B4,Adults,All,"Free legal advice on custody, support payments, and tenancy, offered by volunteer lawyers twice a week."
+org_020,Girls Rising Youth Club,Youth program,Lakeside,796 Harbour Dr,T3C 4R7,10-13|14-17,Girl,"After-school club for girls with mentoring, coding workshops, and outdoor activities."
+org_021,Big Steps Boys Mentorship,Youth program,Cedar Ridge,948 Oak Lane,T3A 3T7,10-13|14-17,Boy,"Mentoring and sports for boys, paired with trained volunteer mentors."
+org_022,Saturday Kids Activity Club,Youth program,Parkview,572 Harbour Dr,T2H 7X5,6-9|10-13,All,"Free weekend arts, games, and sports sessions run by neighbourhood volunteers."
+org_023,Youth Drop-In Centre,Youth program,Maple Hollow,733 Pine Crescent,T2B 7K3,14-17,All,"Safe evening drop-in space for teens with snacks, homework help, and a counsellor on site."
+org_024,Parent & Child Swim and Play,Youth program,Riverbend,94 Willow Rd,T2C 4K1,0-2|3-5|Adults,All,Weekly parent-and-child swim sessions followed by a playgroup; a good first step for isolated parents.
