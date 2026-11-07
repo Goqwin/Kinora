@@ -6,9 +6,7 @@
   "scripts": {
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "db:generate": "drizzle-kit generate && node scripts/patch-postgis-migration.mjs",
-    "db:migrate": "drizzle-kit migrate",
-    "db:check": "node scripts/check-migration.mjs"
+    "db:seed": "tsx src/db/seed.ts"
   },
   "dependencies": {
     "drizzle-orm": "^0.45.4",

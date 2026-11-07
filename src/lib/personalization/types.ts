@@ -1,7 +1,7 @@
 /**
  * Shared types + Zod schemas for the personalization pipeline.
  *
- * One source of truth: the Drizzle enums, the onboarding form, Gemini's
+ * One source of truth: the Supabase CHECK constraints, the onboarding form, Gemini's
  * structured-intent output (step 2) and the retrieval query (step 3) all
  * import from here, so a category or budget level can't drift between layers.
  */
@@ -11,33 +11,24 @@ import { z } from "zod";
 /* Vocabularies                                                        */
 /* ------------------------------------------------------------------ */
 
+/** Must match the CHECK constraint on Supabase `resources.category`. */
 export const NEED_CATEGORIES = [
   "childcare", // daycare, dayhomes, preschool, before/after-school care
-  "financial_aid", // benefits, childcare subsidies, emergency funds
-  "food", // food banks, meal programs, school lunch
-  "employment", // job search, training, flexible work
-  "education", // upgrading, ESL, adult ed for the parent
-  "parenting_support", // parenting classes, peer groups
-  "mental_health_support", // counselling services (we list, never advise)
-  "health", // clinics, dental, vision for kids
-  "recreation", // low-cost activities, rec centre access
-  "community_events", // dated events
+  "financial", // benefits, childcare subsidies, emergency funds
+  "housing", // rental assistance, affordable housing, eviction prevention
+  "food", // food banks, meal programs
+  "health_family", // clinics, counselling, family services (we list, never advise)
+  "community", // peer groups, parenting programs, newcomer and outreach services
+  "activities", // low-cost kids' activities and events
+  "legal_info", // legal clinics (we list, never advise)
 ] as const;
 export const needCategorySchema = z.enum(NEED_CATEGORIES);
 export type NeedCategory = z.infer<typeof needCategorySchema>;
 
-/** Budget the parent can spend on a service, per month, in CAD. */
+/** What the parent can spend on a service. */
 export const BUDGET_LEVELS = ["free_only", "low", "moderate", "flexible"] as const;
 export const budgetLevelSchema = z.enum(BUDGET_LEVELS);
 export type BudgetLevel = z.infer<typeof budgetLevelSchema>;
-
-/** Upper bound used by retrieval's cost-fit score. null = no cap. */
-export const BUDGET_MAX_MONTHLY_CAD: Record<BudgetLevel, number | null> = {
-  free_only: 0,
-  low: 150,
-  moderate: 600,
-  flexible: null,
-};
 
 /** Languages we can realistically match resources on. ISO 639-1. */
 export const LANGUAGES = [
@@ -46,12 +37,29 @@ export const LANGUAGES = [
 export const languageSchema = z.enum(LANGUAGES);
 export type Language = z.infer<typeof languageSchema>;
 
-export const COST_TYPES = ["free", "sliding_scale", "subsidized", "paid"] as const;
+/** Must match the CHECK constraint on Supabase `resources.cost_type`. */
+export const COST_TYPES = ["free", "subsidized", "income_based", "paid"] as const;
 export const costTypeSchema = z.enum(COST_TYPES);
 export type CostType = z.infer<typeof costTypeSchema>;
 
-export const RESOURCE_KINDS = ["service", "program", "event"] as const;
-export type ResourceKind = (typeof RESOURCE_KINDS)[number];
+/**
+ * Cost types each budget allows. Even "free_only" allows subsidized and
+ * income-based: a parent who can't pay may be eligible for reduced cost.
+ * Retrieval still scores free highest.
+ */
+export const BUDGET_COST_TYPES: Record<BudgetLevel, CostType[]> = {
+  free_only: ["free", "subsidized", "income_based"],
+  low: ["free", "subsidized", "income_based"],
+  moderate: ["free", "subsidized", "income_based", "paid"],
+  flexible: ["free", "subsidized", "income_based", "paid"],
+};
+
+/** UI copy for reduced-cost resources. Never say "eligible" outright. */
+export const REDUCED_COST_LABEL = "May be eligible for reduced cost";
+
+/** Must match the CHECK constraint on Supabase `resources.schedule`. */
+export const SCHEDULE_TAGS = ["evenings", "overnight", "weekends", "drop_in"] as const;
+export type ScheduleTag = (typeof SCHEDULE_TAGS)[number];
 
 export const URGENCY_LEVELS = ["low", "medium", "high", "crisis"] as const;
 export const urgencySchema = z.enum(URGENCY_LEVELS);
@@ -109,7 +117,6 @@ export const userContextSchema = z.object({
   ageBands: z.array(z.enum(AGE_BANDS)),
   needs: z.array(needCategorySchema),
   budget: budgetLevelSchema.nullable(),
-  maxMonthlyCostCad: z.number().nullable(),
   language: languageSchema.nullable(),
   /** Which fields the parent actually answered — drives "tell us more" prompts. */
   answered: z.object({
@@ -135,8 +142,8 @@ export type LlmSafeContext = {
 };
 
 /* ------------------------------------------------------------------ */
-/* Structured intent (Gemini output in step 2 — defined now so the DB  */
-/* schema can store it)                                                */
+/* Structured intent (Gemini output in step 2; stored in               */
+/* support_plans.criteria for logged-in users)                         */
 /* ------------------------------------------------------------------ */
 
 export const structuredIntentSchema = z.object({
@@ -146,7 +153,7 @@ export const structuredIntentSchema = z.object({
   urgency: urgencySchema,
   language: languageSchema.nullable(),
   /** Scheduling constraints, e.g. works nights → needs evening/overnight care. */
-  scheduleNeeds: z.array(z.enum(["evenings", "overnight", "weekends", "flexible_drop_in"])).max(4),
+  scheduleNeeds: z.array(z.enum(SCHEDULE_TAGS)).max(4),
   /** Short, PII-free paraphrase for the UI ("Night-shift childcare for a preschooler"). */
   summary: z.string().max(160),
   /** Set by Gemini and/or the keyword check; never inferred loosely. */

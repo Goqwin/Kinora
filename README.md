@@ -2,8 +2,9 @@
 
 Personalization layer for matching Calgary single parents with verified resources.
 
-- `src/lib/personalization/` — onboarding answers → normalized `UserContext` (coarsened to postal FSA, never a full address), merge with Gemini's structured intent, and the LLM-safe projection.
-- `src/db/schema/personalization.ts` — Drizzle schema: `resources` (PostGIS point, generated from lat/lng), `user_contexts` (logged-in users only), `intake_intents` (structured intent, no raw free text).
+- `src/lib/personalization/` — onboarding answers → normalized `UserContext` (coarsened to postal FSA, never a full address), merge with Gemini's structured intent, the LLM-safe projection, and resource retrieval/ranking.
+- `src/db/schema/supabase.ts` — Drizzle schema pulled from the team's Supabase database (`resources`, `users`, `user_preferences`, `support_plans`, `plan_actions`). Supabase is the source of truth and is managed by the team: never run `drizzle-kit generate`/`migrate`/`push` against it. Refresh with `npx drizzle-kit pull`.
+- `src/db/` is server-only: our connection bypasses RLS, so never import it from client components.
 
 ## Setup
 
@@ -16,6 +17,4 @@ cp .env.example .env.local   # Supabase DATABASE_URL (PostGIS enabled)
 | --- | --- |
 | `npm test` | Unit tests (Vitest) |
 | `npm run typecheck` | `tsc --noEmit` |
-| `npm run db:generate` | Generate a migration from the schema, then patch in PostGIS SRID + extension |
-| `npm run db:migrate` | Apply migrations to `DATABASE_URL` |
-| `npm run db:check` | Run migrations against in-memory Postgres + PostGIS and smoke-test a radius query |
+| `npm run db:seed` | Upsert the fake organizations.json (+ one fake event) into `resources` |

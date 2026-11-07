@@ -29,7 +29,7 @@ describe("buildUserContext", () => {
     expect(ctx.ageBands).toEqual(["preschool", "school_age"]);
     expect(ctx.needs).toEqual(["childcare", "food"]); // "after-school" folds into childcare
     expect(ctx.budget).toBe("free_only");
-    expect(ctx.maxMonthlyCostCad).toBe(0);
+    expect(ctx.needs).not.toContain("financial");
     expect(ctx.language).toBe("en");
   });
 
@@ -72,7 +72,7 @@ describe("buildUserContext", () => {
     });
     expect(merged.kidsAges).toEqual([4]);
     expect(merged.needs).toEqual(["childcare", "food"]);
-    expect(merged.maxMonthlyCostCad).toBe(0);
+    expect(merged.budget).toBe("free_only");
   });
 
   it("LLM-safe projection contains no location data", () => {

@@ -1,45 +1,53 @@
 /**
- * Where user context lives:
- *  - Logged in (Auth0 session present): normalized UserContext upserted to
- *    `user_contexts`, keyed by auth0 `sub`.
- *  - Anonymous: NOTHING is stored server-side. The client keeps raw onboarding
- *    answers in sessionStorage and sends them with each request; we rebuild
- *    the context per request (it's a pure, sub-millisecond function).
+ * Where user context comes from:
+ *  - Fresh onboarding answers in this request (anonymous or logged in): built
+ *    per request with buildUserContext(). Nothing is stored server-side.
+ *  - Logged in, no answers in this request: READ the team's `user_preferences`
+ *    row (via `users.auth0_sub`) and rebuild the context from it.
+ *
+ * TODO: writing `user_preferences` is owned by the onboarding/login code.
+ * Writes from here are pending agreement with the teammate who owns that table.
  */
 import "server-only";
-import { eq, sql } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { db } from "../../db";
-import { userContexts } from "../../db/schema/personalization";
+import { userPreferences, users } from "../../db/schema/supabase";
 import { buildUserContext } from "./build-user-context";
-import { userContextSchema, type UserContext } from "./types";
+import type { UserContext } from "./types";
+
+/** "3-5" → 4 (band midpoint, whole years). The table stores bands, not exact ages. */
+function bandToAge(band: string): number | null {
+  const m = /^(\d+)\s*-\s*(\d+)$/.exec(band.trim());
+  return m ? Math.floor((Number(m[1]) + Number(m[2])) / 2) : null;
+}
 
 export async function resolveUserContext(opts: {
   auth0Sub?: string | null;
   /** Fresh onboarding answers from this request, if any. */
   onboarding?: unknown;
-}): Promise<{ context: UserContext; id: string | null }> {
+}): Promise<{ context: UserContext; userId: string | null }> {
   const { auth0Sub, onboarding } = opts;
 
-  if (!auth0Sub) {
-    return { context: buildUserContext(onboarding), id: null };
+  const [user] = auth0Sub
+    ? await db.select({ id: users.id }).from(users).where(eq(users.auth0Sub, auth0Sub)).limit(1)
+    : [];
+  const userId = user?.id ?? null;
+
+  if (onboarding !== undefined || !userId) {
+    return { context: buildUserContext(onboarding), userId };
   }
 
-  if (onboarding !== undefined) {
-    const context = buildUserContext(onboarding);
-    const [row] = await db
-      .insert(userContexts)
-      .values({ auth0Sub, context })
-      .onConflictDoUpdate({
-        target: userContexts.auth0Sub,
-        set: { context, updatedAt: sql`now()` },
-      })
-      .returning({ id: userContexts.id });
-    return { context, id: row?.id ?? null };
-  }
+  const [prefs] = await db.select().from(userPreferences).where(eq(userPreferences.userId, userId)).limit(1);
+  if (!prefs) return { context: buildUserContext({}), userId };
 
-  const [row] = await db.select().from(userContexts).where(eq(userContexts.auth0Sub, auth0Sub)).limit(1);
-  const parsed = row ? userContextSchema.safeParse(row.context) : null;
-  return parsed?.success
-    ? { context: parsed.data, id: row!.id }
-    : { context: buildUserContext({}), id: row?.id ?? null };
+  return {
+    context: buildUserContext({
+      postalCode: prefs.postalFsa,
+      kidsAges: (prefs.childAgeBands ?? []).map(bandToAge).filter((a) => a !== null),
+      needs: prefs.categories ?? [],
+      budget: prefs.budgetBand,
+      language: prefs.language,
+    }),
+    userId,
+  };
 }
