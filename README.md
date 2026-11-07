@@ -1,20 +1,35 @@
-# Hackathon-SingleParent-2026
+# Personalized Support Navigator (Kinora)
 
-Personalization layer for matching Calgary single parents with verified resources.
+Calgary-focused Next.js app that helps single parents find verified childcare, financial aid, and community supports.
 
-- `src/lib/personalization/` — onboarding answers → normalized `UserContext` (coarsened to postal FSA, never a full address), merge with Gemini's structured intent, the LLM-safe projection, and resource retrieval/ranking.
-- `src/db/schema/supabase.ts` — Drizzle schema pulled from the team's Supabase database (`resources`, `users`, `user_preferences`, `support_plans`, `plan_actions`). Supabase is the source of truth and is managed by the team: never run `drizzle-kit generate`/`migrate`/`push` against it. Refresh with `npx drizzle-kit pull`.
-- `src/db/` is server-only: our connection bypasses RLS, so never import it from client components.
-
-## Setup
+## App (repo root)
 
 ```bash
-npm install
-cp .env.example .env.local   # Supabase DATABASE_URL (PostGIS enabled)
+pnpm install
+cp .env.example .env.local
+pnpm dev
 ```
 
-| Script | What it does |
-| --- | --- |
-| `npm test` | Unit tests (Vitest) |
-| `npm run typecheck` | `tsc --noEmit` |
-| `npm run db:seed` | Upsert the fake organizations.json (+ one fake event) into `resources` |
+| Command | Purpose |
+|---------|---------|
+| `pnpm dev` | Dev server |
+| `pnpm typecheck` | TypeScript |
+| `pnpm lint` | ESLint |
+| `pnpm test` | Vitest |
+| `pnpm db:migrate` | Apply `drizzle/0000_init.sql` |
+| `pnpm db:seed` | Upsert `data/resources.csv` |
+| `pnpm db:verify` | Check PostGIS, RLS, resource count |
+
+See `.env.example` for `DATABASE_URL`, Auth0, Mapbox, and Gemini flags.
+
+## Personalization layer (`src/`)
+
+Also on `main`: a personalization / retrieval package under `src/lib/personalization/` and `src/db/`, plus its own tests. That code talks to the shared Supabase schema. Prefer `pnpm test` from the root app config; both test trees live under `tests/`.
+
+Do not run `drizzle-kit push` against production Supabase. App migrations use `pnpm db:migrate` / SQL editor scripts under `drizzle/`.
+
+## Notes
+
+- Catalog seed data: `data/resources.csv`
+- Early Mapbox experiment: `web/` (reference only)
+- Agent rules: `AGENTS.md`

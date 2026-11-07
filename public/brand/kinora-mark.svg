@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+  <title>Kinora</title>
+  <!-- Soft kinship orbits -->
+  <circle cx="15" cy="20" r="11" fill="currentColor" opacity="0.14"/>
+  <circle cx="25" cy="20" r="11" fill="currentColor" opacity="0.14"/>
+  <circle cx="15" cy="20" r="11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="25" cy="20" r="11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="20" cy="20" r="2.35" fill="currentColor"/>
+</svg>
