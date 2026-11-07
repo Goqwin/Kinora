@@ -4,7 +4,7 @@
  * failure. Gemini only sees the redacted text + toLlmSafeContext() (ages, no
  * location). The raw text is never stored or logged. Server-only.
  */
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, ThinkingLevel } from "@google/genai";
 import { z } from "zod";
 import { toLlmSafeContext } from "./build-user-context";
 import { detectCrisis } from "./crisis";
@@ -60,6 +60,8 @@ async function callGemini(prompt: string, signal: AbortSignal): Promise<string> 
       responseMimeType: "application/json",
       responseJsonSchema: INTENT_JSON_SCHEMA,
       temperature: 0,
+      // Lowest thinking level Gemini 3 allows: faster, and these are simple JSON tasks.
+      thinkingConfig: { thinkingLevel: ThinkingLevel.MINIMAL },
       abortSignal: signal,
     },
   });

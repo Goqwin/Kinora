@@ -66,6 +66,13 @@ describe("generatePlan", () => {
     expect(s.firstStep).toBe("Contact them using the details shown");
   });
 
+  it("asks for the plan in the intent's language, English by default", async () => {
+    const generate = vi.fn<GenerateFn>(async () => JSON.stringify({ steps: [step({})] }));
+    await generatePlan({ ...intent, language: "es" }, resources, generate);
+    await generatePlan({ ...intent, language: null }, resources, generate);
+    expect(generate.mock.calls.map(([p]) => JSON.parse(p).need.language)).toEqual(["es", "en"]);
+  });
+
   it("sends Gemini only the intent and allowed resource fields", async () => {
     const generate = vi.fn<GenerateFn>(async () => JSON.stringify({ steps: [step({})] }));
     await generatePlan(intent, resources, generate);

@@ -12,11 +12,13 @@ import { mergeContextWithIntent } from "./build-user-context";
 import { resolveUserContext } from "./context-store";
 import { detectCrisis } from "./crisis";
 import { crisisResourcesFor, type CrisisResource } from "./crisis-resources";
-import { extractIntent } from "./extract-intent";
+import { extractIntent, keywordIntent } from "./extract-intent";
 import { generatePlan, type SupportPlan } from "./generate-plan";
 import { retrieveResources, type RankedResource, type Relaxation } from "./retrieve";
 import { savePlan } from "./save-plan";
 import type { StructuredIntent } from "./types";
+
+const MIN_WORDS_FOR_AI = 3;
 
 export const supportPlanRequestSchema = z.object({
   text: z.string().max(2000).optional().default(""),
@@ -40,11 +42,17 @@ export async function buildSupportPlan(
   const text = body.text.trim();
   const keywordCrisis = detectCrisis(text); // before any Gemini call
 
+  // Empty or very short text (< 3 words): skip both Gemini calls to save time
+  // and quota. Keywords still catch crisis words and simple needs ("need daycare").
+  const skipAi = text.split(/\s+/).filter(Boolean).length < MIN_WORDS_FOR_AI;
+
   const { context, userId } = await resolveUserContext({ auth0Sub, onboarding: body.onboarding });
-  const { intent, intentSource } = await extractIntent(text, context);
+  const { intent, intentSource } = skipAi
+    ? { intent: keywordIntent(text), intentSource: "fallback" as const }
+    : await extractIntent(text, context);
   const merged = mergeContextWithIntent(context, intent);
   const { results, relaxed } = await retrieveResources(merged, { scheduleNeeds: intent.scheduleNeeds });
-  const plan = results.length ? await generatePlan(intent, results) : null;
+  const plan = !skipAi && results.length ? await generatePlan(intent, results) : null;
 
   if (userId) {
     try {
@@ -64,6 +72,7 @@ export async function buildSupportPlan(
     results,
     relaxed,
     plan,
-    usedFallback: intentSource === "fallback" || (results.length > 0 && plan === null),
+    // True only when Gemini was tried and failed; a deliberate skip is not a fallback.
+    usedFallback: !skipAi && (intentSource === "fallback" || (results.length > 0 && plan === null)),
   };
 }
