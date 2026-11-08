@@ -14,6 +14,9 @@
  */
 :root {
   --sky: #acecf7;
+  --navy: #13243b;
+  --pale-blue: #eef6fa;
+  --off-white: #fbfaf6;
   --deep: #0a4452;
   --deep-2: #0b6477;
   --series-1: #0388a6;
@@ -27,13 +30,13 @@
   --coral-soft: #fde4dc;
   --lime: #d7ffab;
   --lime-soft: #f1ffe2;
-  --canvas: #f7fdff;
-  --canvas-deep: #e3f3f7;
+  --canvas: var(--off-white);
+  --canvas-deep: #e7f1f6;
   --surface: #ffffff;
-  --surface-muted: #eaf7fa;
-  --ink: #10323c;
-  --ink-muted: #4a6670;
-  --border: #cde7ec;
+  --surface-muted: var(--pale-blue);
+  --ink: var(--navy);
+  --ink-muted: #4a5d70;
+  --border: #d7e6ee;
   --border-strong: #0a4452;
   --accent: #0b6477;
   --accent-hover: #084f5e;
@@ -46,13 +49,13 @@
   --crisis-bg-hover: #fee2e2;
   --crisis-border: #f5b5b5;
   --crisis-fg: #b91c1c;
-  --ring: #0e7490;
+  --ring: #0b6477;
   --primary: #f48668;
-  --primary-fg: #10323c;
+  --primary-fg: #13243b;
   --secondary: #acecf7;
-  --secondary-fg: #10323c;
+  --secondary-fg: #13243b;
   --highlight: #d7ffab;
-  --highlight-fg: #10323c;
+  --highlight-fg: #13243b;
   --link: #0b6477;
   /* Crisis and errors only. */
   --destructive: #b91c1c;
@@ -67,11 +70,11 @@
   --radius-md: 18px;
   --radius-lg: 28px;
   --radius-pill: 9999px;
-  --shadow-xs: 0 1px 2px rgb(31 41 55 / 0.05);
-  --shadow-sm: 0 2px 8px rgb(31 41 55 / 0.06);
-  --shadow-md: 0 12px 32px rgb(31 41 55 / 0.08);
-  --shadow-brutal: 4px 4px 0 0 var(--ink);
-  --shadow-brutal-sm: 3px 3px 0 0 var(--ink);
+  --shadow-xs: 0 1px 2px rgb(19 36 59 / 0.05);
+  --shadow-sm: 0 2px 8px rgb(19 36 59 / 0.06);
+  --shadow-md: 0 10px 28px rgb(19 36 59 / 0.08);
+  --shadow-brutal: 0 1px 2px rgb(19 36 59 / 0.05), 0 4px 14px rgb(19 36 59 / 0.06);
+  --shadow-brutal-sm: 0 1px 2px rgb(19 36 59 / 0.06);
   --hero-grid: radial-gradient(
     circle at 1px 1px,
     rgb(11 100 119 / 0.1) 1px,
@@ -86,6 +89,9 @@
    ink; pastels stay as accents and keep dark text on top of them. */
 .dark {
   --sky: #acecf7;
+  --navy: #0d1726;
+  --pale-blue: #1b2c42;
+  --off-white: #0d1726;
   --deep: #0a3440;
   --deep-2: #0b4f5e;
   --series-1: #1898b4;
@@ -99,13 +105,13 @@
   --coral-soft: #3a2630;
   --lime: #d7ffab;
   --lime-soft: #26362a;
-  --canvas: #0f1a1e;
-  --canvas-deep: #0a1316;
-  --surface: #16242a;
-  --surface-muted: #1d2f36;
-  --ink: #e6f4f7;
-  --ink-muted: #a7bcc2;
-  --border: #2a4049;
+  --canvas: var(--navy);
+  --canvas-deep: #09111d;
+  --surface: #142235;
+  --surface-muted: var(--pale-blue);
+  --ink: #eaf4f8;
+  --ink-muted: #a9bccb;
+  --border: #26394f;
   --border-strong: #5a7a85;
   --accent: #acecf7;
   --accent-hover: #cff5fb;
@@ -137,14 +143,14 @@
   --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.35);
   --shadow-sm: 0 2px 10px rgb(0 0 0 / 0.4);
   --shadow-md: 0 14px 36px rgb(0 0 0 / 0.5);
-  --shadow-brutal: 4px 4px 0 0 #0b0e1a;
-  --shadow-brutal-sm: 3px 3px 0 0 #0b0e1a;
+  --shadow-brutal: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 14px rgb(0 0 0 / 0.25);
+  --shadow-brutal-sm: 0 1px 2px rgb(0 0 0 / 0.3);
   --hero-grid: radial-gradient(
     circle at 1px 1px,
     rgb(172 236 247 / 0.12) 1px,
     transparent 0
   );
-  --map-marker-stroke: #0f1a1e;
+  --map-marker-stroke: #0d1726;
   --hero-veil: rgb(17 21 42);
   color-scheme: dark;
 }
@@ -209,22 +215,14 @@ h3 {
 }
 
 .sticker {
-  border: 2px solid var(--ink);
+  border: 1px solid var(--border);
   box-shadow: var(--shadow-brutal);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .sticker:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 0 var(--ink);
-}
-
-.dark .sticker {
-  border-color: #0b0e1a;
-}
-
-.dark .sticker:hover {
-  box-shadow: 6px 6px 0 0 #0b0e1a;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -338,7 +336,7 @@ h3 {
   --hero-notch: #0a4452;
   --hero-cream: #fffcf5;
   /* Name kept for existing classes; now Coral Glow on the always-dark hero. */
-  --hero-teal: #f48668;
+  --hero-teal: #ffb39e;
 }
 
 @keyframes hero-kenburns {
@@ -370,10 +368,6 @@ h3 {
     opacity: 1;
     transform: none;
   }
-}
-
-.places-track {
-  touch-action: pan-y;
 }
 
 .hero-grain {

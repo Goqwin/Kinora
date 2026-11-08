@@ -68,10 +68,10 @@ export default function StatsPage() {
         <ul className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {TILES.map((tile, i) => (
             <li key={tile.label}>
-              <Reveal delay={i * 0.06} className={`sticker h-full rounded-[var(--radius-lg)] p-5 text-[#10323c] ${tile.tint}`}>
+              <Reveal delay={i * 0.06} className={`sticker h-full rounded-[var(--radius-lg)] p-5 text-[#13243b] ${tile.tint}`}>
                 <p className="text-sm font-semibold">{tile.label}</p>
                 <p className="mt-2 font-[family-name:var(--font-display)] text-4xl font-semibold">{tile.value}</p>
-                <p className="mt-1 text-sm text-[#10323c]/80">{tile.note}</p>
+                <p className="mt-1 text-sm text-[#13243b]">{tile.note}</p>
               </Reveal>
             </li>
           ))}
@@ -180,7 +180,7 @@ export default function StatsPage() {
           <div className="flex flex-wrap gap-3">
             <Link
               href="/community"
-              className="sticker inline-flex items-center gap-2 rounded-[var(--radius-pill)] bg-[var(--lime)] px-7 py-3.5 text-base font-bold text-[#10323c] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white"
+              className="sticker inline-flex items-center gap-2 rounded-[var(--radius-pill)] bg-[var(--lime)] px-7 py-3.5 text-base font-bold text-[#13243b] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white"
             >
               Connect with parents
               <ArrowRight className="size-4" aria-hidden />

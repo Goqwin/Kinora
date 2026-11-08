@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { Hero, type HeroSeed } from "@/components/home/hero";
-import { PlacesCarousel } from "@/components/home/places-carousel";
+import { CategoryGrid } from "@/components/home/category-grid";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import { getOptionalUser, isAuthConfigured } from "@/lib/auth";
@@ -29,49 +29,6 @@ const VALUE_CARDS = [
     index: "03",
     title: "Parents helping parents.",
     body: "Find peer groups to hang out, shop, or share ideas in a moderated community.",
-  },
-] as const;
-
-const SUPPORT_AREAS = [
-  {
-    index: "01",
-    title: "Childcare",
-    body: "Licensed care, subsidies, and after-school options near you.",
-    href: "/start?mode=nearby",
-    image: "/images/landing/parent-walk.jpg",
-    alt: "A parent and child walking together on a park path",
-  },
-  {
-    index: "02",
-    title: "Money and benefits",
-    body: "Aid programs and ways to ease month-to-month pressure.",
-    href: "/start?mode=needs",
-    image: "/images/landing/parent-grocery.jpg",
-    alt: "A parent and child carrying groceries home together",
-  },
-  {
-    index: "03",
-    title: "Food and groceries",
-    body: "Food banks, meal programs, and community kitchens.",
-    href: "/resources",
-    image: "/images/landing/groceries.jpg",
-    alt: "Fresh produce at a community market stall",
-  },
-  {
-    index: "04",
-    title: "Housing",
-    body: "Shelters, rent help, and housing navigation.",
-    href: "/resources",
-    image: "/images/landing/calgary-day.jpg",
-    alt: "Calgary skyline across open ground on a clear day",
-  },
-  {
-    index: "05",
-    title: "Hang out with parents",
-    body: "Peer groups and community posts for company, coffee, and shopping trips. Posts are opinions, not verified listings.",
-    href: "/community",
-    image: "/images/landing/parent-child.jpg",
-    alt: "A parent holding a child while walking outdoors",
   },
 ] as const;
 
@@ -108,9 +65,9 @@ export default function HomePage() {
       <section className="bg-[var(--canvas)] px-4 py-14 sm:px-6 sm:py-20">
         <div className="mx-auto grid w-full max-w-6xl gap-4 sm:grid-cols-3 sm:gap-5">
           {VALUE_CARDS.map((card, i) => (
-            <Reveal key={card.index} from={i === 0 ? "left" : i === 2 ? "right" : "up"} delay={i * 0.08}>
+            <Reveal key={card.index} delay={i * 0.08}>
             <article
-              className={cn("sticker h-full rounded-[var(--radius-lg)] p-6 text-[#10323c] sm:p-8", CARD_TINTS[i])}
+              className={cn("sticker h-full rounded-[var(--radius-lg)] p-6 text-[#13243b] sm:p-8", CARD_TINTS[i])}
             >
               <p className="grid size-10 place-items-center rounded-full bg-white/70 font-[family-name:var(--font-display)] text-base font-semibold">
                 {card.index}
@@ -118,7 +75,7 @@ export default function HomePage() {
               <h2 className="mt-4 font-[family-name:var(--font-display)] text-xl font-semibold sm:text-2xl">
                 {card.title}
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-[#10323c]/85 sm:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-[#13243b] sm:text-base">
                 {card.body}
               </p>
             </article>
@@ -144,7 +101,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <PlacesCarousel places={SUPPORT_AREAS} />
+        <CategoryGrid />
         </div>
       </section>
 
@@ -214,7 +171,7 @@ export default function HomePage() {
           <Link
             href="/start"
             className={cn(
-              "sticker inline-flex shrink-0 items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-[var(--lime)] px-7 py-3.5 text-base font-bold text-[#10323c]",
+              "sticker inline-flex shrink-0 items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-[var(--lime)] px-7 py-3.5 text-base font-bold text-[#13243b]",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(10_68_82)]",
             )}
           >

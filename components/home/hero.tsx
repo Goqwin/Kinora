@@ -98,26 +98,27 @@ export function Hero({ seed }: HeroProps) {
         <HeroNav />
 
         <div className="relative z-10 mx-auto mt-auto flex w-full max-w-7xl flex-col gap-8 px-5 pb-6 pt-32 sm:px-10 sm:pb-10 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
-          <h1 className="hero-anim-wordmark select-none font-[family-name:var(--font-display)] text-[clamp(5.5rem,26vw,12rem)] font-semibold leading-[0.78] tracking-[-0.05em] text-[var(--hero-cream)] lg:text-[clamp(7rem,15vw,16rem)]">
+          <p className="hero-anim-wordmark select-none font-[family-name:var(--font-display)] text-[clamp(5.5rem,26vw,12rem)] font-semibold leading-[0.78] tracking-[-0.05em] text-[var(--hero-cream)] lg:text-[clamp(7rem,15vw,16rem)]">
             Kinora
-          </h1>
+          </p>
 
-          <div className="hero-anim-column w-full max-w-xl lg:w-[min(36rem,40vw)] lg:pb-2">
+          {/* Near-solid panel keeps every line of hero text at WCAG AA contrast, whatever part of the photo sits behind it. */}
+          <div className="hero-anim-column w-full max-w-xl rounded-[var(--radius-lg)] border border-white/10 bg-[rgb(8_36_46/0.85)] p-5 backdrop-blur-md sm:p-6 lg:w-[min(36rem,40vw)]">
             <p className="text-xs font-medium uppercase tracking-[0.28em] text-[var(--hero-teal)]">
               Connection Closer to Home
             </p>
-            <p className="mt-3 text-pretty text-base leading-relaxed text-[var(--hero-cream)]/90 sm:text-lg">
+            <h1 className="mt-3 text-pretty font-[family-name:var(--font-display)] text-xl font-semibold leading-snug text-[var(--hero-cream)] sm:text-2xl">
               Tell us what you need. Find childcare, benefits, food, housing,
               and parents to hang out with nearby. You do not have to figure
               this out alone.
-            </p>
+            </h1>
 
             {/* POST so a submit before hydration never puts the text in the URL. */}
             <form role="search" method="post" onSubmit={onSubmit} className="mt-6">
               <label htmlFor="hero-q" className="sr-only">
                 Describe what would help
               </label>
-              <div className="flex items-center gap-2 rounded-full border border-white/15 bg-black/45 p-1.5 pl-5 backdrop-blur-xl transition focus-within:border-[var(--hero-teal)]/70 focus-within:shadow-[0_0_0_4px_rgba(215,255,171,0.2)]">
+              <div className="flex items-center gap-2 rounded-full border border-white/20 bg-[rgb(10_40_50/0.82)] p-1.5 pl-5 transition focus-within:border-[var(--hero-teal)]/70 focus-within:shadow-[0_0_0_4px_rgba(215,255,171,0.2)]">
                 <Search
                   aria-hidden
                   className="size-5 shrink-0 text-[var(--hero-teal)]"
@@ -133,7 +134,7 @@ export function Hero({ seed }: HeroProps) {
                   maxLength={1000}
                   autoComplete="off"
                   placeholder="Describe what would help..."
-                  className="min-w-0 flex-1 bg-transparent py-3 text-base text-white outline-none placeholder:text-white/60"
+                  className="min-w-0 flex-1 bg-transparent py-3 text-base text-white outline-none placeholder:text-white/80"
                 />
                 <button
                   type="submit"

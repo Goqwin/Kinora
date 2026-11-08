@@ -5,7 +5,7 @@ import { KinoraLogo } from "@/components/layout/kinora-logo";
 const FOOTER_LINKS = [
   { href: "/resources", label: "Resources" },
   { href: "/start", label: "Get started" },
-  { href: "/plan", label: "My plan" },
+  { href: "/plan", label: "My Plan" },
   { href: "/community", label: "Community" },
   { href: "/stats", label: "Stats" },
 ] as const;
