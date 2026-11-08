@@ -10,16 +10,17 @@ type Props = { years: readonly number[]; series: readonly [Series, Series] };
 
 const W = 640;
 const H = 300;
-const PAD = { top: 16, right: 132, bottom: 36, left: 44 };
+const PAD = { top: 16, right: 132, bottom: 56, left: 64 };
 
 export function GrowthLineChart({ years, series }: Props) {
   const reduce = useReducedMotion();
   const [active, setActive] = useState<number | null>(null);
-  const indexed = series.map((s) => indexSeries(s.values));
-  const all = indexed.flat();
-  const ticks = niceTicks(Math.floor(Math.min(...all)), Math.max(...all), 4);
+  // Percent change since the first year, so the base year sits at 0%.
+  const growth = series.map((s) => indexSeries(s.values).map((v) => v - 100));
+  const all = growth.flat();
+  const ticks = niceTicks(Math.floor(Math.min(0, ...all)), Math.max(...all), 4);
   const yMin = ticks[0];
-  const yMax = ticks.at(-1) ?? 100;
+  const yMax = ticks.at(-1) ?? 0;
   const plotW = W - PAD.left - PAD.right;
   const plotH = H - PAD.top - PAD.bottom;
   const x = (i: number) => PAD.left + (plotW * i) / (years.length - 1);
@@ -37,21 +38,23 @@ export function GrowthLineChart({ years, series }: Props) {
           </li>
         ))}
       </ul>
-      <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full overflow-visible" role="img" aria-label={`Growth of one-parent families, indexed to ${years[0]} equals 100. ${series.map((s, i) => `${s.name} ${formatSignedPct((indexed[i].at(-1) ?? 100) - 100)}`).join(", ")} by ${years.at(-1)}.`}>
+      <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full overflow-visible" role="img" aria-label={`Percent growth in one-parent families since ${years[0]}. ${series.map((s, i) => `${s.name} ${formatSignedPct(growth[i].at(-1) ?? 0)}`).join(", ")} by ${years.at(-1)}.`}>
         {ticks.map((t) => (
           <g key={t}>
             <line x1={PAD.left} x2={W - PAD.right} y1={y(t)} y2={y(t)} stroke="var(--border)" strokeWidth={1} />
-            <text x={PAD.left - 8} y={y(t)} dy="0.32em" textAnchor="end" className="fill-[var(--ink-muted)] text-[12px] tabular-nums">{t}</text>
+            <text x={PAD.left - 8} y={y(t)} dy="0.32em" textAnchor="end" className="fill-[var(--ink-muted)] text-[12px] tabular-nums">{t}%</text>
           </g>
         ))}
         {years.map((year, i) => (
-          <text key={year} x={x(i)} y={H - 10} textAnchor="middle" className="fill-[var(--ink-muted)] text-[12px] tabular-nums">{year}</text>
+          <text key={year} x={x(i)} y={PAD.top + plotH + 20} textAnchor="middle" className="fill-[var(--ink-muted)] text-[12px] tabular-nums">{year}</text>
         ))}
+        <text x={PAD.left + plotW / 2} y={H - 6} textAnchor="middle" className="fill-[var(--ink-muted)] text-[12px] font-semibold">Year</text>
+        <text transform={`translate(14 ${PAD.top + plotH / 2}) rotate(-90)`} textAnchor="middle" className="fill-[var(--ink-muted)] text-[12px] font-semibold">Growth since {years[0]} (%)</text>
         {active !== null && <line x1={x(active)} x2={x(active)} y1={PAD.top} y2={PAD.top + plotH} stroke="var(--border-strong)" strokeWidth={1} />}
         {series.map((s, si) => (
           <g key={s.name}>
             <motion.path
-              d={pathFor(indexed[si])}
+              d={pathFor(growth[si])}
               fill="none"
               stroke={s.color}
               strokeWidth={2}
@@ -62,10 +65,10 @@ export function GrowthLineChart({ years, series }: Props) {
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 1.2, ease: "easeOut", delay: si * 0.2 }}
             />
-            <circle cx={x(last)} cy={y(indexed[si][last])} r={4} fill={s.color} stroke="var(--surface)" strokeWidth={2} />
-            {active !== null && <circle cx={x(active)} cy={y(indexed[si][active])} r={4} fill={s.color} stroke="var(--surface)" strokeWidth={2} />}
-            <text x={x(last) + 12} y={y(indexed[si][last])} dy="0.32em" className="fill-[var(--ink)] text-[13px] font-semibold">
-              {s.name} {formatSignedPct(indexed[si][last] - 100)}
+            <circle cx={x(last)} cy={y(growth[si][last])} r={4} fill={s.color} stroke="var(--surface)" strokeWidth={2} />
+            {active !== null && <circle cx={x(active)} cy={y(growth[si][active])} r={4} fill={s.color} stroke="var(--surface)" strokeWidth={2} />}
+            <text x={x(last) + 12} y={y(growth[si][last])} dy="0.32em" className="fill-[var(--ink)] text-[13px] font-semibold">
+              {s.name} {formatSignedPct(growth[si][last])}
             </text>
           </g>
         ))}
@@ -98,7 +101,7 @@ export function GrowthLineChart({ years, series }: Props) {
             <p key={s.name} className="mt-1 flex items-center gap-2 text-[var(--ink-muted)]">
               <span className="size-2 rounded-full" style={{ background: s.color }} aria-hidden />
               {s.name}: <span className="font-semibold tabular-nums text-[var(--ink)]">{formatFull(s.values[active])}</span>
-              <span className="tabular-nums">({indexed[si][active].toFixed(1)})</span>
+              <span className="tabular-nums">({formatSignedPct(growth[si][active])})</span>
             </p>
           ))}
         </div>
