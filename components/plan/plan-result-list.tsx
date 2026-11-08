@@ -62,11 +62,10 @@ export function PlanResultList({
         <ul className="mt-4 space-y-2">
           {results.map((row, index) => (
             <li key={row.slug}>
-              <button
-                type="button"
+              <div
                 className={cn(
                   "w-full rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 py-4 text-left transition",
-                  "hover:border-[var(--border-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]",
+                  "hover:border-[var(--border-strong)] focus-within:ring-2 focus-within:ring-[var(--ring)]",
                   selectedSlug === row.slug &&
                     "border-[var(--accent)] bg-[var(--surface-muted)]",
                 )}
@@ -88,7 +87,7 @@ export function PlanResultList({
                 </div>
                 <Link
                   href={`/resources/${row.slug}`}
-                  className="mt-2 block font-[family-name:var(--font-display)] text-lg font-semibold text-[var(--ink)] hover:text-[var(--accent)]"
+                  className="mt-2 block font-[family-name:var(--font-display)] text-lg font-semibold text-[var(--ink)] hover:text-[var(--accent)] focus-visible:outline-none"
                 >
                   {row.name}
                 </Link>
@@ -96,7 +95,7 @@ export function PlanResultList({
                   Score {Math.round(row.score)}. May be eligible. Confirm with the provider.{" "}
                   {row.eligibilitySummary}
                 </p>
-              </button>
+              </div>
             </li>
           ))}
         </ul>

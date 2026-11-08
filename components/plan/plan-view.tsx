@@ -195,6 +195,9 @@ export function PlanView({ authReady, dbReady }: { authReady: boolean; dbReady: 
         <Button asChild variant="secondary" className="rounded-full">
           <Link href="/resources">Browse full catalog</Link>
         </Button>
+        <Button asChild variant="secondary" className="rounded-full">
+          <Link href="/saved">Track my steps</Link>
+        </Button>
       </div>
     </>
   );
