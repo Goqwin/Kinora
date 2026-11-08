@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 
 const EXAMPLES = [
   "Parents to hang out or go shopping with nearby",
-  "Meet other parents",
+  "Volunteer opportunities for my family",
   "Affordable after-school care near me",
   "Food help and childcare for a 4 year old",
 ] as const;
@@ -60,8 +60,7 @@ export function Hero({ seed }: HeroProps) {
 
   function onSubmit(event: FormEvent) {
     event.preventDefault();
-    const text =
-      q.trim() || (activeChip !== null ? EXAMPLES[activeChip] : "");
+    const text = q.trim() || (activeChip !== null ? EXAMPLES[activeChip] : "");
     if (!text) return;
     go(text);
   }
@@ -108,7 +107,12 @@ export function Hero({ seed }: HeroProps) {
             </h1>
 
             {/* POST so a submit before hydration never puts the text in the URL. */}
-            <form role="search" method="post" onSubmit={onSubmit} className="mt-6">
+            <form
+              role="search"
+              method="post"
+              onSubmit={onSubmit}
+              className="mt-6"
+            >
               <label htmlFor="hero-q" className="sr-only">
                 Describe what would help
               </label>
