@@ -5,6 +5,7 @@ import { PostActions } from "@/components/community/post-actions";
 import { ReplyForm } from "@/components/community/reply-form";
 import { PageHeader } from "@/components/layout/page-header";
 import { PageShell } from "@/components/layout/page-shell";
+import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { getOptionalUser, isAuthConfigured } from "@/lib/auth";
 import { isDatabaseConfigured } from "@/lib/db";
 import {
@@ -47,6 +48,7 @@ export default async function CommunityPostPage({
 
   return (
     <PageShell>
+      <ScrollToTop />
       <p className="mb-6 rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-sm text-[var(--ink-muted)]">
         Posts are community opinions, not verified information.
       </p>
@@ -60,7 +62,7 @@ export default async function CommunityPostPage({
         </p>
       </PageHeader>
 
-      <p className="mt-6 whitespace-pre-wrap text-base leading-relaxed text-[var(--ink)]">
+      <p className="mt-6 whitespace-pre-wrap break-words text-base leading-relaxed text-[var(--ink)]">
         {post.body}
       </p>
 
@@ -93,7 +95,7 @@ export default async function CommunityPostPage({
                     ? ` · ${new Date(reply.createdAt).toLocaleDateString()}`
                     : null}
                 </p>
-                <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-[var(--ink)]">
+                <p className="mt-2 whitespace-pre-wrap break-words text-sm leading-relaxed text-[var(--ink)]">
                   {reply.body}
                 </p>
               </li>

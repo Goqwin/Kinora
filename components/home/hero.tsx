@@ -89,13 +89,13 @@ export function Hero({ seed }: HeroProps) {
 
         <HeroNav />
 
-        <div className="relative z-10 mx-auto mt-auto flex w-full max-w-7xl flex-col gap-8 px-5 pb-6 pt-32 sm:px-10 sm:pb-10 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
+        <div className="relative z-10 mx-auto mt-auto flex w-full max-w-7xl flex-col gap-10 px-5 pb-6 pt-32 sm:px-10 sm:pb-10 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
           <p className="hero-anim-wordmark select-none font-[family-name:var(--font-display)] text-[clamp(5.5rem,26vw,12rem)] font-semibold leading-[0.78] tracking-[-0.05em] text-[var(--hero-cream)] lg:text-[clamp(7rem,15vw,16rem)]">
             Kinora
           </p>
 
           {/* Near-solid panel keeps every line of hero text at WCAG AA contrast, whatever part of the photo sits behind it. */}
-          <div className="hero-anim-column w-full max-w-xl rounded-[var(--radius-lg)] border border-white/10 bg-[rgb(8_36_46/0.85)] p-5 backdrop-blur-md sm:p-6 lg:w-[min(36rem,40vw)]">
+          <div className="hero-anim-column w-full max-w-xl rounded-[var(--radius-lg)] border border-white/10 bg-[rgb(8_36_46/0.85)] p-5 backdrop-blur-md sm:p-7 lg:ml-8 lg:w-[min(36rem,40vw)]">
             <p className="text-xs font-medium uppercase tracking-[0.28em] text-[var(--hero-teal)]">
               Connection Closer to Home
             </p>

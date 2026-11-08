@@ -35,7 +35,7 @@ export function PlanResultsWithMap({
           onSelectResult={setSelectedSlug}
         />
       </div>
-      <div className="lg:sticky lg:top-20 lg:order-2 lg:self-start">
+      <div className="lg:sticky lg:top-24 lg:order-2 lg:self-start">
         <LazyResourceMap
           resources={results}
           selectedId={selectedSlug}

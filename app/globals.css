@@ -17,7 +17,6 @@
   --navy: #13243b;
   --pale-blue: #eef6fa;
   --off-white: #fbfaf6;
-  --sand: #f4ece1;
   --deep: #0a4452;
   --deep-2: #0b6477;
   --series-1: #0388a6;
@@ -93,7 +92,6 @@
   --navy: #0d1726;
   --pale-blue: #1b2c42;
   --off-white: #0d1726;
-  --sand: #1c2a3d;
   --deep: #0a3440;
   --deep-2: #0b4f5e;
   --series-1: #1898b4;
@@ -194,6 +192,14 @@
 }
 
 /* Fluid base size: every rem-based size scales from 15px on phones to 18px on large screens. */
+/* Lock pages to the screen width. Set on both elements: on body alone it is
+   passed to the viewport and stops clipping. clip (not hidden) keeps sticky. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 html {
   font-size: clamp(15px, 13.5px + 0.3vw, 18px);
   scrollbar-width: none;

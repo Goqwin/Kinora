@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { Hero, type HeroSeed } from "@/components/home/hero";
+import { TopicMarquee } from "@/components/home/topic-marquee";
 import { CategoryGrid } from "@/components/home/category-grid";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,7 @@ import { getPreferencesByUserId } from "@/lib/db/queries/preferences";
 import { cn } from "@/lib/utils";
 
 const CARD_TINTS = ["bg-[var(--sky)]", "bg-[var(--coral)]", "bg-[var(--lime)]"] as const;
+const CARD_SOFT = ["bg-[var(--sky-soft)]", "bg-[var(--coral-soft)]", "bg-[var(--lime-soft)]"] as const;
 
 const HELP_TOPICS = [
   "Childcare",
@@ -80,23 +82,14 @@ export default function HomePage() {
         <HomeHero />
       </Suspense>
 
-      <div className="bg-[var(--coral)] px-4 py-4 sm:px-6">
-        <ul
-          aria-label="Kinds of help on Kinora"
-          className="mx-auto flex max-w-6xl flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-[0.16em] text-[#13243b]"
-        >
-          {HELP_TOPICS.map((topic) => (
-            <li key={topic}>{topic}</li>
-          ))}
-        </ul>
-      </div>
+      <TopicMarquee topics={HELP_TOPICS} label="Kinds of help on Kinora" />
 
       <section className="bg-[var(--canvas)] px-4 py-14 sm:px-6 sm:py-20">
         <div className="mx-auto grid w-full max-w-6xl gap-4 sm:grid-cols-3 sm:gap-5">
           {VALUE_CARDS.map((card, i) => (
             <Reveal key={card.index} delay={i * 0.08}>
             <article
-              className="sticker h-full rounded-[var(--radius-lg)] bg-[var(--sand)] p-6 text-[var(--ink)] sm:p-8"
+              className={cn("sticker h-full rounded-[var(--radius-lg)] p-6 text-[var(--ink)] sm:p-8", CARD_SOFT[i])}
             >
               <p className={cn("grid size-10 place-items-center rounded-full font-[family-name:var(--font-display)] text-base font-semibold text-[#13243b]", CARD_TINTS[i])}>
                 {card.index}

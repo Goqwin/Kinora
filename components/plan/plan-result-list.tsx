@@ -25,11 +25,13 @@ export function PlanResultList({
         <h2 className="font-[family-name:var(--font-display)] text-2xl font-semibold tracking-tight text-[var(--ink)]">
           Your support plan
         </h2>
-        <ol className="mt-6 space-y-4">
-          {actions.map((action) => (
+        {/* Steps stack like cards while scrolling: each sticks a little lower than the last. */}
+        <ol className="mt-6 space-y-4 pb-6">
+          {actions.map((action, index) => (
             <li
               key={action.resourceSlug}
-              className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-xs)]"
+              className="sticky rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-md)]"
+              style={{ top: `calc(6rem + ${index * 14}px)`, zIndex: index + 1 }}
             >
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
                 Step {action.priority}

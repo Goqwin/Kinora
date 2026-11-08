@@ -8,7 +8,7 @@ import { ResourceCard } from "@/components/resources/resource-card";
 import type { CatalogResource } from "@/lib/resources/types";
 import { cn } from "@/lib/utils";
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 5;
 
 type ResourcesCatalogWithMapProps = {
   resources: CatalogResource[];
@@ -45,11 +45,12 @@ export function ResourcesCatalogWithMap({ resources }: ResourcesCatalogWithMapPr
   const last = current * PAGE_SIZE + pageItems.length;
 
   return (
-    <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
-      <div ref={listRef} className="scroll-mt-24">
-        <p className="mb-4 text-sm text-[var(--ink-muted)]" role="status" aria-live="polite">
-          Showing {first}–{last} of {resources.length} resources
-        </p>
+    <div ref={listRef} className="scroll-mt-24">
+      <p className="mb-4 text-sm text-[var(--ink-muted)]" role="status" aria-live="polite">
+        Showing {first}–{last} of {resources.length} resources
+      </p>
+      <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+      <div>
         <ul className="grid gap-5">
           {pageItems.map((resource) => (
             <li key={resource.slug}>
@@ -117,7 +118,7 @@ export function ResourcesCatalogWithMap({ resources }: ResourcesCatalogWithMapPr
           </nav>
         ) : null}
       </div>
-      <div className="lg:sticky lg:top-20">
+      <div className="lg:sticky lg:top-24">
         <LazyResourceMap
           resources={pageItems}
           selectedId={focusSlug}
@@ -125,6 +126,7 @@ export function ResourcesCatalogWithMap({ resources }: ResourcesCatalogWithMapPr
           userPoint={null}
           radiusKm={25}
         />
+      </div>
       </div>
     </div>
   );
