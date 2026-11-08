@@ -13,6 +13,7 @@ import {
   setCommunityPostStatus,
   toggleHelpfulVote,
 } from "@/lib/db/queries/community";
+import { setOpenToMeetParents } from "@/lib/db/queries/preferences";
 import { getResourceIdBySlug } from "@/lib/db/queries/resources";
 import {
   COMMUNITY_POST_CATEGORIES,
@@ -250,5 +251,44 @@ export async function moderateCommunityPostAction(
     return { ok: true };
   } catch {
     return { ok: false, error: "Could not update the post." };
+  }
+}
+
+const meetParentsSchema = z.object({
+  openToMeetParents: z.boolean(),
+});
+
+export async function setOpenToMeetParentsAction(
+  input: z.infer<typeof meetParentsSchema>,
+): Promise<{ ok: true } | { ok: false; error: string }> {
+  const parsed = meetParentsSchema.safeParse(input);
+  if (!parsed.success) {
+    return { ok: false, error: "Invalid opt-in value." };
+  }
+
+  const user = await getOptionalUser();
+  if (!user) {
+    return { ok: false, error: "Sign in to opt in." };
+  }
+
+  if (!isDatabaseConfigured()) {
+    return { ok: false, error: "Database is not configured yet." };
+  }
+
+  if (!/^[0-9a-f-]{36}$/i.test(user.id)) {
+    return {
+      ok: false,
+      error:
+        "Account sync is not ready. Try again after the database is connected.",
+    };
+  }
+
+  try {
+    await setOpenToMeetParents(user.id, parsed.data.openToMeetParents);
+    revalidatePath("/community");
+    revalidatePath("/account");
+    return { ok: true };
+  } catch {
+    return { ok: false, error: "Could not update your opt-in. Try again." };
   }
 }

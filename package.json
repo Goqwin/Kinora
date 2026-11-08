@@ -14,6 +14,7 @@
     "db:seed": "tsx scripts/seed.ts",
     "db:verify": "tsx scripts/verify-db.ts",
     "db:seed:personalization": "tsx scripts/seed-personalization.ts",
+    "db:seed:community": "tsx scripts/seed-community.ts",
     "personas": "tsx scripts/personas.ts",
     "db:pull": "drizzle-kit pull --config drizzle/pull.config.ts"
   },

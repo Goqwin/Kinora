@@ -18,7 +18,7 @@ export type SearchCriteria = {
   radiusKm: number;
   userLat: number | null;
   userLon: number | null;
-  /** Preference-only flag; plan UI may show a community nudge. */
+  /** Preference or free-text hangout intent; boosts community matches. */
   openToMeetParents?: boolean;
 };
 
@@ -51,10 +51,28 @@ function haversineKm(
   return 2 * r * Math.asin(Math.sqrt(a));
 }
 
+function wantsParentHangouts(criteria: SearchCriteria): boolean {
+  return Boolean(
+    criteria.openToMeetParents ||
+      criteria.categories.includes("community"),
+  );
+}
+
 function ageScore(
   resource: CatalogResource,
   criteria: SearchCriteria,
 ): number {
+  // Parent hangout / community listings are often adults-only. Do not penalize
+  // them when the search is about meeting other parents.
+  if (
+    wantsParentHangouts(criteria) &&
+    resource.category === "community" &&
+    resource.ageMinMonths === null &&
+    resource.ageMaxMonths === null
+  ) {
+    return MATCH_WEIGHTS.age;
+  }
+
   if (criteria.childAgeMonths === null && criteria.childAgeBands.length === 0) {
     return MATCH_WEIGHTS.age;
   }
@@ -132,6 +150,9 @@ function otherScore(resource: CatalogResource, criteria: SearchCriteria): number
       score += MATCH_OTHER.urgency;
     }
   }
+  if (wantsParentHangouts(criteria) && resource.category === "community") {
+    score += MATCH_OTHER.parentHangout;
+  }
   return Math.min(score, MATCH_WEIGHTS.other);
 }
 
@@ -139,11 +160,13 @@ export function scoreResource(
   resource: CatalogResource,
   criteria: SearchCriteria,
 ): ScoredResource {
-  const categoryPart =
+  const categoryMatch =
     criteria.categories.length === 0 ||
-    criteria.categories.includes(resource.category)
-      ? MATCH_WEIGHTS.category
-      : MATCH_WEIGHTS.category * 0.15;
+    criteria.categories.includes(resource.category) ||
+    (wantsParentHangouts(criteria) && resource.category === "community");
+  const categoryPart = categoryMatch
+    ? MATCH_WEIGHTS.category
+    : MATCH_WEIGHTS.category * 0.15;
 
   const parts = {
     category: categoryPart,

@@ -23,12 +23,12 @@ const VALUE_CARDS = [
   {
     index: "02",
     title: "Your plan in about a minute.",
-    body: "Describe your situation and get 3 to 4 clear next steps.",
+    body: "Describe your situation and get 4 to 5 clear next steps.",
   },
   {
     index: "03",
     title: "Parents helping parents.",
-    body: "Ask questions and share ideas in a moderated community.",
+    body: "Find peer groups to hang out, shop, or share ideas in a moderated community.",
   },
 ] as const;
 
@@ -67,8 +67,8 @@ const SUPPORT_AREAS = [
   },
   {
     index: "05",
-    title: "From other parents",
-    body: "Community posts are opinions, not verified listings.",
+    title: "Hang out with parents",
+    body: "Peer groups and community posts for company, coffee, and shopping trips. Posts are opinions, not verified listings.",
     href: "/community",
     image: "/images/landing/parent-child.jpg",
     alt: "A parent holding a child while walking outdoors",

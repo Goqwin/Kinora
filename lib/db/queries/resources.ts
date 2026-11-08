@@ -79,7 +79,10 @@ export async function listActiveResources(options?: {
 
   const categoryFilter =
     options?.categories && options.categories.length > 0
-      ? sql`AND category = ANY(${options.categories})`
+      ? sql`AND category IN (${sql.join(
+          options.categories.map((category) => sql`${category}`),
+          sql`, `,
+        )})`
       : sql``;
 
   const result = await db.execute(sql`

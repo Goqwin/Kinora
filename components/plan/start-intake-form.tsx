@@ -23,6 +23,7 @@ export function StartIntakeForm({ defaultMode }: StartIntakeFormProps) {
   const [mode, setMode] = React.useState(defaultMode);
   const [submitting, setSubmitting] = React.useState(false);
   const [ageBands, setAgeBands] = React.useState<ChildAgeBand[]>([]);
+  const [openToMeetParents, setOpenToMeetParents] = React.useState(false);
 
   function toggleAgeBand(band: ChildAgeBand) {
     setAgeBands((prev) =>
@@ -56,6 +57,10 @@ export function StartIntakeForm({ defaultMode }: StartIntakeFormProps) {
 
         const cost = String(form.get("cost") ?? "").trim();
         if (cost) params.set("costPreference", cost);
+
+        if (openToMeetParents) {
+          params.set("openToMeetParents", "1");
+        }
 
         // The free text never goes in the URL; it is handed to /plan via
         // sessionStorage. "Nearby" mode clears any earlier text.
@@ -125,7 +130,7 @@ export function StartIntakeForm({ defaultMode }: StartIntakeFormProps) {
             id="needs"
             name="needs"
             maxLength={1000}
-            placeholder="Example: I need after-school care and help understanding subsidy rules."
+            placeholder="Example: after-school care, or parents to hang out or shop with."
           />
           <p className="text-xs text-[var(--ink-muted)]">
             Do not include names, phone numbers, or your full address here.
@@ -149,7 +154,8 @@ export function StartIntakeForm({ defaultMode }: StartIntakeFormProps) {
               <option value="financial">Financial aid</option>
               <option value="food">Food</option>
               <option value="housing">Housing</option>
-              <option value="activities">Activities</option>
+              <option value="activities">Kids activities</option>
+              <option value="community">Parent hangouts</option>
             </select>
           </div>
           <div className="space-y-2 sm:col-span-2">
@@ -187,6 +193,24 @@ export function StartIntakeForm({ defaultMode }: StartIntakeFormProps) {
               <option value="free">Free</option>
               <option value="subsidized">Subsidized</option>
             </select>
+          </div>
+          <div className="flex items-start gap-3 sm:col-span-2">
+            <input
+              id="openToMeetParents"
+              type="checkbox"
+              checked={openToMeetParents}
+              onChange={(event) => setOpenToMeetParents(event.target.checked)}
+              className="mt-1 h-4 w-4 accent-[var(--accent)]"
+            />
+            <div>
+              <Label htmlFor="openToMeetParents" className="font-medium">
+                Include parent hangouts
+              </Label>
+              <p className="mt-1 text-xs text-[var(--ink-muted)]">
+                Suggest peer groups for coffee, shopping, or company with other
+                single parents.
+              </p>
+            </div>
           </div>
         </div>
       </div>

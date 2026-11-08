@@ -10,4 +10,6 @@ export const MATCH_OTHER = {
   language: 4,
   verified: 3,
   urgency: 3,
+  /** Extra when the parent wants hangouts / peer company. */
+  parentHangout: 5,
 } as const;
