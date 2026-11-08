@@ -21,7 +21,7 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: {
-    default: "Kinora | Calgary single parents",
+    default: "Kinora | Connections Closer to Home",
     template: "%s | Kinora",
   },
   icons: { icon: "/brand/kinora-mark.svg" },

@@ -9,7 +9,7 @@ type KinoraLogoProps = {
   taglineClassName?: string;
 };
 
-/** Sleek twin-orbit mark + optional Kinora wordmark. */
+
 export function KinoraLogo({
   className,
   markClassName,

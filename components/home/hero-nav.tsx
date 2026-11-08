@@ -36,7 +36,7 @@ export function HeroNav() {
         >
           <KinoraLogo
             showWordmark
-            tagline="Calgary single parents"
+            tagline="Connections Closer to Home."
             markClassName="size-9 text-[var(--hero-cream)]"
             wordmarkClassName="text-[var(--hero-cream)]"
             taglineClassName="text-[var(--hero-cream)]/70"

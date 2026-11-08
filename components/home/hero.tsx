@@ -108,7 +108,7 @@ export function Hero({ seed }: HeroProps) {
 
           <div className="hero-anim-column w-full max-w-xl lg:w-[min(36rem,40vw)] lg:pb-2">
             <p className="text-xs font-medium uppercase tracking-[0.28em] text-[var(--hero-teal)]">
-              Calgary single parents
+              Connection Closer to Home
             </p>
             <p className="mt-3 text-pretty text-base leading-relaxed text-[var(--hero-cream)]/90 sm:text-lg">
               Tell us what you need. Find childcare, benefits, food, housing,
