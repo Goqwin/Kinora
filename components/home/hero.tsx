@@ -83,7 +83,7 @@ export function Hero({ seed }: HeroProps) {
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-gradient-to-t from-[#04100d]/90 via-[#04100d]/35 to-[#04100d]/55"
+          className="absolute inset-0 -z-10 bg-gradient-to-t from-[#1f2a44]/90 via-[#1f2a44]/35 to-[#1f2a44]/55"
         />
         <div
           aria-hidden
@@ -119,7 +119,7 @@ export function Hero({ seed }: HeroProps) {
               <label htmlFor="hero-q" className="sr-only">
                 Describe what would help
               </label>
-              <div className="flex items-center gap-2 rounded-full border border-white/15 bg-black/45 p-1.5 pl-5 backdrop-blur-xl transition focus-within:border-[var(--hero-teal)]/70 focus-within:shadow-[0_0_0_4px_rgba(45,212,191,0.15)]">
+              <div className="flex items-center gap-2 rounded-full border border-white/15 bg-black/45 p-1.5 pl-5 backdrop-blur-xl transition focus-within:border-[var(--hero-teal)]/70 focus-within:shadow-[0_0_0_4px_rgba(215,255,171,0.2)]">
                 <Search
                   aria-hidden
                   className="size-5 shrink-0 text-[var(--hero-teal)]"

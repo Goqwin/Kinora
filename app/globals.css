@@ -1,94 +1,107 @@
 @import "tailwindcss";
 
 /**
- * Kinora color system — one teal family for light and dark.
- * Soft borders and shadows (no harsh black/white brutal blocks).
+ * Kinora color system: friendly, elementary-classroom palette.
+ * Brand: frosted blue #ACECF7, coral glow #F48668, lime cream #D7FFAB, on warm paper with navy ink.
+ * Coral text uses --accent (#C2452A) because #F48668 is too light for text on white.
  */
 :root {
-  --canvas: #f5f8f7;
-  --canvas-deep: #e7efec;
+  --sky: #acecf7;
+  --sky-soft: #e6f8fc;
+  --coral: #f48668;
+  --coral-soft: #fde4dc;
+  --lime: #d7ffab;
+  --lime-soft: #f1ffe2;
+  --canvas: #fffcf5;
+  --canvas-deep: #e6f8fc;
   --surface: #ffffff;
-  --surface-muted: #eef3f1;
-  --ink: #13201c;
-  --ink-muted: #5b6b66;
-  --border: #d5e0dc;
-  --border-strong: #9eb0aa;
-  --accent: #0d9488;
-  --accent-hover: #0f766e;
-  --accent-fg: #f3fffc;
-  --trust: #0d9488;
-  --trust-muted: #d5f3ef;
+  --surface-muted: #f3fbfd;
+  --ink: #1f2a44;
+  --ink-muted: #56607a;
+  --border: #cde6ec;
+  --border-strong: #1f2a44;
+  --accent: #c2452a;
+  --accent-hover: #a83a22;
+  --accent-fg: #ffffff;
+  --trust: #2f7a4f;
+  --trust-muted: #e6ffd0;
   --warn-fg: #8a5a12;
-  --warn-muted: #f7edd9;
-  --crisis-bg: #fff4f1;
-  --crisis-bg-hover: #ffe9e3;
-  --crisis-border: #e7c2b6;
-  --crisis-fg: #6b3023;
-  --ring: #0d9488;
-  --overlay: rgb(19 32 28 / 0.48);
-  --play-pink: #e8f6f4;
-  --play-pink-shadow: #9fd4cd;
-  --play-teal: #0d9488;
-  --play-amber: #d4923a;
-  --play-blue: #3d8fb5;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
+  --warn-muted: #fff2d6;
+  --crisis-bg: #fff1ec;
+  --crisis-bg-hover: #ffe3d9;
+  --crisis-border: #f4b29e;
+  --crisis-fg: #7a2a17;
+  --ring: #c2452a;
+  --overlay: rgb(31 42 68 / 0.5);
+  --play-pink: #fde4dc;
+  --play-pink-shadow: #f48668;
+  --play-teal: #2f9fb3;
+  --play-amber: #f48668;
+  --play-blue: #acecf7;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
   --radius-pill: 9999px;
-  --shadow-xs: 0 1px 2px rgb(19 32 28 / 0.05);
-  --shadow-sm: 0 2px 8px rgb(19 32 28 / 0.06);
-  --shadow-md: 0 12px 32px rgb(19 32 28 / 0.08);
-  --shadow-brutal: var(--shadow-sm);
-  --shadow-brutal-sm: var(--shadow-xs);
+  --shadow-xs: 0 1px 2px rgb(31 42 68 / 0.06);
+  --shadow-sm: 0 3px 10px rgb(31 42 68 / 0.08);
+  --shadow-md: 0 14px 34px rgb(31 42 68 / 0.12);
+  --shadow-brutal: 4px 4px 0 0 var(--ink);
+  --shadow-brutal-sm: 3px 3px 0 0 var(--ink);
   --hero-grid: radial-gradient(
     circle at 1px 1px,
-    rgb(13 148 136 / 0.1) 1px,
+    rgb(47 159 179 / 0.18) 1px,
     transparent 0
   );
   --map-marker-stroke: #ffffff;
-  --hero-veil: rgb(10 40 36);
+  --hero-veil: rgb(31 42 68);
   color-scheme: light;
 }
 
 .dark {
-  --canvas: #0e1614;
-  --canvas-deep: #0a100e;
-  --surface: #172220;
-  --surface-muted: #1f2d2a;
-  --ink: #e8f2ef;
-  --ink-muted: #9aada7;
-  --border: #2d3f3a;
-  --border-strong: #4a635c;
-  --accent: #2dd4bf;
-  --accent-hover: #5eead4;
-  --accent-fg: #042f2e;
-  --trust: #2dd4bf;
-  --trust-muted: #134e4a;
-  --warn-fg: #f0c27a;
-  --warn-muted: #3a2f1c;
-  --crisis-bg: #2a1a17;
-  --crisis-bg-hover: #3a2420;
-  --crisis-border: #8a5a4e;
-  --crisis-fg: #f3c4b8;
-  --ring: #2dd4bf;
+  --sky: #acecf7;
+  --sky-soft: #1d3346;
+  --coral: #f48668;
+  --coral-soft: #3a2630;
+  --lime: #d7ffab;
+  --lime-soft: #26362a;
+  --canvas: #161b2e;
+  --canvas-deep: #11152a;
+  --surface: #1f2640;
+  --surface-muted: #262e4c;
+  --ink: #f6f8ff;
+  --ink-muted: #b3bcd6;
+  --border: #36405f;
+  --border-strong: #acecf7;
+  --accent: #f48668;
+  --accent-hover: #ff9f84;
+  --accent-fg: #1f2a44;
+  --trust: #d7ffab;
+  --trust-muted: #26362a;
+  --warn-fg: #f6cf86;
+  --warn-muted: #3a3020;
+  --crisis-bg: #3a2228;
+  --crisis-bg-hover: #4a2a31;
+  --crisis-border: #a65a4b;
+  --crisis-fg: #ffc9bb;
+  --ring: #f48668;
   --overlay: rgb(0 0 0 / 0.55);
-  --play-pink: #134e4a;
-  --play-pink-shadow: #0d9488;
-  --play-teal: #2dd4bf;
-  --play-amber: #d4a14a;
-  --play-blue: #4a9ec0;
+  --play-pink: #3a2630;
+  --play-pink-shadow: #f48668;
+  --play-teal: #acecf7;
+  --play-amber: #f48668;
+  --play-blue: #acecf7;
   --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.35);
   --shadow-sm: 0 2px 10px rgb(0 0 0 / 0.4);
   --shadow-md: 0 14px 36px rgb(0 0 0 / 0.5);
-  --shadow-brutal: var(--shadow-sm);
-  --shadow-brutal-sm: var(--shadow-xs);
+  --shadow-brutal: 4px 4px 0 0 #0b0e1a;
+  --shadow-brutal-sm: 3px 3px 0 0 #0b0e1a;
   --hero-grid: radial-gradient(
     circle at 1px 1px,
-    rgb(45 212 191 / 0.12) 1px,
+    rgb(172 236 247 / 0.14) 1px,
     transparent 0
   );
-  --map-marker-stroke: #0e1614;
-  --hero-veil: rgb(6 24 22);
+  --map-marker-stroke: #161b2e;
+  --hero-veil: rgb(17 21 42);
   color-scheme: dark;
 }
 
@@ -96,7 +109,9 @@
   --color-background: var(--canvas);
   --color-foreground: var(--ink);
   --font-sans: var(--font-body);
-  --font-mono: var(--font-mono);
+  --color-sky: var(--sky);
+  --color-coral: var(--coral);
+  --color-lime: var(--lime);
 }
 
 @keyframes link-underline {
@@ -111,7 +126,40 @@
 body {
   background: var(--canvas);
   color: var(--ink);
-  font-family: var(--font-body), system-ui, sans-serif;
+  font-family: var(--font-body), ui-rounded, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+.sticker {
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-brutal);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sticker:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 var(--ink);
+}
+
+.dark .sticker {
+  border-color: #0b0e1a;
+}
+
+.dark .sticker:hover {
+  box-shadow: 6px 6px 0 0 #0b0e1a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sticker,
+  .sticker:hover {
+    transition: none;
+    transform: none;
+  }
 }
 
 .landing-row-link {
@@ -190,7 +238,7 @@ body {
 
 .kinora-map-popup__title {
   margin: 4px 0 0;
-  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-family: var(--font-display), ui-rounded, system-ui, sans-serif;
   font-size: 15px;
   font-weight: 600;
   line-height: 1.25;
@@ -223,10 +271,10 @@ body {
 
 /* Cinematic landing hero (always dark card, independent of theme) */
 :root {
-  --hero-ink: #07110f;
-  --hero-notch: #050807;
-  --hero-cream: #ebe9d6;
-  --hero-teal: #2dd4bf;
+  --hero-ink: #1f2a44;
+  --hero-notch: #1f2a44;
+  --hero-cream: #fffcf5;
+  --hero-teal: #d7ffab;
 }
 
 @keyframes hero-kenburns {
@@ -262,7 +310,6 @@ body {
 
 @keyframes value-rise {
   from {
-    opacity: 0;
     transform: translateY(20px);
   }
   to {

@@ -10,6 +10,8 @@ import { isDatabaseConfigured } from "@/lib/db";
 import { getPreferencesByUserId } from "@/lib/db/queries/preferences";
 import { cn } from "@/lib/utils";
 
+const CARD_TINTS = ["bg-[var(--sky)]", "bg-[var(--coral)]", "bg-[var(--lime)]"] as const;
+
 const VALUE_CARDS = [
   {
     index: "01",
@@ -96,25 +98,25 @@ async function HomeHero() {
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col bg-[var(--hero-ink)]">
+    <div className="flex flex-col bg-[var(--canvas)]">
       <Suspense fallback={<Hero />}>
         <HomeHero />
       </Suspense>
 
       <section className="bg-[var(--canvas)] px-4 py-14 sm:px-6 sm:py-20">
         <div className="mx-auto grid w-full max-w-6xl gap-4 sm:grid-cols-3 sm:gap-5">
-          {VALUE_CARDS.map((card) => (
+          {VALUE_CARDS.map((card, i) => (
             <article
               key={card.index}
-              className="value-card-rise rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
+              className={cn("sticker value-card-rise rounded-[var(--radius-lg)] p-6 text-[#1f2a44] sm:p-8", CARD_TINTS[i])}
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+              <p className="grid size-10 place-items-center rounded-full bg-white/70 font-[family-name:var(--font-display)] text-base font-semibold">
                 {card.index}
               </p>
-              <h2 className="mt-4 font-[family-name:var(--font-display)] text-xl font-semibold tracking-tight text-[var(--ink)] sm:text-2xl">
+              <h2 className="mt-4 font-[family-name:var(--font-display)] text-xl font-semibold sm:text-2xl">
                 {card.title}
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--ink-muted)] sm:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-[#1f2a44]/85 sm:text-base">
                 {card.body}
               </p>
             </article>
@@ -122,7 +124,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl bg-[var(--canvas)] px-4 py-14 sm:px-6 sm:py-20">
+      <section className="bg-[var(--canvas)] px-4 py-14 sm:px-6 sm:py-20">
+        <div className="mx-auto w-full max-w-6xl">
         <div className="flex flex-col gap-5 border-b border-[var(--border)] pb-8 sm:flex-row sm:items-end sm:justify-between sm:gap-10 sm:pb-10">
           <div className="max-w-xl">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
@@ -148,7 +151,7 @@ export default function HomePage() {
                   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--canvas)]",
                 )}
               >
-                <span className="relative hidden h-[4.5rem] w-28 shrink-0 overflow-hidden rounded-[var(--radius-md)] border border-[var(--border)] shadow-[var(--shadow-xs)] sm:block sm:h-24 sm:w-36">
+                <span className="relative hidden h-[4.5rem] w-28 shrink-0 overflow-hidden rounded-[var(--radius-md)] border-2 border-[var(--ink)] shadow-[var(--shadow-brutal-sm)] sm:block sm:h-24 sm:w-36">
                   <Image
                     src={area.image}
                     alt={area.alt}
@@ -157,7 +160,7 @@ export default function HomePage() {
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </span>
-                <span className="w-9 shrink-0 tabular-nums text-sm font-medium tracking-tight text-[var(--ink-muted)] sm:w-11 sm:text-base">
+                <span className="grid size-9 shrink-0 place-items-center rounded-full bg-[var(--sky)] font-[family-name:var(--font-display)] text-sm font-semibold text-[#1f2a44] sm:size-11 sm:text-base">
                   {area.index}
                 </span>
                 <span className="min-w-0 flex-1">
@@ -178,6 +181,7 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
+        </div>
       </section>
 
       <section className="border-y border-[var(--border)] bg-[var(--surface)]">
@@ -230,7 +234,7 @@ export default function HomePage() {
           className="object-cover object-center"
         />
         <div
-          className="absolute inset-0 bg-[rgb(10_28_26/0.68)]"
+          className="absolute inset-0 bg-[rgb(31_42_68/0.72)]"
           aria-hidden
         />
         <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-4 py-16 sm:flex-row sm:items-center sm:justify-between sm:gap-12 sm:px-6 sm:py-20">
@@ -246,9 +250,8 @@ export default function HomePage() {
           <Link
             href="/start"
             className={cn(
-              "inline-flex shrink-0 items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-white px-7 py-3.5 text-sm font-semibold tracking-wide text-[var(--ink)]",
-              "transition-colors hover:bg-[var(--canvas)]",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(10_28_26)]",
+              "sticker inline-flex shrink-0 items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-[var(--lime)] px-7 py-3.5 text-base font-bold text-[#1f2a44]",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(31_42_68)]",
             )}
           >
             Start with filters
