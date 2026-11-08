@@ -51,3 +51,10 @@ Warm public-service UI: canvas `#f7f4ef`, ink `#1f2a23`, accent coral `#c45f43`,
 ## 2026-11-07 — Child age bands (Kinora)
 
 Product age bands are `ages_0_3`, `ages_3_8`, `ages_8_12`, `ages_12_17`, `ages_18_plus` (labels 0–3, 3–8, 8–12, 12–17, 18+). These replace PRD `infant` / `toddler` / `preschool` / `school_age` for preferences, AI criteria, and matching month maps.
+
+## 2026-11-08: Stats page and motion
+
+- Added `/stats` at the team's request. It is outside the PRD feature list. It shows Statistics Canada figures only (Table 17-10-0061-01 and the 2021 Census), with sources linked on the page. Values live in `lib/stats/families.ts` and a test checks that couple plus one-parent families add up to the total for every year.
+- The Calgary figures (52,170 one-parent families, 80,495 children) are shown as supplied by the team. Their exact Statistics Canada table and year still need to be confirmed and added to `SOURCES`.
+- Chart colours were checked with a colour-blindness validator: `#0388A6` and `#D9573A` in light mode, `#1898B4` and `#E0623F` in dark mode.
+- `framer-motion` is back for the places carousel, chart drawing, and slide-in reveals. Reveals move content but never hide it, so the page is readable before any animation runs.

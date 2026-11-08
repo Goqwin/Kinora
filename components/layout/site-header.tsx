@@ -21,6 +21,7 @@ const NAV_LINKS = [
   { href: "/plan", label: "My plan" },
   { href: "/community", label: "Community" },
   { href: "/saved", label: "Saved" },
+  { href: "/stats", label: "Stats" },
 ] as const;
 
 export function SiteHeader() {
@@ -35,7 +36,7 @@ export function SiteHeader() {
           aria-label="Kinora home"
         >
           <KinoraLogo
-            tagline="Calgary single parents"
+            tagline="Connections closer to home"
             markClassName="h-8 w-8 transition-colors group-hover:text-[var(--accent-hover)]"
             wordmarkClassName="text-[1.05rem] transition-colors group-hover:text-[var(--accent)] sm:text-lg"
           />

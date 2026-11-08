@@ -14,6 +14,14 @@
  */
 :root {
   --sky: #acecf7;
+  --deep: #0a4452;
+  --deep-2: #0b6477;
+  --series-1: #0388a6;
+  --series-2: #d9573a;
+  --grad-deep: linear-gradient(135deg, #0a4452 0%, #0b6477 55%, #c9634a 100%);
+  --grad-soft: linear-gradient(135deg, #e6f8fc 0%, #fdf1ec 55%, #f1ffe2 100%);
+  --blob-sky: rgb(172 236 247 / 0.6);
+  --blob-coral: rgb(244 134 104 / 0.3);
   --sky-soft: #e6f8fc;
   --coral: #f48668;
   --coral-soft: #fde4dc;
@@ -23,10 +31,10 @@
   --canvas-deep: #e3f3f7;
   --surface: #ffffff;
   --surface-muted: #eaf7fa;
-  --ink: #1f2937;
-  --ink-muted: #4b5563;
+  --ink: #10323c;
+  --ink-muted: #4a6670;
   --border: #cde7ec;
-  --border-strong: #1f2a44;
+  --border-strong: #0a4452;
   --accent: #0b6477;
   --accent-hover: #084f5e;
   --accent-fg: #ffffff;
@@ -40,11 +48,11 @@
   --crisis-fg: #b91c1c;
   --ring: #0e7490;
   --primary: #f48668;
-  --primary-fg: #1f2937;
+  --primary-fg: #10323c;
   --secondary: #acecf7;
-  --secondary-fg: #1f2937;
+  --secondary-fg: #10323c;
   --highlight: #d7ffab;
-  --highlight-fg: #1f2937;
+  --highlight-fg: #10323c;
   --link: #0b6477;
   /* Crisis and errors only. */
   --destructive: #b91c1c;
@@ -78,6 +86,14 @@
    ink; pastels stay as accents and keep dark text on top of them. */
 .dark {
   --sky: #acecf7;
+  --deep: #0a3440;
+  --deep-2: #0b4f5e;
+  --series-1: #1898b4;
+  --series-2: #e0623f;
+  --grad-deep: linear-gradient(135deg, #0a3440 0%, #0b4f5e 55%, #8f4636 100%);
+  --grad-soft: linear-gradient(135deg, #12303a 0%, #2c2026 55%, #1f2c22 100%);
+  --blob-sky: rgb(172 236 247 / 0.1);
+  --blob-coral: rgb(244 134 104 / 0.14);
   --sky-soft: #1d3346;
   --coral: #f48668;
   --coral-soft: #3a2630;
@@ -93,7 +109,7 @@
   --border-strong: #5a7a85;
   --accent: #acecf7;
   --accent-hover: #cff5fb;
-  --accent-fg: #1f2937;
+  --accent-fg: #0a3440;
   --trust: #acecf7;
   --trust-muted: #17414a;
   --warn-fg: #f6cf86;
@@ -104,11 +120,11 @@
   --crisis-fg: #fca5a5;
   --ring: #7dd3e3;
   --primary: #f48668;
-  --primary-fg: #1f2937;
+  --primary-fg: #0a3440;
   --secondary: #acecf7;
-  --secondary-fg: #1f2937;
+  --secondary-fg: #0a3440;
   --highlight: #d7ffab;
-  --highlight-fg: #1f2937;
+  --highlight-fg: #0a3440;
   --link: #acecf7;
   --destructive: #b91c1c;
   --destructive-fg: #ffffff;
@@ -206,16 +222,6 @@ h3 {
     transition: none;
     transform: none;
   }
-}
-
-.landing-row-link {
-  transition: background-color 0.15s ease, padding-left 0.15s ease;
-}
-
-.landing-row-link:hover,
-.landing-row-link:focus-visible {
-  background-color: var(--surface-muted);
-  padding-left: 0.25rem;
 }
 
 .noise-overlay {
@@ -317,8 +323,8 @@ h3 {
 
 /* Cinematic landing hero (always dark card, independent of theme) */
 :root {
-  --hero-ink: #1f2a44;
-  --hero-notch: #1f2a44;
+  --hero-ink: #0a4452;
+  --hero-notch: #0a4452;
   --hero-cream: #fffcf5;
   /* Name kept for existing classes; now Coral Glow on the always-dark hero. */
   --hero-teal: #f48668;
@@ -355,14 +361,8 @@ h3 {
   }
 }
 
-@keyframes value-rise {
-  from {
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+.places-track {
+  touch-action: pan-y;
 }
 
 .hero-grain {
@@ -427,25 +427,10 @@ h3 {
   display: none;
 }
 
-.value-card-rise {
-  animation: value-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 35%;
-}
-
-@supports not (animation-timeline: view()) {
-  .value-card-rise {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero-anim-image,
   .hero-anim-wordmark,
-  .hero-anim-column,
-  .value-card-rise {
+  .hero-anim-column {
     animation: none;
     opacity: 1;
     transform: none;

@@ -1,9 +1,11 @@
 import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Hero, type HeroSeed } from "@/components/home/hero";
+import { PlacesCarousel } from "@/components/home/places-carousel";
+import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import { getOptionalUser, isAuthConfigured } from "@/lib/auth";
 import { isDatabaseConfigured } from "@/lib/db";
@@ -98,7 +100,7 @@ async function HomeHero() {
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col bg-[var(--canvas)]">
+    <div className="flex flex-col overflow-x-clip bg-[var(--canvas)]">
       <Suspense fallback={<Hero />}>
         <HomeHero />
       </Suspense>
@@ -106,9 +108,9 @@ export default function HomePage() {
       <section className="bg-[var(--canvas)] px-4 py-14 sm:px-6 sm:py-20">
         <div className="mx-auto grid w-full max-w-6xl gap-4 sm:grid-cols-3 sm:gap-5">
           {VALUE_CARDS.map((card, i) => (
+            <Reveal key={card.index} from={i === 0 ? "left" : i === 2 ? "right" : "up"} delay={i * 0.08}>
             <article
-              key={card.index}
-              className={cn("sticker value-card-rise rounded-[var(--radius-lg)] p-6 text-[#1f2a44] sm:p-8", CARD_TINTS[i])}
+              className={cn("sticker h-full rounded-[var(--radius-lg)] p-6 text-[#10323c] sm:p-8", CARD_TINTS[i])}
             >
               <p className="grid size-10 place-items-center rounded-full bg-white/70 font-[family-name:var(--font-display)] text-base font-semibold">
                 {card.index}
@@ -116,10 +118,11 @@ export default function HomePage() {
               <h2 className="mt-4 font-[family-name:var(--font-display)] text-xl font-semibold sm:text-2xl">
                 {card.title}
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-[#1f2a44]/85 sm:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-[#10323c]/85 sm:text-base">
                 {card.body}
               </p>
             </article>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -141,46 +144,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <ul className="mt-2 divide-y divide-[var(--border)]">
-          {SUPPORT_AREAS.map((area) => (
-            <li key={area.index}>
-              <Link
-                href={area.href}
-                className={cn(
-                  "landing-row-link group flex items-center gap-4 py-6 sm:gap-7 sm:py-7",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--canvas)]",
-                )}
-              >
-                <span className="relative hidden h-[4.5rem] w-28 shrink-0 overflow-hidden rounded-[var(--radius-md)] border-2 border-[var(--ink)] shadow-[var(--shadow-brutal-sm)] sm:block sm:h-24 sm:w-36">
-                  <Image
-                    src={area.image}
-                    alt={area.alt}
-                    fill
-                    sizes="144px"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </span>
-                <span className="grid size-9 shrink-0 place-items-center rounded-full bg-[var(--sky)] font-[family-name:var(--font-display)] text-sm font-semibold text-[#1f2a44] sm:size-11 sm:text-base">
-                  {area.index}
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="flex items-center gap-2">
-                    <span className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--ink)] sm:text-2xl">
-                      {area.title}
-                    </span>
-                    <ArrowUpRight
-                      className="h-5 w-5 shrink-0 text-[var(--accent)] opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
-                      aria-hidden
-                    />
-                  </span>
-                  <span className="mt-1.5 block max-w-xl text-sm leading-relaxed text-[var(--ink-muted)] sm:text-base">
-                    {area.body}
-                  </span>
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <PlacesCarousel places={SUPPORT_AREAS} />
         </div>
       </section>
 
@@ -234,7 +198,7 @@ export default function HomePage() {
           className="object-cover object-center"
         />
         <div
-          className="absolute inset-0 bg-[rgb(31_42_68/0.72)]"
+          className="absolute inset-0 bg-[linear-gradient(115deg,rgb(10_68_82/0.9)_0%,rgb(11_100_119/0.72)_55%,rgb(244_134_104/0.5)_100%)]"
           aria-hidden
         />
         <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-4 py-16 sm:flex-row sm:items-center sm:justify-between sm:gap-12 sm:px-6 sm:py-20">
@@ -250,8 +214,8 @@ export default function HomePage() {
           <Link
             href="/start"
             className={cn(
-              "sticker inline-flex shrink-0 items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-[var(--lime)] px-7 py-3.5 text-base font-bold text-[#1f2a44]",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(31_42_68)]",
+              "sticker inline-flex shrink-0 items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-[var(--lime)] px-7 py-3.5 text-base font-bold text-[#10323c]",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(10_68_82)]",
             )}
           >
             Start with filters
