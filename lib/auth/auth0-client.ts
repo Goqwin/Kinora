@@ -4,7 +4,7 @@ import { Auth0Client } from "@auth0/nextjs-auth0/server";
 
 import { getEnv } from "@/lib/env";
 
-function authEnvReady(): boolean {
+export function isAuthConfigured(): boolean {
   const env = getEnv();
   return Boolean(
     env.AUTH0_SECRET &&
@@ -18,7 +18,7 @@ function authEnvReady(): boolean {
 let client: Auth0Client | null | undefined;
 
 export function getAuth0(): Auth0Client | null {
-  if (!authEnvReady()) return null;
+  if (!isAuthConfigured()) return null;
   if (client === undefined) {
     client = new Auth0Client();
   }

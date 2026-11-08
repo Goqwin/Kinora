@@ -2,10 +2,13 @@ import "server-only";
 
 import { redirect } from "next/navigation";
 
-import { getAuth0 } from "@/lib/auth/auth0-client";
+import { getAuth0, isAuthConfigured } from "@/lib/auth/auth0-client";
+import { safeReturnPath } from "@/lib/auth/paths";
 import { isDatabaseConfigured } from "@/lib/db";
 import { upsertUserFromAuth0 } from "@/lib/db/queries/users";
-import { adminSubs, getEnv } from "@/lib/env";
+import { adminSubs } from "@/lib/env";
+
+export { isAuthConfigured };
 
 export type AppUser = {
   id: string;
@@ -14,17 +17,6 @@ export type AppUser = {
   displayName: string | null;
   role: "user" | "admin";
 };
-
-export function isAuthConfigured(): boolean {
-  const env = getEnv();
-  return Boolean(
-    env.AUTH0_SECRET &&
-      env.AUTH0_DOMAIN &&
-      env.AUTH0_CLIENT_ID &&
-      env.AUTH0_CLIENT_SECRET &&
-      env.APP_BASE_URL,
-  );
-}
 
 export async function getOptionalUser(): Promise<AppUser | null> {
   const auth0 = getAuth0();
@@ -72,7 +64,7 @@ export async function getOptionalUser(): Promise<AppUser | null> {
 export async function requireUser(returnPath?: string): Promise<AppUser> {
   const user = await getOptionalUser();
   if (user) return user;
-  const path = returnPath ? `?returnTo=${encodeURIComponent(returnPath)}` : "";
+  const path = returnPath ? `?returnTo=${encodeURIComponent(safeReturnPath(returnPath))}` : "";
   redirect(`/account${path}`);
 }
 

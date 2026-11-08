@@ -7,6 +7,7 @@ import { TaskList } from "@/components/plan/task-list";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getOptionalUser, isAuthConfigured } from "@/lib/auth";
+import { loginHref } from "@/lib/auth/paths";
 import { isDatabaseConfigured } from "@/lib/db";
 import { listSavedResourcesForUser } from "@/lib/db/queries/saved";
 import { listTasksForUser } from "@/lib/db/queries/tasks";
@@ -56,7 +57,7 @@ export default async function SavedPage() {
             Sign in to see saves
           </p>
           <Button asChild className="mt-6 rounded-full">
-            <Link href="/auth/login">Sign in</Link>
+            <a href={loginHref("/saved")}>Sign in</a>
           </Button>
         </div>
       ) : null}

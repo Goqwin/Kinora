@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/layout/page-header";
 import { PageShell } from "@/components/layout/page-shell";
 import { getOptionalUser, isAuthConfigured } from "@/lib/auth";
+import { LOGOUT_HREF, loginHref, safeReturnPath } from "@/lib/auth/paths";
 import { isDatabaseConfigured } from "@/lib/db";
 import {
   BUDGET_BANDS,
@@ -64,7 +65,11 @@ function AccountFallback() {
   );
 }
 
-async function AccountContent() {
+type AccountSearchParams = Promise<{ returnTo?: string | string[] }>;
+
+async function AccountContent({ searchParams }: { searchParams: AccountSearchParams }) {
+  const { returnTo } = await searchParams;
+  const returnPath = safeReturnPath(typeof returnTo === "string" ? returnTo : undefined);
   const authReady = isAuthConfigured();
   const dbReady = isDatabaseConfigured();
   const user = authReady ? await getOptionalUser() : null;
@@ -144,7 +149,7 @@ async function AccountContent() {
               variant="secondary"
               className="rounded-full sm:flex-1"
             >
-              <Link href="/auth/logout">Sign out</Link>
+              <a href={LOGOUT_HREF}>Sign out</a>
             </Button>
           ) : (
             <Button
@@ -154,7 +159,7 @@ async function AccountContent() {
               aria-disabled={!authReady}
             >
               {authReady ? (
-                <Link href="/auth/login?returnTo=/account">Sign in</Link>
+                <a href={loginHref(returnPath)}>Sign in</a>
               ) : (
                 <span>Sign in</span>
               )}
@@ -220,10 +225,10 @@ async function AccountContent() {
   );
 }
 
-export default function AccountPage() {
+export default function AccountPage({ searchParams }: PageProps<"/account">) {
   return (
     <Suspense fallback={<AccountFallback />}>
-      <AccountContent />
+      <AccountContent searchParams={searchParams as AccountSearchParams} />
     </Suspense>
   );
 }

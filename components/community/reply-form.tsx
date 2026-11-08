@@ -4,6 +4,7 @@ import { useState, useTransition } from "react";
 
 import { createCommunityReplyAction } from "@/app/actions/community";
 import { Button } from "@/components/ui/button";
+import { loginHref } from "@/lib/auth/paths";
 
 type ReplyFormProps = {
   postId: string;
@@ -18,7 +19,7 @@ export function ReplyForm({ postId, signedIn }: ReplyFormProps) {
   if (!signedIn) {
     return (
       <p className="rounded-2xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] px-4 py-4 text-sm text-[var(--ink-muted)]">
-        <a href="/auth/login" className="font-medium text-[var(--accent)] underline-offset-2 hover:underline">
+        <a href={loginHref(`/community/${postId}`)} className="font-medium text-[var(--accent)] underline-offset-2 hover:underline">
           Sign in
         </a>{" "}
         to reply. Posts stay moderated.
