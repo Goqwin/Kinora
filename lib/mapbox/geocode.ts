@@ -1,7 +1,13 @@
+import "server-only";
+
 import { approximateFromPostal, roundCoord } from "@/lib/geo";
 import { getEnv } from "@/lib/env";
 
 import type { LngLat } from "./radius";
+
+/** Canadian forward sortation area: letter, digit, letter (no D, F, I, O, Q, U). */
+export const FSA_PATTERN = /^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z]$/;
+const LOOKUP_TIMEOUT_MS = 4_000;
 
 /**
  * Geocode a Canadian postal FSA using Mapbox when MAPBOX_TOKEN is set;
@@ -10,9 +16,9 @@ import type { LngLat } from "./radius";
 export async function geocodePostalFsa(
   postal: string,
 ): Promise<LngLat | null> {
-  const cleaned = postal.replace(/\s+/g, "").toUpperCase();
-  if (cleaned.length < 3) return null;
-  const query = `${cleaned.slice(0, 3)} Calgary AB Canada`;
+  const fsa = postal.replace(/\s+/g, "").toUpperCase().slice(0, 3);
+  if (!FSA_PATTERN.test(fsa)) return null;
+  const query = `${fsa} Calgary AB Canada`;
   const token = getEnv().MAPBOX_TOKEN?.trim();
 
   if (token) {
@@ -25,7 +31,10 @@ export async function geocodePostalFsa(
     url.searchParams.set("limit", "1");
 
     try {
-      const res = await fetch(url.toString(), { next: { revalidate: 86400 } });
+      const res = await fetch(url.toString(), {
+        next: { revalidate: 86400 },
+        signal: AbortSignal.timeout(LOOKUP_TIMEOUT_MS),
+      });
       if (res.ok) {
         const data = (await res.json()) as {
           features?: { center?: [number, number] }[];
