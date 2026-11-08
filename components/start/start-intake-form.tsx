@@ -12,6 +12,7 @@ import {
   CHILD_AGE_BAND_LABELS,
   type ChildAgeBand,
 } from "@/lib/db/schema-constants";
+import { stashPlanText } from "@/lib/plan-text-handoff";
 
 type StartIntakeFormProps = {
   defaultMode: "nearby" | "needs";
@@ -31,6 +32,8 @@ export function StartIntakeForm({ defaultMode }: StartIntakeFormProps) {
 
   return (
     <form
+      // POST so a submit before hydration never puts the parent's text in the URL.
+      method="post"
       className="space-y-8"
       onSubmit={(event) => {
         event.preventDefault();
@@ -54,12 +57,13 @@ export function StartIntakeForm({ defaultMode }: StartIntakeFormProps) {
         const cost = String(form.get("cost") ?? "").trim();
         if (cost) params.set("costPreference", cost);
 
-        if (mode === "needs") {
-          const text = String(form.get("needs") ?? "").trim();
-          if (text) params.set("text", text);
-        }
+        // The free text never goes in the URL; it is handed to /plan via
+        // sessionStorage. "Nearby" mode clears any earlier text.
+        const text = mode === "needs" ? String(form.get("needs") ?? "") : "";
+        const query = params.toString();
+        stashPlanText(query, text);
 
-        router.push(`/plan?${params.toString()}`);
+        router.push(`/plan?${query}`);
       }}
     >
       <fieldset className="space-y-3">

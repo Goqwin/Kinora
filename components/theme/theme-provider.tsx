@@ -10,9 +10,9 @@ import {
 } from "react";
 
 import {
+  DEFAULT_THEME,
   THEME_STORAGE_KEY,
   applyTheme,
-  getSystemTheme,
   type ThemeMode,
 } from "@/lib/theme";
 
@@ -27,7 +27,7 @@ const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 function readStoredTheme(): ThemeMode {
   const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
-  return stored === "light" || stored === "dark" ? stored : getSystemTheme();
+  return stored === "light" || stored === "dark" ? stored : DEFAULT_THEME;
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {

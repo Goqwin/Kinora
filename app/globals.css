@@ -1,9 +1,16 @@
 @import "tailwindcss";
 
 /**
- * Kinora color system: friendly, elementary-classroom palette.
- * Brand: frosted blue #ACECF7, coral glow #F48668, lime cream #D7FFAB, on warm paper with navy ink.
- * Coral text uses --accent (#C2452A) because #F48668 is too light for text on white.
+ * Kinora color system: pastel palette (Coral Glow, Frosted Blue, Lime Cream).
+ * Brand swatches --sky (frosted blue), --coral (coral glow) and --lime (lime
+ * cream), each with a -soft tint, are available for decorative fills.
+ *
+ * Pastels always carry dark text (--ink), never white.
+ * --accent is the app's long-standing brand token and is mostly used as TEXT
+ * (links, eyebrows), so it holds the AA-safe link teal, not the coral.
+ * Coral, blue and lime live in --primary, --secondary and --highlight and are
+ * exposed to Tailwind with shadcn names in @theme below. Note that Tailwind's
+ * `accent` (bg-accent) is the lime pastel, while var(--accent) is the teal.
  */
 :root {
   --sky: #acecf7;
@@ -12,27 +19,37 @@
   --coral-soft: #fde4dc;
   --lime: #d7ffab;
   --lime-soft: #f1ffe2;
-  --canvas: #fffcf5;
-  --canvas-deep: #e6f8fc;
+  --canvas: #f7fdff;
+  --canvas-deep: #e3f3f7;
   --surface: #ffffff;
-  --surface-muted: #f3fbfd;
-  --ink: #1f2a44;
-  --ink-muted: #56607a;
-  --border: #cde6ec;
+  --surface-muted: #eaf7fa;
+  --ink: #1f2937;
+  --ink-muted: #4b5563;
+  --border: #cde7ec;
   --border-strong: #1f2a44;
-  --accent: #c2452a;
-  --accent-hover: #a83a22;
+  --accent: #0b6477;
+  --accent-hover: #084f5e;
   --accent-fg: #ffffff;
-  --trust: #2f7a4f;
-  --trust-muted: #e6ffd0;
+  --trust: #0b6477;
+  --trust-muted: #acecf7;
   --warn-fg: #8a5a12;
   --warn-muted: #fff2d6;
-  --crisis-bg: #fff1ec;
-  --crisis-bg-hover: #ffe3d9;
-  --crisis-border: #f4b29e;
-  --crisis-fg: #7a2a17;
-  --ring: #c2452a;
-  --overlay: rgb(31 42 68 / 0.5);
+  --crisis-bg: #fef2f2;
+  --crisis-bg-hover: #fee2e2;
+  --crisis-border: #f5b5b5;
+  --crisis-fg: #b91c1c;
+  --ring: #0e7490;
+  --primary: #f48668;
+  --primary-fg: #1f2937;
+  --secondary: #acecf7;
+  --secondary-fg: #1f2937;
+  --highlight: #d7ffab;
+  --highlight-fg: #1f2937;
+  --link: #0b6477;
+  /* Crisis and errors only. */
+  --destructive: #b91c1c;
+  --destructive-fg: #ffffff;
+  --overlay: rgb(31 41 55 / 0.48);
   --play-pink: #fde4dc;
   --play-pink-shadow: #f48668;
   --play-teal: #2f9fb3;
@@ -42,14 +59,14 @@
   --radius-md: 18px;
   --radius-lg: 28px;
   --radius-pill: 9999px;
-  --shadow-xs: 0 1px 2px rgb(31 42 68 / 0.06);
-  --shadow-sm: 0 3px 10px rgb(31 42 68 / 0.08);
-  --shadow-md: 0 14px 34px rgb(31 42 68 / 0.12);
+  --shadow-xs: 0 1px 2px rgb(31 41 55 / 0.05);
+  --shadow-sm: 0 2px 8px rgb(31 41 55 / 0.06);
+  --shadow-md: 0 12px 32px rgb(31 41 55 / 0.08);
   --shadow-brutal: 4px 4px 0 0 var(--ink);
   --shadow-brutal-sm: 3px 3px 0 0 var(--ink);
   --hero-grid: radial-gradient(
     circle at 1px 1px,
-    rgb(47 159 179 / 0.18) 1px,
+    rgb(11 100 119 / 0.1) 1px,
     transparent 0
   );
   --map-marker-stroke: #ffffff;
@@ -57,6 +74,8 @@
   color-scheme: light;
 }
 
+/* Dark mode: derived from the pastel palette. Deep blue-grey surfaces, light
+   ink; pastels stay as accents and keep dark text on top of them. */
 .dark {
   --sky: #acecf7;
   --sky-soft: #1d3346;
@@ -64,26 +83,35 @@
   --coral-soft: #3a2630;
   --lime: #d7ffab;
   --lime-soft: #26362a;
-  --canvas: #161b2e;
-  --canvas-deep: #11152a;
-  --surface: #1f2640;
-  --surface-muted: #262e4c;
-  --ink: #f6f8ff;
-  --ink-muted: #b3bcd6;
-  --border: #36405f;
-  --border-strong: #acecf7;
-  --accent: #f48668;
-  --accent-hover: #ff9f84;
-  --accent-fg: #1f2a44;
-  --trust: #d7ffab;
-  --trust-muted: #26362a;
+  --canvas: #0f1a1e;
+  --canvas-deep: #0a1316;
+  --surface: #16242a;
+  --surface-muted: #1d2f36;
+  --ink: #e6f4f7;
+  --ink-muted: #a7bcc2;
+  --border: #2a4049;
+  --border-strong: #5a7a85;
+  --accent: #acecf7;
+  --accent-hover: #cff5fb;
+  --accent-fg: #1f2937;
+  --trust: #acecf7;
+  --trust-muted: #17414a;
   --warn-fg: #f6cf86;
   --warn-muted: #3a3020;
-  --crisis-bg: #3a2228;
-  --crisis-bg-hover: #4a2a31;
-  --crisis-border: #a65a4b;
-  --crisis-fg: #ffc9bb;
-  --ring: #f48668;
+  --crisis-bg: #2a1414;
+  --crisis-bg-hover: #3a1c1c;
+  --crisis-border: #7f2a2a;
+  --crisis-fg: #fca5a5;
+  --ring: #7dd3e3;
+  --primary: #f48668;
+  --primary-fg: #1f2937;
+  --secondary: #acecf7;
+  --secondary-fg: #1f2937;
+  --highlight: #d7ffab;
+  --highlight-fg: #1f2937;
+  --link: #acecf7;
+  --destructive: #b91c1c;
+  --destructive-fg: #ffffff;
   --overlay: rgb(0 0 0 / 0.55);
   --play-pink: #3a2630;
   --play-pink-shadow: #f48668;
@@ -97,10 +125,10 @@
   --shadow-brutal-sm: 3px 3px 0 0 #0b0e1a;
   --hero-grid: radial-gradient(
     circle at 1px 1px,
-    rgb(172 236 247 / 0.14) 1px,
+    rgb(172 236 247 / 0.12) 1px,
     transparent 0
   );
-  --map-marker-stroke: #161b2e;
+  --map-marker-stroke: #0f1a1e;
   --hero-veil: rgb(17 21 42);
   color-scheme: dark;
 }
@@ -108,6 +136,24 @@
 @theme inline {
   --color-background: var(--canvas);
   --color-foreground: var(--ink);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--ink);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-fg);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-fg);
+  --color-accent: var(--highlight);
+  --color-accent-foreground: var(--highlight-fg);
+  --color-muted: var(--surface-muted);
+  --color-muted-foreground: var(--ink-muted);
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: var(--ring);
+  --color-link: var(--link);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-fg);
   --font-sans: var(--font-body);
   --color-sky: var(--sky);
   --color-coral: var(--coral);
@@ -274,7 +320,8 @@ h3 {
   --hero-ink: #1f2a44;
   --hero-notch: #1f2a44;
   --hero-cream: #fffcf5;
-  --hero-teal: #d7ffab;
+  /* Name kept for existing classes; now Coral Glow on the always-dark hero. */
+  --hero-teal: #f48668;
 }
 
 @keyframes hero-kenburns {

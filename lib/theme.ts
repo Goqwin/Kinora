@@ -2,12 +2,11 @@ export type ThemeMode = "light" | "dark";
 
 export const THEME_STORAGE_KEY = "sn-theme";
 
-export function getSystemTheme(): ThemeMode {
-  if (typeof window === "undefined") return "light";
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-}
+/**
+ * New visitors always get light mode, whatever their OS setting. Dark mode is
+ * opt-in through the toggle, and the choice is remembered in localStorage.
+ */
+export const DEFAULT_THEME: ThemeMode = "light";
 
 export function applyTheme(theme: ThemeMode) {
   const root = document.documentElement;

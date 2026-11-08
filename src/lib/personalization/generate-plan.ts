@@ -29,7 +29,9 @@ const stepSchema = z.object({
 const planSchema = z.object({ steps: z.array(stepSchema).min(3).max(6) });
 
 const PLAN_JSON_SCHEMA = (() => {
-  const { $schema: _, ...schema } = z.toJSONSchema(planSchema) as Record<string, unknown>;
+  // Gemini rejects the "$schema" keyword.
+  const schema: Record<string, unknown> = { ...z.toJSONSchema(planSchema) };
+  delete schema.$schema;
   return schema;
 })();
 

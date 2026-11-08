@@ -44,7 +44,9 @@ Rules:
 - Give no advice of any kind (legal, medical, mental-health).`;
 
 const INTENT_JSON_SCHEMA = (() => {
-  const { $schema: _, ...schema } = z.toJSONSchema(structuredIntentSchema) as Record<string, unknown>;
+  // Gemini rejects the "$schema" keyword.
+  const schema: Record<string, unknown> = { ...z.toJSONSchema(structuredIntentSchema) };
+  delete schema.$schema;
   return schema;
 })();
 
