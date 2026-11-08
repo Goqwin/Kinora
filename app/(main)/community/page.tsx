@@ -22,6 +22,9 @@ export const metadata = {
   title: "Community",
 };
 
+/** Auth session + DB aggregates are request-bound; allow a blocking route. */
+export const instant = false;
+
 type CommunityPageProps = {
   searchParams: Promise<{ fsa?: string; postal?: string }>;
 };
