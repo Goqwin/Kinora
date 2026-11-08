@@ -3,19 +3,20 @@
 import Link from "next/link";
 import * as React from "react";
 
-import { persistPlanFromSearchAction } from "@/app/actions/plan";
+import { saveShownPlanAction, type ShownPlan } from "@/app/actions/plan";
 import { Button } from "@/components/ui/button";
 
 type SavePlanButtonProps = {
   authReady: boolean;
   dbReady: boolean;
-  searchParams: Record<string, string | undefined>;
+  /** The plan on screen (structured data only, never the parent's text). */
+  plan: ShownPlan;
 };
 
 export function SavePlanButton({
   authReady,
   dbReady,
-  searchParams,
+  plan,
 }: SavePlanButtonProps) {
   const [pending, setPending] = React.useState(false);
   const [done, setDone] = React.useState(false);
@@ -43,22 +44,7 @@ export function SavePlanButton({
         onClick={async () => {
           setPending(true);
           setError(null);
-          const result = await persistPlanFromSearchAction({
-            text: searchParams.text,
-            postal: searchParams.postal,
-            radiusKm: searchParams.radiusKm
-              ? Number(searchParams.radiusKm)
-              : undefined,
-            categories: searchParams.categories,
-            childAgeYears: searchParams.childAgeYears
-              ? Number(searchParams.childAgeYears)
-              : null,
-            costPreference:
-              searchParams.costPreference === "free" ||
-              searchParams.costPreference === "subsidized"
-                ? searchParams.costPreference
-                : null,
-          });
+          const result = await saveShownPlanAction(plan);
           setPending(false);
           if (!result.ok) {
             setError(result.error);

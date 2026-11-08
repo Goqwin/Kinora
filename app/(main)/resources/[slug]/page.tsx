@@ -113,8 +113,8 @@ export default async function ResourceDetailPage({
           Eligibility
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-[var(--ink-muted)]">
-          You may be potentially eligible based on this summary. Only the
-          provider can confirm approval: {resource.eligibilitySummary}
+          May be eligible. Confirm with the provider.{" "}
+          {resource.eligibilitySummary}
         </p>
       </section>
 

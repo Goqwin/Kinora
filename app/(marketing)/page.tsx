@@ -139,8 +139,8 @@ export default function HomePage() {
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-[var(--ink-muted)] sm:pb-1">
-            Search in plain language above, or browse these paths. Eligibility is
-            always potentially eligible until a provider confirms.
+            Search in plain language above, or browse these paths. May be
+            eligible. Confirm with the provider.
           </p>
         </div>
 

@@ -31,3 +31,15 @@ describe("detectCrisis", () => {
     expect(result.matched).toBe(false);
   });
 });
+
+describe("crisis callout ranking", () => {
+  it("puts 911 first, then lines matching the signals, mapping live-check categories", async () => {
+    const { crisisResourcesFor, toCrisisSignals } = await import("@/lib/safety/crisis");
+    const signals = toCrisisSignals(["domestic_violence", "no_shelter", "abuse", "unknown"]);
+    expect(signals.sort()).toEqual(["abuse", "no_shelter_tonight"]);
+    const top4 = crisisResourcesFor(signals).slice(0, 4).map((r) => r.id);
+    expect(top4[0]).toBe("emergency");
+    expect(top4).toContain("family-violence-line");
+    expect(top4).toContain("alberta-211");
+  });
+});

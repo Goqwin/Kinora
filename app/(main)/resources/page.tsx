@@ -15,7 +15,7 @@ export default async function ResourcesPage() {
       <PageHeader
         eyebrow="Verified catalog"
         title="Browse supports"
-        description="Each listing includes a source link and last verified date. Eligibility is always potentially eligible until a provider confirms."
+        description="Each listing includes a source link and last verified date. May be eligible. Confirm with the provider."
       />
       {resources.length === 0 ? (
         <p

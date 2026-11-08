@@ -45,12 +45,14 @@ describe("buildSupportPlan", () => {
     expect(r.crisisResources).toEqual([]);
   });
 
-  it("flags a crisis sentence and puts crisis resources first, with TODO phones", async () => {
+  it("flags a crisis sentence and puts 911 first, then the matching lines", async () => {
     const r = await buildSupportPlan({ text: "My partner hits me and we have nowhere to sleep tonight", onboarding }, null);
     expect(r.crisis).toBe(true);
-    expect(r.crisisResources[0]!.id).toBe("emergency");
-    expect(r.crisisResources.map((c) => c.id)).toEqual(expect.arrayContaining(["family-violence-line", "emergency-shelter"]));
-    expect(r.crisisResources.every((c) => c.phone.startsWith("TODO") && !c.verified)).toBe(true);
+    const ids = r.crisisResources.map((c) => c.id);
+    expect(ids[0]).toBe("emergency");
+    // abuse + no_shelter_tonight → these rank above the general ones
+    expect(ids.indexOf("family-violence-line")).toBeLessThan(ids.indexOf("kids-help-phone"));
+    expect(ids.indexOf("alberta-211")).toBeLessThan(ids.indexOf("kids-help-phone"));
     expect(r.results.length).toBeGreaterThan(0); // results still come back
   });
 
@@ -71,7 +73,28 @@ describe("buildSupportPlan", () => {
   it("still flags crisis in short text", async () => {
     const r = await buildSupportPlan({ text: "feeling suicidal", onboarding }, null);
     expect(r.crisis).toBe(true);
-    expect(r.crisisResources.map((c) => c.id)).toContain("suicide-crisis-line");
+    expect(r.crisisResources.map((c) => c.id).slice(0, 3)).toEqual(["emergency", "988-suicide-crisis", "distress-centre-calgary"]);
+  });
+
+  it("never calls Gemini when AI is switched off", async () => {
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    const r = await buildSupportPlan({ text: NIGHT_SHIFT, onboarding }, null, { aiEnabled: false });
+    expect(warn).not.toHaveBeenCalled(); // a Gemini attempt would fail and warn here
+    warn.mockRestore();
+    expect(r.plan).toBeNull();
+    expect(r.usedFallback).toBe(false);
+    expect(r.intent.categories).toContain("childcare");
+  });
+
+  it("skips the plan call when the time budget is used up", async () => {
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    const r = await buildSupportPlan({ text: NIGHT_SHIFT, onboarding }, null, { timeBudgetMs: 0 });
+    // Only the intent call is attempted (and fails); the plan call never starts.
+    expect(warn.mock.calls.map((c) => String(c[0]))).toEqual(["extract-intent: Gemini failed, using fallback:"]);
+    warn.mockRestore();
+    expect(r.plan).toBeNull();
+    expect(r.usedFallback).toBe(true); // → keyword banner on the page
+    expect(r.results.length).toBeGreaterThan(0);
   });
 
   it("saves nothing for anonymous users", async () => {
