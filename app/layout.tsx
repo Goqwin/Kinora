@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Fraunces, Figtree } from "next/font/google";
+import { Fredoka, Nunito } from "next/font/google";
 
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { ThemeScript } from "@/components/theme/theme-script";
 
 import "./globals.css";
 
-const fraunces = Fraunces({
+const fredoka = Fredoka({
   variable: "--font-display",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const figtree = Figtree({
+const nunito = Nunito({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
@@ -34,11 +35,11 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-CA"
       suppressHydrationWarning
-      className={`${fraunces.variable} ${figtree.variable} h-full antialiased`}
+      className={`${fredoka.variable} ${nunito.variable} antialiased`}
     >
-      <body className="flex min-h-full flex-col font-[family-name:var(--font-body)]">
+      <body className="flex min-h-dvh flex-col font-[family-name:var(--font-body)]">
         <ThemeScript />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
