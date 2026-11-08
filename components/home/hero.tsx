@@ -68,7 +68,7 @@ export function Hero({ seed }: HeroProps) {
   }
 
   return (
-    <section className="bg-[var(--hero-ink)] p-2 sm:p-3">
+    <section className="bg-[image:var(--grad-deep)] p-2 sm:p-3">
       <div className="relative isolate flex min-h-[calc(100svh-1rem)] flex-col overflow-hidden rounded-[1.75rem] sm:min-h-[calc(100svh-1.5rem)] sm:rounded-[2.25rem]">
         <Image
           src={HERO_IMAGE}
@@ -84,7 +84,7 @@ export function Hero({ seed }: HeroProps) {
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-gradient-to-t from-[#1f2a44]/90 via-[#1f2a44]/35 to-[#1f2a44]/55"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(55%_45%_at_88%_8%,rgb(244_134_104/0.38),transparent_70%),radial-gradient(45%_40%_at_8%_92%,rgb(172_236_247/0.28),transparent_70%),linear-gradient(to_top,rgb(10_68_82/0.92)_0%,rgb(10_68_82/0.45)_45%,rgb(11_100_119/0.25)_100%)]"
         />
         <div
           aria-hidden
