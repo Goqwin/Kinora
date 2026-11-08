@@ -1,11 +1,12 @@
 [
   {
     "id": "org_001",
-    "name": "Little Sprouts Early Learning",
+    "slug": "little-sprouts-early-learning-maple-hollow",
+    "name": "Little Sprouts Early Learning (Maple Hollow)",
     "type": "Daycare",
     "neighbourhood": "Maple Hollow",
-    "address": "341 Willow Rd",
-    "postal_code": "T2B 1C9",
+    "address": "454 Pine Crescent",
+    "postal_code": "T2A 4C9",
     "suitable_ages": [
       "0-2",
       "3-5"
@@ -17,11 +18,12 @@
   },
   {
     "id": "org_002",
-    "name": "Sunny Days Child Care",
+    "slug": "sunny-days-child-care-maple-hollow",
+    "name": "Sunny Days Child Care (Maple Hollow)",
     "type": "Daycare",
-    "neighbourhood": "Riverbend",
-    "address": "106 Sunrise Blvd",
-    "postal_code": "T2C 9J1",
+    "neighbourhood": "Maple Hollow",
+    "address": "444 Elm St",
+    "postal_code": "T2A 4Y1",
     "suitable_ages": [
       "3-5"
     ],
@@ -32,11 +34,12 @@
   },
   {
     "id": "org_003",
-    "name": "Rainbow Playhouse Out-of-School Care",
+    "slug": "rainbow-playhouse-out-of-school-care-maple-hollow",
+    "name": "Rainbow Playhouse Out-of-School Care (Maple Hollow)",
     "type": "Daycare",
-    "neighbourhood": "Parkview",
-    "address": "98 Pine Crescent",
-    "postal_code": "T2J 2K2",
+    "neighbourhood": "Maple Hollow",
+    "address": "600 Meadow Ct",
+    "postal_code": "T2B 1K1",
     "suitable_ages": [
       "6-9",
       "10-13"
@@ -48,27 +51,12 @@
   },
   {
     "id": "org_004",
-    "name": "Drop-In Playroom",
-    "type": "Daycare",
-    "neighbourhood": "Cedar Ridge",
-    "address": "574 Pine Crescent",
-    "postal_code": "T3A 2K1",
-    "suitable_ages": [
-      "0-2",
-      "3-5"
-    ],
-    "suitable_genders": [
-      "All"
-    ],
-    "description": "Short-term drop-in child care (up to 3 hours) so parents can attend appointments or run errands."
-  },
-  {
-    "id": "org_005",
-    "name": "Single Parents Circle",
+    "slug": "single-parents-circle-maple-hollow",
+    "name": "Single Parents Circle (Maple Hollow)",
     "type": "Support program",
     "neighbourhood": "Maple Hollow",
-    "address": "600 Meadow Ct",
-    "postal_code": "T2B 1K1",
+    "address": "580 Willow Rd",
+    "postal_code": "T2B 7G9",
     "suitable_ages": [
       "Adults"
     ],
@@ -78,42 +66,13 @@
     "description": "Weekly peer support meetups for single parents with a shared meal, guest speakers, and free child-minding on site."
   },
   {
-    "id": "org_006",
-    "name": "Moms Together Peer Group",
+    "id": "org_005",
+    "slug": "parent-respite-nights-maple-hollow",
+    "name": "Parent Respite Nights (Maple Hollow)",
     "type": "Support program",
-    "neighbourhood": "Lakeside",
-    "address": "580 Willow Rd",
-    "postal_code": "T3E 7G9",
-    "suitable_ages": [
-      "Adults"
-    ],
-    "suitable_genders": [
-      "Woman"
-    ],
-    "description": "Women-only peer group offering friendship, parenting workshops, and monthly wellness mornings."
-  },
-  {
-    "id": "org_007",
-    "name": "Dads Connect",
-    "type": "Support program",
-    "neighbourhood": "Riverbend",
+    "neighbourhood": "Maple Hollow",
     "address": "130 Meadow Ct",
-    "postal_code": "T2E 9H2",
-    "suitable_ages": [
-      "Adults"
-    ],
-    "suitable_genders": [
-      "Man"
-    ],
-    "description": "Support group for fathers raising kids on their own, with parenting skills sessions and weekend family activities."
-  },
-  {
-    "id": "org_008",
-    "name": "Parent Respite Nights",
-    "type": "Support program",
-    "neighbourhood": "Parkview",
-    "address": "605 Meadow Ct",
-    "postal_code": "T2H 6E9",
+    "postal_code": "T2B 9H2",
     "suitable_ages": [
       "0-2",
       "3-5",
@@ -126,47 +85,13 @@
     "description": "Monthly evenings where trained volunteers care for kids so parents can rest; includes dinner for the children."
   },
   {
-    "id": "org_009",
-    "name": "Calm Harbour Parent Wellness",
-    "type": "Support program",
-    "neighbourhood": "Cedar Ridge",
-    "address": "739 Birch Ave",
-    "postal_code": "T3A 4V9",
-    "suitable_ages": [
-      "Adults"
-    ],
-    "suitable_genders": [
-      "All"
-    ],
-    "description": "Free group counselling and stress-management workshops for parents, with evening and online options."
-  },
-  {
-    "id": "org_010",
-    "name": "Family Wellness Child Services",
+    "id": "org_006",
+    "slug": "young-minds-counselling-maple-hollow",
+    "name": "Young Minds Counselling (Maple Hollow)",
     "type": "Child services",
-    "neighbourhood": "Riverbend",
-    "address": "447 Sunrise Blvd",
-    "postal_code": "T2E 8P5",
-    "suitable_ages": [
-      "0-2",
-      "3-5",
-      "6-9",
-      "10-13",
-      "14-17",
-      "Adults"
-    ],
-    "suitable_genders": [
-      "All"
-    ],
-    "description": "Family counselling, parenting coaching, and referrals to community resources for families facing hardship."
-  },
-  {
-    "id": "org_011",
-    "name": "Young Minds Counselling",
-    "type": "Child services",
-    "neighbourhood": "Parkview",
-    "address": "264 Willow Rd",
-    "postal_code": "T2H 2Y5",
+    "neighbourhood": "Maple Hollow",
+    "address": "605 Meadow Ct",
+    "postal_code": "T2A 6E9",
     "suitable_ages": [
       "6-9",
       "10-13",
@@ -178,12 +103,13 @@
     "description": "Child and youth counselling covering anxiety, school stress, grief, and family change."
   },
   {
-    "id": "org_012",
-    "name": "Early Years Development Clinic",
+    "id": "org_007",
+    "slug": "early-years-development-clinic-maple-hollow",
+    "name": "Early Years Development Clinic (Maple Hollow)",
     "type": "Child services",
     "neighbourhood": "Maple Hollow",
-    "address": "547 Oak Lane",
-    "postal_code": "T2B 8M2",
+    "address": "739 Birch Ave",
+    "postal_code": "T2A 4V9",
     "suitable_ages": [
       "0-2",
       "3-5"
@@ -194,12 +120,13 @@
     "description": "Developmental screening, speech and language support, and early intervention for young children."
   },
   {
-    "id": "org_013",
-    "name": "Regional Family Support Office",
+    "id": "org_008",
+    "slug": "regional-family-support-office-maple-hollow",
+    "name": "Regional Family Support Office (Maple Hollow)",
     "type": "Government assistance",
-    "neighbourhood": "Riverbend",
-    "address": "130 Station Rd",
-    "postal_code": "T2E 3N3",
+    "neighbourhood": "Maple Hollow",
+    "address": "447 Sunrise Blvd",
+    "postal_code": "T2B 8P5",
     "suitable_ages": [
       "Adults"
     ],
@@ -209,42 +136,13 @@
     "description": "Help applying for child benefits, income support, and emergency assistance; walk-ins and appointments."
   },
   {
-    "id": "org_014",
-    "name": "Child Care Subsidy Office",
-    "type": "Government assistance",
-    "neighbourhood": "Maple Hollow",
-    "address": "965 Oak Lane",
-    "postal_code": "T2B 1C9",
-    "suitable_ages": [
-      "Adults"
-    ],
-    "suitable_genders": [
-      "All"
-    ],
-    "description": "Eligibility checks and applications for child care fee subsidies, with a same-day pre-screening service."
-  },
-  {
-    "id": "org_015",
-    "name": "Housing Assistance Intake Centre",
-    "type": "Government assistance",
-    "neighbourhood": "Lakeside",
-    "address": "596 Sunrise Blvd",
-    "postal_code": "T3E 6Z8",
-    "suitable_ages": [
-      "Adults"
-    ],
-    "suitable_genders": [
-      "All"
-    ],
-    "description": "Intake for rental assistance, affordable housing waitlists, and eviction-prevention support."
-  },
-  {
-    "id": "org_016",
-    "name": "Neighbourhood Outreach Hub",
+    "id": "org_009",
+    "slug": "neighbourhood-outreach-hub-maple-hollow",
+    "name": "Neighbourhood Outreach Hub (Maple Hollow)",
     "type": "Outreach",
-    "neighbourhood": "Cedar Ridge",
-    "address": "603 Oak Lane",
-    "postal_code": "T3A 2L8",
+    "neighbourhood": "Maple Hollow",
+    "address": "264 Willow Rd",
+    "postal_code": "T2A 2Y5",
     "suitable_ages": [
       "0-2",
       "3-5",
@@ -259,12 +157,13 @@
     "description": "Drop-in centre connecting families to food, clothing, transit passes, and local services, with a friendly front desk."
   },
   {
-    "id": "org_017",
-    "name": "Community Food Pantry & Meal Share",
+    "id": "org_010",
+    "slug": "community-food-pantry-meal-share-maple-hollow",
+    "name": "Community Food Pantry & Meal Share (Maple Hollow)",
     "type": "Outreach",
     "neighbourhood": "Maple Hollow",
-    "address": "723 Birch Ave",
-    "postal_code": "T2A 5Y8",
+    "address": "547 Oak Lane",
+    "postal_code": "T2B 8M2",
     "suitable_ages": [
       "0-2",
       "3-5",
@@ -279,12 +178,290 @@
     "description": "Weekly grocery hampers and a community dinner open to all families, no questions asked."
   },
   {
+    "id": "org_011",
+    "slug": "girls-rising-youth-club-maple-hollow",
+    "name": "Girls Rising Youth Club (Maple Hollow)",
+    "type": "Youth program",
+    "neighbourhood": "Maple Hollow",
+    "address": "130 Station Rd",
+    "postal_code": "T2B 3N3",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Girl"
+    ],
+    "description": "After-school club for girls with mentoring, coding workshops, and outdoor activities."
+  },
+  {
+    "id": "org_012",
+    "slug": "big-steps-boys-mentorship-maple-hollow",
+    "name": "Big Steps Boys Mentorship (Maple Hollow)",
+    "type": "Youth program",
+    "neighbourhood": "Maple Hollow",
+    "address": "965 Oak Lane",
+    "postal_code": "T2B 1C9",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Boy"
+    ],
+    "description": "Mentoring and sports for boys, paired with trained volunteer mentors."
+  },
+  {
+    "id": "org_013",
+    "slug": "youth-drop-in-centre-maple-hollow",
+    "name": "Youth Drop-In Centre (Maple Hollow)",
+    "type": "Youth program",
+    "neighbourhood": "Maple Hollow",
+    "address": "596 Sunrise Blvd",
+    "postal_code": "T2B 6Z8",
+    "suitable_ages": [
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Safe evening drop-in space for teens with snacks, homework help, and a counsellor on site."
+  },
+  {
+    "id": "org_014",
+    "slug": "parent-child-swim-and-play-maple-hollow",
+    "name": "Parent & Child Swim and Play (Maple Hollow)",
+    "type": "Youth program",
+    "neighbourhood": "Maple Hollow",
+    "address": "603 Oak Lane",
+    "postal_code": "T2A 2L8",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly parent-and-child swim sessions followed by a playgroup; a good first step for isolated parents."
+  },
+  {
+    "id": "org_015",
+    "slug": "little-sprouts-early-learning-riverbend",
+    "name": "Little Sprouts Early Learning (Riverbend)",
+    "type": "Daycare",
+    "neighbourhood": "Riverbend",
+    "address": "515 Elm St",
+    "postal_code": "T2C 5G4",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Licensed full-day child care for infants and preschoolers with play-based learning, hot lunches, and flexible hours for shift workers."
+  },
+  {
+    "id": "org_016",
+    "slug": "sunny-days-child-care-riverbend",
+    "name": "Sunny Days Child Care (Riverbend)",
+    "type": "Daycare",
+    "neighbourhood": "Riverbend",
+    "address": "417 Pine Crescent",
+    "postal_code": "T2E 2H8",
+    "suitable_ages": [
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Half-day and full-day preschool with a sliding-scale fee for low-income families."
+  },
+  {
+    "id": "org_017",
+    "slug": "rainbow-playhouse-out-of-school-care-riverbend",
+    "name": "Rainbow Playhouse Out-of-School Care (Riverbend)",
+    "type": "Daycare",
+    "neighbourhood": "Riverbend",
+    "address": "421 Station Rd",
+    "postal_code": "T2E 3S9",
+    "suitable_ages": [
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Before- and after-school care with homework help, snacks, and holiday day camps."
+  },
+  {
     "id": "org_018",
-    "name": "Newcomer Family Welcome Centre",
+    "slug": "drop-in-playroom-riverbend",
+    "name": "Drop-In Playroom (Riverbend)",
+    "type": "Daycare",
+    "neighbourhood": "Riverbend",
+    "address": "295 Pine Crescent",
+    "postal_code": "T2E 7K3",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Short-term drop-in child care (up to 3 hours) so parents can attend appointments or run errands."
+  },
+  {
+    "id": "org_019",
+    "slug": "single-parents-circle-riverbend",
+    "name": "Single Parents Circle (Riverbend)",
+    "type": "Support program",
+    "neighbourhood": "Riverbend",
+    "address": "94 Willow Rd",
+    "postal_code": "T2C 4K1",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly peer support meetups for single parents with a shared meal, guest speakers, and free child-minding on site."
+  },
+  {
+    "id": "org_020",
+    "slug": "parent-respite-nights-riverbend",
+    "name": "Parent Respite Nights (Riverbend)",
+    "type": "Support program",
+    "neighbourhood": "Riverbend",
+    "address": "506 Meadow Ct",
+    "postal_code": "T2C 5M1",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Monthly evenings where trained volunteers care for kids so parents can rest; includes dinner for the children."
+  },
+  {
+    "id": "org_021",
+    "slug": "family-wellness-child-services-riverbend",
+    "name": "Family Wellness Child Services (Riverbend)",
+    "type": "Child services",
+    "neighbourhood": "Riverbend",
+    "address": "159 Pine Crescent",
+    "postal_code": "T2E 6G9",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Family counselling, parenting coaching, and referrals to community resources for families facing hardship."
+  },
+  {
+    "id": "org_022",
+    "slug": "early-years-development-clinic-riverbend",
+    "name": "Early Years Development Clinic (Riverbend)",
+    "type": "Child services",
+    "neighbourhood": "Riverbend",
+    "address": "983 Meadow Ct",
+    "postal_code": "T2C 8X7",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Developmental screening, speech and language support, and early intervention for young children."
+  },
+  {
+    "id": "org_023",
+    "slug": "regional-family-support-office-riverbend",
+    "name": "Regional Family Support Office (Riverbend)",
+    "type": "Government assistance",
+    "neighbourhood": "Riverbend",
+    "address": "417 Pine Crescent",
+    "postal_code": "T2E 2V7",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Help applying for child benefits, income support, and emergency assistance; walk-ins and appointments."
+  },
+  {
+    "id": "org_024",
+    "slug": "child-care-subsidy-office-riverbend",
+    "name": "Child Care Subsidy Office (Riverbend)",
+    "type": "Government assistance",
+    "neighbourhood": "Riverbend",
+    "address": "73 Aspen Way",
+    "postal_code": "T2C 4T3",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Eligibility checks and applications for child care fee subsidies, with a same-day pre-screening service."
+  },
+  {
+    "id": "org_025",
+    "slug": "housing-assistance-intake-centre-riverbend",
+    "name": "Housing Assistance Intake Centre (Riverbend)",
+    "type": "Government assistance",
+    "neighbourhood": "Riverbend",
+    "address": "122 Sunrise Blvd",
+    "postal_code": "T2C 2A3",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Intake for rental assistance, affordable housing waitlists, and eviction-prevention support."
+  },
+  {
+    "id": "org_026",
+    "slug": "community-food-pantry-meal-share-riverbend",
+    "name": "Community Food Pantry & Meal Share (Riverbend)",
     "type": "Outreach",
-    "neighbourhood": "Parkview",
-    "address": "301 Pine Crescent",
-    "postal_code": "T2J 1T6",
+    "neighbourhood": "Riverbend",
+    "address": "559 Birch Ave",
+    "postal_code": "T2E 1C4",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly grocery hampers and a community dinner open to all families, no questions asked."
+  },
+  {
+    "id": "org_027",
+    "slug": "newcomer-family-welcome-centre-riverbend",
+    "name": "Newcomer Family Welcome Centre (Riverbend)",
+    "type": "Outreach",
+    "neighbourhood": "Riverbend",
+    "address": "638 Pine Crescent",
+    "postal_code": "T2C 5P6",
     "suitable_ages": [
       "0-2",
       "3-5",
@@ -299,27 +476,13 @@
     "description": "Settlement support, language classes, and family events for people new to the country."
   },
   {
-    "id": "org_019",
-    "name": "Family Legal Aid Clinic",
-    "type": "Outreach",
-    "neighbourhood": "Riverbend",
-    "address": "182 Meadow Ct",
-    "postal_code": "T2C 8B4",
-    "suitable_ages": [
-      "Adults"
-    ],
-    "suitable_genders": [
-      "All"
-    ],
-    "description": "Free legal advice on custody, support payments, and tenancy, offered by volunteer lawyers twice a week."
-  },
-  {
-    "id": "org_020",
-    "name": "Girls Rising Youth Club",
+    "id": "org_028",
+    "slug": "girls-rising-youth-club-riverbend",
+    "name": "Girls Rising Youth Club (Riverbend)",
     "type": "Youth program",
-    "neighbourhood": "Lakeside",
-    "address": "796 Harbour Dr",
-    "postal_code": "T3C 4R7",
+    "neighbourhood": "Riverbend",
+    "address": "495 Birch Ave",
+    "postal_code": "T2C 8T8",
     "suitable_ages": [
       "10-13",
       "14-17"
@@ -330,12 +493,13 @@
     "description": "After-school club for girls with mentoring, coding workshops, and outdoor activities."
   },
   {
-    "id": "org_021",
-    "name": "Big Steps Boys Mentorship",
+    "id": "org_029",
+    "slug": "big-steps-boys-mentorship-riverbend",
+    "name": "Big Steps Boys Mentorship (Riverbend)",
     "type": "Youth program",
-    "neighbourhood": "Cedar Ridge",
-    "address": "948 Oak Lane",
-    "postal_code": "T3A 3T7",
+    "neighbourhood": "Riverbend",
+    "address": "505 Harbour Dr",
+    "postal_code": "T2C 3E6",
     "suitable_ages": [
       "10-13",
       "14-17"
@@ -346,12 +510,324 @@
     "description": "Mentoring and sports for boys, paired with trained volunteer mentors."
   },
   {
-    "id": "org_022",
-    "name": "Saturday Kids Activity Club",
+    "id": "org_030",
+    "slug": "youth-drop-in-centre-riverbend",
+    "name": "Youth Drop-In Centre (Riverbend)",
     "type": "Youth program",
-    "neighbourhood": "Parkview",
-    "address": "572 Harbour Dr",
-    "postal_code": "T2H 7X5",
+    "neighbourhood": "Riverbend",
+    "address": "768 Harbour Dr",
+    "postal_code": "T2E 3W1",
+    "suitable_ages": [
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Safe evening drop-in space for teens with snacks, homework help, and a counsellor on site."
+  },
+  {
+    "id": "org_031",
+    "slug": "parent-child-swim-and-play-riverbend",
+    "name": "Parent & Child Swim and Play (Riverbend)",
+    "type": "Youth program",
+    "neighbourhood": "Riverbend",
+    "address": "220 Station Rd",
+    "postal_code": "T2E 3X1",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly parent-and-child swim sessions followed by a playgroup; a good first step for isolated parents."
+  },
+  {
+    "id": "org_032",
+    "slug": "rainbow-playhouse-out-of-school-care-cedar-ridge",
+    "name": "Rainbow Playhouse Out-of-School Care (Cedar Ridge)",
+    "type": "Daycare",
+    "neighbourhood": "Cedar Ridge",
+    "address": "514 Sunrise Blvd",
+    "postal_code": "T3A 1L8",
+    "suitable_ages": [
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Before- and after-school care with homework help, snacks, and holiday day camps."
+  },
+  {
+    "id": "org_033",
+    "slug": "single-parents-circle-cedar-ridge",
+    "name": "Single Parents Circle (Cedar Ridge)",
+    "type": "Support program",
+    "neighbourhood": "Cedar Ridge",
+    "address": "275 Aspen Way",
+    "postal_code": "T3B 8P6",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly peer support meetups for single parents with a shared meal, guest speakers, and free child-minding on site."
+  },
+  {
+    "id": "org_034",
+    "slug": "moms-together-peer-group-cedar-ridge",
+    "name": "Moms Together Peer Group (Cedar Ridge)",
+    "type": "Support program",
+    "neighbourhood": "Cedar Ridge",
+    "address": "92 Aspen Way",
+    "postal_code": "T3A 4V4",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "Woman"
+    ],
+    "description": "Women-only peer group offering friendship, parenting workshops, and monthly wellness mornings."
+  },
+  {
+    "id": "org_035",
+    "slug": "dads-connect-cedar-ridge",
+    "name": "Dads Connect (Cedar Ridge)",
+    "type": "Support program",
+    "neighbourhood": "Cedar Ridge",
+    "address": "355 Aspen Way",
+    "postal_code": "T3B 1V6",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "Man"
+    ],
+    "description": "Support group for fathers raising kids on their own, with parenting skills sessions and weekend family activities."
+  },
+  {
+    "id": "org_036",
+    "slug": "calm-harbour-parent-wellness-cedar-ridge",
+    "name": "Calm Harbour Parent Wellness (Cedar Ridge)",
+    "type": "Support program",
+    "neighbourhood": "Cedar Ridge",
+    "address": "828 Birch Ave",
+    "postal_code": "T3A 7J8",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free group counselling and stress-management workshops for parents, with evening and online options."
+  },
+  {
+    "id": "org_037",
+    "slug": "family-wellness-child-services-cedar-ridge",
+    "name": "Family Wellness Child Services (Cedar Ridge)",
+    "type": "Child services",
+    "neighbourhood": "Cedar Ridge",
+    "address": "920 Willow Rd",
+    "postal_code": "T3B 6C7",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Family counselling, parenting coaching, and referrals to community resources for families facing hardship."
+  },
+  {
+    "id": "org_038",
+    "slug": "young-minds-counselling-cedar-ridge",
+    "name": "Young Minds Counselling (Cedar Ridge)",
+    "type": "Child services",
+    "neighbourhood": "Cedar Ridge",
+    "address": "484 Pine Crescent",
+    "postal_code": "T3A 3H3",
+    "suitable_ages": [
+      "6-9",
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Child and youth counselling covering anxiety, school stress, grief, and family change."
+  },
+  {
+    "id": "org_039",
+    "slug": "early-years-development-clinic-cedar-ridge",
+    "name": "Early Years Development Clinic (Cedar Ridge)",
+    "type": "Child services",
+    "neighbourhood": "Cedar Ridge",
+    "address": "38 Willow Rd",
+    "postal_code": "T3B 3Z8",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Developmental screening, speech and language support, and early intervention for young children."
+  },
+  {
+    "id": "org_040",
+    "slug": "regional-family-support-office-cedar-ridge",
+    "name": "Regional Family Support Office (Cedar Ridge)",
+    "type": "Government assistance",
+    "neighbourhood": "Cedar Ridge",
+    "address": "683 Sunrise Blvd",
+    "postal_code": "T3A 9X3",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Help applying for child benefits, income support, and emergency assistance; walk-ins and appointments."
+  },
+  {
+    "id": "org_041",
+    "slug": "child-care-subsidy-office-cedar-ridge",
+    "name": "Child Care Subsidy Office (Cedar Ridge)",
+    "type": "Government assistance",
+    "neighbourhood": "Cedar Ridge",
+    "address": "31 Elm St",
+    "postal_code": "T3A 9G7",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Eligibility checks and applications for child care fee subsidies, with a same-day pre-screening service."
+  },
+  {
+    "id": "org_042",
+    "slug": "housing-assistance-intake-centre-cedar-ridge",
+    "name": "Housing Assistance Intake Centre (Cedar Ridge)",
+    "type": "Government assistance",
+    "neighbourhood": "Cedar Ridge",
+    "address": "902 Aspen Way",
+    "postal_code": "T3A 1L4",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Intake for rental assistance, affordable housing waitlists, and eviction-prevention support."
+  },
+  {
+    "id": "org_043",
+    "slug": "neighbourhood-outreach-hub-cedar-ridge",
+    "name": "Neighbourhood Outreach Hub (Cedar Ridge)",
+    "type": "Outreach",
+    "neighbourhood": "Cedar Ridge",
+    "address": "309 Station Rd",
+    "postal_code": "T3A 6L9",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Drop-in centre connecting families to food, clothing, transit passes, and local services, with a friendly front desk."
+  },
+  {
+    "id": "org_044",
+    "slug": "newcomer-family-welcome-centre-cedar-ridge",
+    "name": "Newcomer Family Welcome Centre (Cedar Ridge)",
+    "type": "Outreach",
+    "neighbourhood": "Cedar Ridge",
+    "address": "439 Willow Rd",
+    "postal_code": "T3A 6T9",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Settlement support, language classes, and family events for people new to the country."
+  },
+  {
+    "id": "org_045",
+    "slug": "family-legal-aid-clinic-cedar-ridge",
+    "name": "Family Legal Aid Clinic (Cedar Ridge)",
+    "type": "Outreach",
+    "neighbourhood": "Cedar Ridge",
+    "address": "440 Station Rd",
+    "postal_code": "T3A 9G9",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free legal advice on custody, support payments, and tenancy, offered by volunteer lawyers twice a week."
+  },
+  {
+    "id": "org_046",
+    "slug": "girls-rising-youth-club-cedar-ridge",
+    "name": "Girls Rising Youth Club (Cedar Ridge)",
+    "type": "Youth program",
+    "neighbourhood": "Cedar Ridge",
+    "address": "532 Elm St",
+    "postal_code": "T3B 3Z1",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Girl"
+    ],
+    "description": "After-school club for girls with mentoring, coding workshops, and outdoor activities."
+  },
+  {
+    "id": "org_047",
+    "slug": "big-steps-boys-mentorship-cedar-ridge",
+    "name": "Big Steps Boys Mentorship (Cedar Ridge)",
+    "type": "Youth program",
+    "neighbourhood": "Cedar Ridge",
+    "address": "804 Willow Rd",
+    "postal_code": "T3A 3V2",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Boy"
+    ],
+    "description": "Mentoring and sports for boys, paired with trained volunteer mentors."
+  },
+  {
+    "id": "org_048",
+    "slug": "saturday-kids-activity-club-cedar-ridge",
+    "name": "Saturday Kids Activity Club (Cedar Ridge)",
+    "type": "Youth program",
+    "neighbourhood": "Cedar Ridge",
+    "address": "579 Elm St",
+    "postal_code": "T3B 9W9",
     "suitable_ages": [
       "6-9",
       "10-13"
@@ -362,27 +838,13 @@
     "description": "Free weekend arts, games, and sports sessions run by neighbourhood volunteers."
   },
   {
-    "id": "org_023",
-    "name": "Youth Drop-In Centre",
+    "id": "org_049",
+    "slug": "parent-child-swim-and-play-cedar-ridge",
+    "name": "Parent & Child Swim and Play (Cedar Ridge)",
     "type": "Youth program",
-    "neighbourhood": "Maple Hollow",
-    "address": "733 Pine Crescent",
-    "postal_code": "T2B 7K3",
-    "suitable_ages": [
-      "14-17"
-    ],
-    "suitable_genders": [
-      "All"
-    ],
-    "description": "Safe evening drop-in space for teens with snacks, homework help, and a counsellor on site."
-  },
-  {
-    "id": "org_024",
-    "name": "Parent & Child Swim and Play",
-    "type": "Youth program",
-    "neighbourhood": "Riverbend",
-    "address": "94 Willow Rd",
-    "postal_code": "T2C 4K1",
+    "neighbourhood": "Cedar Ridge",
+    "address": "504 Birch Ave",
+    "postal_code": "T3A 4J5",
     "suitable_ages": [
       "0-2",
       "3-5",
@@ -392,5 +854,1758 @@
       "All"
     ],
     "description": "Weekly parent-and-child swim sessions followed by a playgroup; a good first step for isolated parents."
+  },
+  {
+    "id": "org_050",
+    "slug": "little-sprouts-early-learning-parkview",
+    "name": "Little Sprouts Early Learning (Parkview)",
+    "type": "Daycare",
+    "neighbourhood": "Parkview",
+    "address": "530 Station Rd",
+    "postal_code": "T2J 9K9",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Licensed full-day child care for infants and preschoolers with play-based learning, hot lunches, and flexible hours for shift workers."
+  },
+  {
+    "id": "org_051",
+    "slug": "moms-together-peer-group-parkview",
+    "name": "Moms Together Peer Group (Parkview)",
+    "type": "Support program",
+    "neighbourhood": "Parkview",
+    "address": "907 Harbour Dr",
+    "postal_code": "T2H 8G7",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "Woman"
+    ],
+    "description": "Women-only peer group offering friendship, parenting workshops, and monthly wellness mornings."
+  },
+  {
+    "id": "org_052",
+    "slug": "parent-respite-nights-parkview",
+    "name": "Parent Respite Nights (Parkview)",
+    "type": "Support program",
+    "neighbourhood": "Parkview",
+    "address": "134 Pine Crescent",
+    "postal_code": "T2J 6C4",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Monthly evenings where trained volunteers care for kids so parents can rest; includes dinner for the children."
+  },
+  {
+    "id": "org_053",
+    "slug": "calm-harbour-parent-wellness-parkview",
+    "name": "Calm Harbour Parent Wellness (Parkview)",
+    "type": "Support program",
+    "neighbourhood": "Parkview",
+    "address": "448 Birch Ave",
+    "postal_code": "T2H 5E3",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free group counselling and stress-management workshops for parents, with evening and online options."
+  },
+  {
+    "id": "org_054",
+    "slug": "family-wellness-child-services-parkview",
+    "name": "Family Wellness Child Services (Parkview)",
+    "type": "Child services",
+    "neighbourhood": "Parkview",
+    "address": "972 Sunrise Blvd",
+    "postal_code": "T2H 5G8",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Family counselling, parenting coaching, and referrals to community resources for families facing hardship."
+  },
+  {
+    "id": "org_055",
+    "slug": "young-minds-counselling-parkview",
+    "name": "Young Minds Counselling (Parkview)",
+    "type": "Child services",
+    "neighbourhood": "Parkview",
+    "address": "234 Birch Ave",
+    "postal_code": "T2J 8H4",
+    "suitable_ages": [
+      "6-9",
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Child and youth counselling covering anxiety, school stress, grief, and family change."
+  },
+  {
+    "id": "org_056",
+    "slug": "child-care-subsidy-office-parkview",
+    "name": "Child Care Subsidy Office (Parkview)",
+    "type": "Government assistance",
+    "neighbourhood": "Parkview",
+    "address": "175 Pine Crescent",
+    "postal_code": "T2J 6S4",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Eligibility checks and applications for child care fee subsidies, with a same-day pre-screening service."
+  },
+  {
+    "id": "org_057",
+    "slug": "housing-assistance-intake-centre-parkview",
+    "name": "Housing Assistance Intake Centre (Parkview)",
+    "type": "Government assistance",
+    "neighbourhood": "Parkview",
+    "address": "375 Sunrise Blvd",
+    "postal_code": "T2H 6A6",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Intake for rental assistance, affordable housing waitlists, and eviction-prevention support."
+  },
+  {
+    "id": "org_058",
+    "slug": "neighbourhood-outreach-hub-parkview",
+    "name": "Neighbourhood Outreach Hub (Parkview)",
+    "type": "Outreach",
+    "neighbourhood": "Parkview",
+    "address": "577 Oak Lane",
+    "postal_code": "T2J 1R6",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Drop-in centre connecting families to food, clothing, transit passes, and local services, with a friendly front desk."
+  },
+  {
+    "id": "org_059",
+    "slug": "community-food-pantry-meal-share-parkview",
+    "name": "Community Food Pantry & Meal Share (Parkview)",
+    "type": "Outreach",
+    "neighbourhood": "Parkview",
+    "address": "539 Meadow Ct",
+    "postal_code": "T2J 9C2",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly grocery hampers and a community dinner open to all families, no questions asked."
+  },
+  {
+    "id": "org_060",
+    "slug": "girls-rising-youth-club-parkview",
+    "name": "Girls Rising Youth Club (Parkview)",
+    "type": "Youth program",
+    "neighbourhood": "Parkview",
+    "address": "950 Aspen Way",
+    "postal_code": "T2H 2L5",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Girl"
+    ],
+    "description": "After-school club for girls with mentoring, coding workshops, and outdoor activities."
+  },
+  {
+    "id": "org_061",
+    "slug": "big-steps-boys-mentorship-parkview",
+    "name": "Big Steps Boys Mentorship (Parkview)",
+    "type": "Youth program",
+    "neighbourhood": "Parkview",
+    "address": "50 Willow Rd",
+    "postal_code": "T2J 3S5",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Boy"
+    ],
+    "description": "Mentoring and sports for boys, paired with trained volunteer mentors."
+  },
+  {
+    "id": "org_062",
+    "slug": "sunny-days-child-care-lakeside",
+    "name": "Sunny Days Child Care (Lakeside)",
+    "type": "Daycare",
+    "neighbourhood": "Lakeside",
+    "address": "970 Elm St",
+    "postal_code": "T3C 5C4",
+    "suitable_ages": [
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Half-day and full-day preschool with a sliding-scale fee for low-income families."
+  },
+  {
+    "id": "org_063",
+    "slug": "rainbow-playhouse-out-of-school-care-lakeside",
+    "name": "Rainbow Playhouse Out-of-School Care (Lakeside)",
+    "type": "Daycare",
+    "neighbourhood": "Lakeside",
+    "address": "78 Harbour Dr",
+    "postal_code": "T3C 8A6",
+    "suitable_ages": [
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Before- and after-school care with homework help, snacks, and holiday day camps."
+  },
+  {
+    "id": "org_064",
+    "slug": "drop-in-playroom-lakeside",
+    "name": "Drop-In Playroom (Lakeside)",
+    "type": "Daycare",
+    "neighbourhood": "Lakeside",
+    "address": "576 Pine Crescent",
+    "postal_code": "T3E 3B9",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Short-term drop-in child care (up to 3 hours) so parents can attend appointments or run errands."
+  },
+  {
+    "id": "org_065",
+    "slug": "moms-together-peer-group-lakeside",
+    "name": "Moms Together Peer Group (Lakeside)",
+    "type": "Support program",
+    "neighbourhood": "Lakeside",
+    "address": "736 Aspen Way",
+    "postal_code": "T3C 3L1",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "Woman"
+    ],
+    "description": "Women-only peer group offering friendship, parenting workshops, and monthly wellness mornings."
+  },
+  {
+    "id": "org_066",
+    "slug": "parent-respite-nights-lakeside",
+    "name": "Parent Respite Nights (Lakeside)",
+    "type": "Support program",
+    "neighbourhood": "Lakeside",
+    "address": "195 Aspen Way",
+    "postal_code": "T3E 5W4",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Monthly evenings where trained volunteers care for kids so parents can rest; includes dinner for the children."
+  },
+  {
+    "id": "org_067",
+    "slug": "calm-harbour-parent-wellness-lakeside",
+    "name": "Calm Harbour Parent Wellness (Lakeside)",
+    "type": "Support program",
+    "neighbourhood": "Lakeside",
+    "address": "306 Oak Lane",
+    "postal_code": "T3C 5P1",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free group counselling and stress-management workshops for parents, with evening and online options."
+  },
+  {
+    "id": "org_068",
+    "slug": "young-minds-counselling-lakeside",
+    "name": "Young Minds Counselling (Lakeside)",
+    "type": "Child services",
+    "neighbourhood": "Lakeside",
+    "address": "266 Elm St",
+    "postal_code": "T3C 1W9",
+    "suitable_ages": [
+      "6-9",
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Child and youth counselling covering anxiety, school stress, grief, and family change."
+  },
+  {
+    "id": "org_069",
+    "slug": "early-years-development-clinic-lakeside",
+    "name": "Early Years Development Clinic (Lakeside)",
+    "type": "Child services",
+    "neighbourhood": "Lakeside",
+    "address": "204 Station Rd",
+    "postal_code": "T3E 4T2",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Developmental screening, speech and language support, and early intervention for young children."
+  },
+  {
+    "id": "org_070",
+    "slug": "housing-assistance-intake-centre-lakeside",
+    "name": "Housing Assistance Intake Centre (Lakeside)",
+    "type": "Government assistance",
+    "neighbourhood": "Lakeside",
+    "address": "684 Pine Crescent",
+    "postal_code": "T3E 9R9",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Intake for rental assistance, affordable housing waitlists, and eviction-prevention support."
+  },
+  {
+    "id": "org_071",
+    "slug": "neighbourhood-outreach-hub-lakeside",
+    "name": "Neighbourhood Outreach Hub (Lakeside)",
+    "type": "Outreach",
+    "neighbourhood": "Lakeside",
+    "address": "325 Aspen Way",
+    "postal_code": "T3C 6J3",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Drop-in centre connecting families to food, clothing, transit passes, and local services, with a friendly front desk."
+  },
+  {
+    "id": "org_072",
+    "slug": "community-food-pantry-meal-share-lakeside",
+    "name": "Community Food Pantry & Meal Share (Lakeside)",
+    "type": "Outreach",
+    "neighbourhood": "Lakeside",
+    "address": "424 Sunrise Blvd",
+    "postal_code": "T3C 3A2",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly grocery hampers and a community dinner open to all families, no questions asked."
+  },
+  {
+    "id": "org_073",
+    "slug": "family-legal-aid-clinic-lakeside",
+    "name": "Family Legal Aid Clinic (Lakeside)",
+    "type": "Outreach",
+    "neighbourhood": "Lakeside",
+    "address": "650 Harbour Dr",
+    "postal_code": "T3E 3B2",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free legal advice on custody, support payments, and tenancy, offered by volunteer lawyers twice a week."
+  },
+  {
+    "id": "org_074",
+    "slug": "big-steps-boys-mentorship-lakeside",
+    "name": "Big Steps Boys Mentorship (Lakeside)",
+    "type": "Youth program",
+    "neighbourhood": "Lakeside",
+    "address": "691 Pine Crescent",
+    "postal_code": "T3E 4M1",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Boy"
+    ],
+    "description": "Mentoring and sports for boys, paired with trained volunteer mentors."
+  },
+  {
+    "id": "org_075",
+    "slug": "saturday-kids-activity-club-lakeside",
+    "name": "Saturday Kids Activity Club (Lakeside)",
+    "type": "Youth program",
+    "neighbourhood": "Lakeside",
+    "address": "480 Willow Rd",
+    "postal_code": "T3C 5T1",
+    "suitable_ages": [
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free weekend arts, games, and sports sessions run by neighbourhood volunteers."
+  },
+  {
+    "id": "org_076",
+    "slug": "parent-child-swim-and-play-lakeside",
+    "name": "Parent & Child Swim and Play (Lakeside)",
+    "type": "Youth program",
+    "neighbourhood": "Lakeside",
+    "address": "279 Sunrise Blvd",
+    "postal_code": "T3E 9N4",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly parent-and-child swim sessions followed by a playgroup; a good first step for isolated parents."
+  },
+  {
+    "id": "org_077",
+    "slug": "rainbow-playhouse-out-of-school-care-ironwood",
+    "name": "Rainbow Playhouse Out-of-School Care (Ironwood)",
+    "type": "Daycare",
+    "neighbourhood": "Ironwood",
+    "address": "215 Aspen Way",
+    "postal_code": "T2K 2L2",
+    "suitable_ages": [
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Before- and after-school care with homework help, snacks, and holiday day camps."
+  },
+  {
+    "id": "org_078",
+    "slug": "drop-in-playroom-ironwood",
+    "name": "Drop-In Playroom (Ironwood)",
+    "type": "Daycare",
+    "neighbourhood": "Ironwood",
+    "address": "157 Pine Crescent",
+    "postal_code": "T2K 7A5",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Short-term drop-in child care (up to 3 hours) so parents can attend appointments or run errands."
+  },
+  {
+    "id": "org_079",
+    "slug": "moms-together-peer-group-ironwood",
+    "name": "Moms Together Peer Group (Ironwood)",
+    "type": "Support program",
+    "neighbourhood": "Ironwood",
+    "address": "321 Aspen Way",
+    "postal_code": "T2K 9G7",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "Woman"
+    ],
+    "description": "Women-only peer group offering friendship, parenting workshops, and monthly wellness mornings."
+  },
+  {
+    "id": "org_080",
+    "slug": "dads-connect-ironwood",
+    "name": "Dads Connect (Ironwood)",
+    "type": "Support program",
+    "neighbourhood": "Ironwood",
+    "address": "792 Sunrise Blvd",
+    "postal_code": "T2L 3M3",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "Man"
+    ],
+    "description": "Support group for fathers raising kids on their own, with parenting skills sessions and weekend family activities."
+  },
+  {
+    "id": "org_081",
+    "slug": "young-minds-counselling-ironwood",
+    "name": "Young Minds Counselling (Ironwood)",
+    "type": "Child services",
+    "neighbourhood": "Ironwood",
+    "address": "54 Station Rd",
+    "postal_code": "T2L 9G9",
+    "suitable_ages": [
+      "6-9",
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Child and youth counselling covering anxiety, school stress, grief, and family change."
+  },
+  {
+    "id": "org_082",
+    "slug": "early-years-development-clinic-ironwood",
+    "name": "Early Years Development Clinic (Ironwood)",
+    "type": "Child services",
+    "neighbourhood": "Ironwood",
+    "address": "780 Station Rd",
+    "postal_code": "T2K 4C1",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Developmental screening, speech and language support, and early intervention for young children."
+  },
+  {
+    "id": "org_083",
+    "slug": "regional-family-support-office-ironwood",
+    "name": "Regional Family Support Office (Ironwood)",
+    "type": "Government assistance",
+    "neighbourhood": "Ironwood",
+    "address": "52 Willow Rd",
+    "postal_code": "T2L 2R8",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Help applying for child benefits, income support, and emergency assistance; walk-ins and appointments."
+  },
+  {
+    "id": "org_084",
+    "slug": "housing-assistance-intake-centre-ironwood",
+    "name": "Housing Assistance Intake Centre (Ironwood)",
+    "type": "Government assistance",
+    "neighbourhood": "Ironwood",
+    "address": "581 Elm St",
+    "postal_code": "T2K 9K8",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Intake for rental assistance, affordable housing waitlists, and eviction-prevention support."
+  },
+  {
+    "id": "org_085",
+    "slug": "neighbourhood-outreach-hub-ironwood",
+    "name": "Neighbourhood Outreach Hub (Ironwood)",
+    "type": "Outreach",
+    "neighbourhood": "Ironwood",
+    "address": "280 Elm St",
+    "postal_code": "T2L 2W9",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Drop-in centre connecting families to food, clothing, transit passes, and local services, with a friendly front desk."
+  },
+  {
+    "id": "org_086",
+    "slug": "newcomer-family-welcome-centre-ironwood",
+    "name": "Newcomer Family Welcome Centre (Ironwood)",
+    "type": "Outreach",
+    "neighbourhood": "Ironwood",
+    "address": "104 Station Rd",
+    "postal_code": "T2K 8L2",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Settlement support, language classes, and family events for people new to the country."
+  },
+  {
+    "id": "org_087",
+    "slug": "big-steps-boys-mentorship-ironwood",
+    "name": "Big Steps Boys Mentorship (Ironwood)",
+    "type": "Youth program",
+    "neighbourhood": "Ironwood",
+    "address": "876 Harbour Dr",
+    "postal_code": "T2K 4K8",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Boy"
+    ],
+    "description": "Mentoring and sports for boys, paired with trained volunteer mentors."
+  },
+  {
+    "id": "org_088",
+    "slug": "saturday-kids-activity-club-ironwood",
+    "name": "Saturday Kids Activity Club (Ironwood)",
+    "type": "Youth program",
+    "neighbourhood": "Ironwood",
+    "address": "515 Pine Crescent",
+    "postal_code": "T2K 8M1",
+    "suitable_ages": [
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free weekend arts, games, and sports sessions run by neighbourhood volunteers."
+  },
+  {
+    "id": "org_089",
+    "slug": "little-sprouts-early-learning-stonegate",
+    "name": "Little Sprouts Early Learning (Stonegate)",
+    "type": "Daycare",
+    "neighbourhood": "Stonegate",
+    "address": "701 Oak Lane",
+    "postal_code": "T2N 9M8",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Licensed full-day child care for infants and preschoolers with play-based learning, hot lunches, and flexible hours for shift workers."
+  },
+  {
+    "id": "org_090",
+    "slug": "sunny-days-child-care-stonegate",
+    "name": "Sunny Days Child Care (Stonegate)",
+    "type": "Daycare",
+    "neighbourhood": "Stonegate",
+    "address": "487 Oak Lane",
+    "postal_code": "T2M 9J5",
+    "suitable_ages": [
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Half-day and full-day preschool with a sliding-scale fee for low-income families."
+  },
+  {
+    "id": "org_091",
+    "slug": "rainbow-playhouse-out-of-school-care-stonegate",
+    "name": "Rainbow Playhouse Out-of-School Care (Stonegate)",
+    "type": "Daycare",
+    "neighbourhood": "Stonegate",
+    "address": "97 Oak Lane",
+    "postal_code": "T2M 5T2",
+    "suitable_ages": [
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Before- and after-school care with homework help, snacks, and holiday day camps."
+  },
+  {
+    "id": "org_092",
+    "slug": "single-parents-circle-stonegate",
+    "name": "Single Parents Circle (Stonegate)",
+    "type": "Support program",
+    "neighbourhood": "Stonegate",
+    "address": "849 Station Rd",
+    "postal_code": "T2N 5R4",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly peer support meetups for single parents with a shared meal, guest speakers, and free child-minding on site."
+  },
+  {
+    "id": "org_093",
+    "slug": "moms-together-peer-group-stonegate",
+    "name": "Moms Together Peer Group (Stonegate)",
+    "type": "Support program",
+    "neighbourhood": "Stonegate",
+    "address": "948 Aspen Way",
+    "postal_code": "T2M 2G9",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "Woman"
+    ],
+    "description": "Women-only peer group offering friendship, parenting workshops, and monthly wellness mornings."
+  },
+  {
+    "id": "org_094",
+    "slug": "dads-connect-stonegate",
+    "name": "Dads Connect (Stonegate)",
+    "type": "Support program",
+    "neighbourhood": "Stonegate",
+    "address": "278 Sunrise Blvd",
+    "postal_code": "T2M 9L2",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "Man"
+    ],
+    "description": "Support group for fathers raising kids on their own, with parenting skills sessions and weekend family activities."
+  },
+  {
+    "id": "org_095",
+    "slug": "family-wellness-child-services-stonegate",
+    "name": "Family Wellness Child Services (Stonegate)",
+    "type": "Child services",
+    "neighbourhood": "Stonegate",
+    "address": "730 Sunrise Blvd",
+    "postal_code": "T2M 8V7",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Family counselling, parenting coaching, and referrals to community resources for families facing hardship."
+  },
+  {
+    "id": "org_096",
+    "slug": "early-years-development-clinic-stonegate",
+    "name": "Early Years Development Clinic (Stonegate)",
+    "type": "Child services",
+    "neighbourhood": "Stonegate",
+    "address": "35 Willow Rd",
+    "postal_code": "T2M 8T7",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Developmental screening, speech and language support, and early intervention for young children."
+  },
+  {
+    "id": "org_097",
+    "slug": "regional-family-support-office-stonegate",
+    "name": "Regional Family Support Office (Stonegate)",
+    "type": "Government assistance",
+    "neighbourhood": "Stonegate",
+    "address": "319 Willow Rd",
+    "postal_code": "T2N 6R6",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Help applying for child benefits, income support, and emergency assistance; walk-ins and appointments."
+  },
+  {
+    "id": "org_098",
+    "slug": "child-care-subsidy-office-stonegate",
+    "name": "Child Care Subsidy Office (Stonegate)",
+    "type": "Government assistance",
+    "neighbourhood": "Stonegate",
+    "address": "133 Sunrise Blvd",
+    "postal_code": "T2M 6N7",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Eligibility checks and applications for child care fee subsidies, with a same-day pre-screening service."
+  },
+  {
+    "id": "org_099",
+    "slug": "housing-assistance-intake-centre-stonegate",
+    "name": "Housing Assistance Intake Centre (Stonegate)",
+    "type": "Government assistance",
+    "neighbourhood": "Stonegate",
+    "address": "132 Aspen Way",
+    "postal_code": "T2M 5L6",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Intake for rental assistance, affordable housing waitlists, and eviction-prevention support."
+  },
+  {
+    "id": "org_100",
+    "slug": "newcomer-family-welcome-centre-stonegate",
+    "name": "Newcomer Family Welcome Centre (Stonegate)",
+    "type": "Outreach",
+    "neighbourhood": "Stonegate",
+    "address": "76 Pine Crescent",
+    "postal_code": "T2N 2P7",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Settlement support, language classes, and family events for people new to the country."
+  },
+  {
+    "id": "org_101",
+    "slug": "girls-rising-youth-club-stonegate",
+    "name": "Girls Rising Youth Club (Stonegate)",
+    "type": "Youth program",
+    "neighbourhood": "Stonegate",
+    "address": "783 Harbour Dr",
+    "postal_code": "T2M 5E1",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Girl"
+    ],
+    "description": "After-school club for girls with mentoring, coding workshops, and outdoor activities."
+  },
+  {
+    "id": "org_102",
+    "slug": "big-steps-boys-mentorship-stonegate",
+    "name": "Big Steps Boys Mentorship (Stonegate)",
+    "type": "Youth program",
+    "neighbourhood": "Stonegate",
+    "address": "864 Harbour Dr",
+    "postal_code": "T2M 4L7",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Boy"
+    ],
+    "description": "Mentoring and sports for boys, paired with trained volunteer mentors."
+  },
+  {
+    "id": "org_103",
+    "slug": "saturday-kids-activity-club-stonegate",
+    "name": "Saturday Kids Activity Club (Stonegate)",
+    "type": "Youth program",
+    "neighbourhood": "Stonegate",
+    "address": "533 Sunrise Blvd",
+    "postal_code": "T2M 6S1",
+    "suitable_ages": [
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free weekend arts, games, and sports sessions run by neighbourhood volunteers."
+  },
+  {
+    "id": "org_104",
+    "slug": "youth-drop-in-centre-stonegate",
+    "name": "Youth Drop-In Centre (Stonegate)",
+    "type": "Youth program",
+    "neighbourhood": "Stonegate",
+    "address": "841 Pine Crescent",
+    "postal_code": "T2M 2B7",
+    "suitable_ages": [
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Safe evening drop-in space for teens with snacks, homework help, and a counsellor on site."
+  },
+  {
+    "id": "org_105",
+    "slug": "sunny-days-child-care-birchwood",
+    "name": "Sunny Days Child Care (Birchwood)",
+    "type": "Daycare",
+    "neighbourhood": "Birchwood",
+    "address": "425 Aspen Way",
+    "postal_code": "T2R 8X7",
+    "suitable_ages": [
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Half-day and full-day preschool with a sliding-scale fee for low-income families."
+  },
+  {
+    "id": "org_106",
+    "slug": "moms-together-peer-group-birchwood",
+    "name": "Moms Together Peer Group (Birchwood)",
+    "type": "Support program",
+    "neighbourhood": "Birchwood",
+    "address": "132 Willow Rd",
+    "postal_code": "T2P 2J9",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "Woman"
+    ],
+    "description": "Women-only peer group offering friendship, parenting workshops, and monthly wellness mornings."
+  },
+  {
+    "id": "org_107",
+    "slug": "dads-connect-birchwood",
+    "name": "Dads Connect (Birchwood)",
+    "type": "Support program",
+    "neighbourhood": "Birchwood",
+    "address": "937 Oak Lane",
+    "postal_code": "T2P 8N8",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "Man"
+    ],
+    "description": "Support group for fathers raising kids on their own, with parenting skills sessions and weekend family activities."
+  },
+  {
+    "id": "org_108",
+    "slug": "young-minds-counselling-birchwood",
+    "name": "Young Minds Counselling (Birchwood)",
+    "type": "Child services",
+    "neighbourhood": "Birchwood",
+    "address": "447 Willow Rd",
+    "postal_code": "T2P 4C3",
+    "suitable_ages": [
+      "6-9",
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Child and youth counselling covering anxiety, school stress, grief, and family change."
+  },
+  {
+    "id": "org_109",
+    "slug": "regional-family-support-office-birchwood",
+    "name": "Regional Family Support Office (Birchwood)",
+    "type": "Government assistance",
+    "neighbourhood": "Birchwood",
+    "address": "360 Station Rd",
+    "postal_code": "T2P 6K6",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Help applying for child benefits, income support, and emergency assistance; walk-ins and appointments."
+  },
+  {
+    "id": "org_110",
+    "slug": "housing-assistance-intake-centre-birchwood",
+    "name": "Housing Assistance Intake Centre (Birchwood)",
+    "type": "Government assistance",
+    "neighbourhood": "Birchwood",
+    "address": "274 Meadow Ct",
+    "postal_code": "T2P 1S7",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Intake for rental assistance, affordable housing waitlists, and eviction-prevention support."
+  },
+  {
+    "id": "org_111",
+    "slug": "neighbourhood-outreach-hub-birchwood",
+    "name": "Neighbourhood Outreach Hub (Birchwood)",
+    "type": "Outreach",
+    "neighbourhood": "Birchwood",
+    "address": "433 Station Rd",
+    "postal_code": "T2P 7L6",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Drop-in centre connecting families to food, clothing, transit passes, and local services, with a friendly front desk."
+  },
+  {
+    "id": "org_112",
+    "slug": "community-food-pantry-meal-share-birchwood",
+    "name": "Community Food Pantry & Meal Share (Birchwood)",
+    "type": "Outreach",
+    "neighbourhood": "Birchwood",
+    "address": "780 Elm St",
+    "postal_code": "T2R 5Y6",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly grocery hampers and a community dinner open to all families, no questions asked."
+  },
+  {
+    "id": "org_113",
+    "slug": "newcomer-family-welcome-centre-birchwood",
+    "name": "Newcomer Family Welcome Centre (Birchwood)",
+    "type": "Outreach",
+    "neighbourhood": "Birchwood",
+    "address": "138 Station Rd",
+    "postal_code": "T2P 2L4",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Settlement support, language classes, and family events for people new to the country."
+  },
+  {
+    "id": "org_114",
+    "slug": "family-legal-aid-clinic-birchwood",
+    "name": "Family Legal Aid Clinic (Birchwood)",
+    "type": "Outreach",
+    "neighbourhood": "Birchwood",
+    "address": "403 Pine Crescent",
+    "postal_code": "T2R 7M1",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free legal advice on custody, support payments, and tenancy, offered by volunteer lawyers twice a week."
+  },
+  {
+    "id": "org_115",
+    "slug": "girls-rising-youth-club-birchwood",
+    "name": "Girls Rising Youth Club (Birchwood)",
+    "type": "Youth program",
+    "neighbourhood": "Birchwood",
+    "address": "140 Elm St",
+    "postal_code": "T2R 8Y8",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Girl"
+    ],
+    "description": "After-school club for girls with mentoring, coding workshops, and outdoor activities."
+  },
+  {
+    "id": "org_116",
+    "slug": "big-steps-boys-mentorship-birchwood",
+    "name": "Big Steps Boys Mentorship (Birchwood)",
+    "type": "Youth program",
+    "neighbourhood": "Birchwood",
+    "address": "10 Birch Ave",
+    "postal_code": "T2R 9T8",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Boy"
+    ],
+    "description": "Mentoring and sports for boys, paired with trained volunteer mentors."
+  },
+  {
+    "id": "org_117",
+    "slug": "saturday-kids-activity-club-birchwood",
+    "name": "Saturday Kids Activity Club (Birchwood)",
+    "type": "Youth program",
+    "neighbourhood": "Birchwood",
+    "address": "264 Birch Ave",
+    "postal_code": "T2P 3G9",
+    "suitable_ages": [
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free weekend arts, games, and sports sessions run by neighbourhood volunteers."
+  },
+  {
+    "id": "org_118",
+    "slug": "youth-drop-in-centre-birchwood",
+    "name": "Youth Drop-In Centre (Birchwood)",
+    "type": "Youth program",
+    "neighbourhood": "Birchwood",
+    "address": "708 Birch Ave",
+    "postal_code": "T2R 2X1",
+    "suitable_ages": [
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Safe evening drop-in space for teens with snacks, homework help, and a counsellor on site."
+  },
+  {
+    "id": "org_119",
+    "slug": "parent-child-swim-and-play-birchwood",
+    "name": "Parent & Child Swim and Play (Birchwood)",
+    "type": "Youth program",
+    "neighbourhood": "Birchwood",
+    "address": "11 Willow Rd",
+    "postal_code": "T2P 1M3",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly parent-and-child swim sessions followed by a playgroup; a good first step for isolated parents."
+  },
+  {
+    "id": "org_120",
+    "slug": "little-sprouts-early-learning-foxglen",
+    "name": "Little Sprouts Early Learning (Foxglen)",
+    "type": "Daycare",
+    "neighbourhood": "Foxglen",
+    "address": "481 Harbour Dr",
+    "postal_code": "T3H 4V9",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Licensed full-day child care for infants and preschoolers with play-based learning, hot lunches, and flexible hours for shift workers."
+  },
+  {
+    "id": "org_121",
+    "slug": "rainbow-playhouse-out-of-school-care-foxglen",
+    "name": "Rainbow Playhouse Out-of-School Care (Foxglen)",
+    "type": "Daycare",
+    "neighbourhood": "Foxglen",
+    "address": "250 Station Rd",
+    "postal_code": "T3G 1S5",
+    "suitable_ages": [
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Before- and after-school care with homework help, snacks, and holiday day camps."
+  },
+  {
+    "id": "org_122",
+    "slug": "drop-in-playroom-foxglen",
+    "name": "Drop-In Playroom (Foxglen)",
+    "type": "Daycare",
+    "neighbourhood": "Foxglen",
+    "address": "66 Elm St",
+    "postal_code": "T3G 8S2",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Short-term drop-in child care (up to 3 hours) so parents can attend appointments or run errands."
+  },
+  {
+    "id": "org_123",
+    "slug": "single-parents-circle-foxglen",
+    "name": "Single Parents Circle (Foxglen)",
+    "type": "Support program",
+    "neighbourhood": "Foxglen",
+    "address": "273 Aspen Way",
+    "postal_code": "T3H 6K8",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly peer support meetups for single parents with a shared meal, guest speakers, and free child-minding on site."
+  },
+  {
+    "id": "org_124",
+    "slug": "moms-together-peer-group-foxglen",
+    "name": "Moms Together Peer Group (Foxglen)",
+    "type": "Support program",
+    "neighbourhood": "Foxglen",
+    "address": "44 Sunrise Blvd",
+    "postal_code": "T3H 6R4",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "Woman"
+    ],
+    "description": "Women-only peer group offering friendship, parenting workshops, and monthly wellness mornings."
+  },
+  {
+    "id": "org_125",
+    "slug": "parent-respite-nights-foxglen",
+    "name": "Parent Respite Nights (Foxglen)",
+    "type": "Support program",
+    "neighbourhood": "Foxglen",
+    "address": "16 Harbour Dr",
+    "postal_code": "T3G 4V4",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Monthly evenings where trained volunteers care for kids so parents can rest; includes dinner for the children."
+  },
+  {
+    "id": "org_126",
+    "slug": "calm-harbour-parent-wellness-foxglen",
+    "name": "Calm Harbour Parent Wellness (Foxglen)",
+    "type": "Support program",
+    "neighbourhood": "Foxglen",
+    "address": "329 Aspen Way",
+    "postal_code": "T3G 8K5",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free group counselling and stress-management workshops for parents, with evening and online options."
+  },
+  {
+    "id": "org_127",
+    "slug": "young-minds-counselling-foxglen",
+    "name": "Young Minds Counselling (Foxglen)",
+    "type": "Child services",
+    "neighbourhood": "Foxglen",
+    "address": "788 Harbour Dr",
+    "postal_code": "T3G 8Z3",
+    "suitable_ages": [
+      "6-9",
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Child and youth counselling covering anxiety, school stress, grief, and family change."
+  },
+  {
+    "id": "org_128",
+    "slug": "early-years-development-clinic-foxglen",
+    "name": "Early Years Development Clinic (Foxglen)",
+    "type": "Child services",
+    "neighbourhood": "Foxglen",
+    "address": "927 Aspen Way",
+    "postal_code": "T3H 7B3",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Developmental screening, speech and language support, and early intervention for young children."
+  },
+  {
+    "id": "org_129",
+    "slug": "regional-family-support-office-foxglen",
+    "name": "Regional Family Support Office (Foxglen)",
+    "type": "Government assistance",
+    "neighbourhood": "Foxglen",
+    "address": "954 Pine Crescent",
+    "postal_code": "T3G 4A3",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Help applying for child benefits, income support, and emergency assistance; walk-ins and appointments."
+  },
+  {
+    "id": "org_130",
+    "slug": "child-care-subsidy-office-foxglen",
+    "name": "Child Care Subsidy Office (Foxglen)",
+    "type": "Government assistance",
+    "neighbourhood": "Foxglen",
+    "address": "435 Elm St",
+    "postal_code": "T3G 3R8",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Eligibility checks and applications for child care fee subsidies, with a same-day pre-screening service."
+  },
+  {
+    "id": "org_131",
+    "slug": "housing-assistance-intake-centre-foxglen",
+    "name": "Housing Assistance Intake Centre (Foxglen)",
+    "type": "Government assistance",
+    "neighbourhood": "Foxglen",
+    "address": "929 Sunrise Blvd",
+    "postal_code": "T3G 2H6",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Intake for rental assistance, affordable housing waitlists, and eviction-prevention support."
+  },
+  {
+    "id": "org_132",
+    "slug": "neighbourhood-outreach-hub-foxglen",
+    "name": "Neighbourhood Outreach Hub (Foxglen)",
+    "type": "Outreach",
+    "neighbourhood": "Foxglen",
+    "address": "205 Willow Rd",
+    "postal_code": "T3H 1M7",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Drop-in centre connecting families to food, clothing, transit passes, and local services, with a friendly front desk."
+  },
+  {
+    "id": "org_133",
+    "slug": "family-legal-aid-clinic-foxglen",
+    "name": "Family Legal Aid Clinic (Foxglen)",
+    "type": "Outreach",
+    "neighbourhood": "Foxglen",
+    "address": "869 Sunrise Blvd",
+    "postal_code": "T3H 8H2",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free legal advice on custody, support payments, and tenancy, offered by volunteer lawyers twice a week."
+  },
+  {
+    "id": "org_134",
+    "slug": "girls-rising-youth-club-foxglen",
+    "name": "Girls Rising Youth Club (Foxglen)",
+    "type": "Youth program",
+    "neighbourhood": "Foxglen",
+    "address": "12 Birch Ave",
+    "postal_code": "T3H 2P7",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Girl"
+    ],
+    "description": "After-school club for girls with mentoring, coding workshops, and outdoor activities."
+  },
+  {
+    "id": "org_135",
+    "slug": "saturday-kids-activity-club-foxglen",
+    "name": "Saturday Kids Activity Club (Foxglen)",
+    "type": "Youth program",
+    "neighbourhood": "Foxglen",
+    "address": "988 Birch Ave",
+    "postal_code": "T3G 7P5",
+    "suitable_ages": [
+      "6-9",
+      "10-13"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free weekend arts, games, and sports sessions run by neighbourhood volunteers."
+  },
+  {
+    "id": "org_136",
+    "slug": "youth-drop-in-centre-foxglen",
+    "name": "Youth Drop-In Centre (Foxglen)",
+    "type": "Youth program",
+    "neighbourhood": "Foxglen",
+    "address": "851 Pine Crescent",
+    "postal_code": "T3G 1V4",
+    "suitable_ages": [
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Safe evening drop-in space for teens with snacks, homework help, and a counsellor on site."
+  },
+  {
+    "id": "org_137",
+    "slug": "little-sprouts-early-learning-summit-park",
+    "name": "Little Sprouts Early Learning (Summit Park)",
+    "type": "Daycare",
+    "neighbourhood": "Summit Park",
+    "address": "832 Elm St",
+    "postal_code": "T3K 4C6",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Licensed full-day child care for infants and preschoolers with play-based learning, hot lunches, and flexible hours for shift workers."
+  },
+  {
+    "id": "org_138",
+    "slug": "sunny-days-child-care-summit-park",
+    "name": "Sunny Days Child Care (Summit Park)",
+    "type": "Daycare",
+    "neighbourhood": "Summit Park",
+    "address": "381 Harbour Dr",
+    "postal_code": "T3K 1L6",
+    "suitable_ages": [
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Half-day and full-day preschool with a sliding-scale fee for low-income families."
+  },
+  {
+    "id": "org_139",
+    "slug": "drop-in-playroom-summit-park",
+    "name": "Drop-In Playroom (Summit Park)",
+    "type": "Daycare",
+    "neighbourhood": "Summit Park",
+    "address": "956 Harbour Dr",
+    "postal_code": "T3K 1Z2",
+    "suitable_ages": [
+      "0-2",
+      "3-5"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Short-term drop-in child care (up to 3 hours) so parents can attend appointments or run errands."
+  },
+  {
+    "id": "org_140",
+    "slug": "moms-together-peer-group-summit-park",
+    "name": "Moms Together Peer Group (Summit Park)",
+    "type": "Support program",
+    "neighbourhood": "Summit Park",
+    "address": "34 Aspen Way",
+    "postal_code": "T3J 8T7",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "Woman"
+    ],
+    "description": "Women-only peer group offering friendship, parenting workshops, and monthly wellness mornings."
+  },
+  {
+    "id": "org_141",
+    "slug": "calm-harbour-parent-wellness-summit-park",
+    "name": "Calm Harbour Parent Wellness (Summit Park)",
+    "type": "Support program",
+    "neighbourhood": "Summit Park",
+    "address": "818 Harbour Dr",
+    "postal_code": "T3K 8G8",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free group counselling and stress-management workshops for parents, with evening and online options."
+  },
+  {
+    "id": "org_142",
+    "slug": "family-wellness-child-services-summit-park",
+    "name": "Family Wellness Child Services (Summit Park)",
+    "type": "Child services",
+    "neighbourhood": "Summit Park",
+    "address": "197 Elm St",
+    "postal_code": "T3K 3Z4",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Family counselling, parenting coaching, and referrals to community resources for families facing hardship."
+  },
+  {
+    "id": "org_143",
+    "slug": "young-minds-counselling-summit-park",
+    "name": "Young Minds Counselling (Summit Park)",
+    "type": "Child services",
+    "neighbourhood": "Summit Park",
+    "address": "345 Sunrise Blvd",
+    "postal_code": "T3K 6Z2",
+    "suitable_ages": [
+      "6-9",
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Child and youth counselling covering anxiety, school stress, grief, and family change."
+  },
+  {
+    "id": "org_144",
+    "slug": "child-care-subsidy-office-summit-park",
+    "name": "Child Care Subsidy Office (Summit Park)",
+    "type": "Government assistance",
+    "neighbourhood": "Summit Park",
+    "address": "534 Aspen Way",
+    "postal_code": "T3K 3K7",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Eligibility checks and applications for child care fee subsidies, with a same-day pre-screening service."
+  },
+  {
+    "id": "org_145",
+    "slug": "community-food-pantry-meal-share-summit-park",
+    "name": "Community Food Pantry & Meal Share (Summit Park)",
+    "type": "Outreach",
+    "neighbourhood": "Summit Park",
+    "address": "76 Elm St",
+    "postal_code": "T3K 9X6",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Weekly grocery hampers and a community dinner open to all families, no questions asked."
+  },
+  {
+    "id": "org_146",
+    "slug": "newcomer-family-welcome-centre-summit-park",
+    "name": "Newcomer Family Welcome Centre (Summit Park)",
+    "type": "Outreach",
+    "neighbourhood": "Summit Park",
+    "address": "174 Pine Crescent",
+    "postal_code": "T3J 2L2",
+    "suitable_ages": [
+      "0-2",
+      "3-5",
+      "6-9",
+      "10-13",
+      "14-17",
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Settlement support, language classes, and family events for people new to the country."
+  },
+  {
+    "id": "org_147",
+    "slug": "family-legal-aid-clinic-summit-park",
+    "name": "Family Legal Aid Clinic (Summit Park)",
+    "type": "Outreach",
+    "neighbourhood": "Summit Park",
+    "address": "223 Birch Ave",
+    "postal_code": "T3K 8T3",
+    "suitable_ages": [
+      "Adults"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Free legal advice on custody, support payments, and tenancy, offered by volunteer lawyers twice a week."
+  },
+  {
+    "id": "org_148",
+    "slug": "girls-rising-youth-club-summit-park",
+    "name": "Girls Rising Youth Club (Summit Park)",
+    "type": "Youth program",
+    "neighbourhood": "Summit Park",
+    "address": "249 Willow Rd",
+    "postal_code": "T3K 8Z4",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Girl"
+    ],
+    "description": "After-school club for girls with mentoring, coding workshops, and outdoor activities."
+  },
+  {
+    "id": "org_149",
+    "slug": "big-steps-boys-mentorship-summit-park",
+    "name": "Big Steps Boys Mentorship (Summit Park)",
+    "type": "Youth program",
+    "neighbourhood": "Summit Park",
+    "address": "775 Station Rd",
+    "postal_code": "T3J 5M5",
+    "suitable_ages": [
+      "10-13",
+      "14-17"
+    ],
+    "suitable_genders": [
+      "Boy"
+    ],
+    "description": "Mentoring and sports for boys, paired with trained volunteer mentors."
+  },
+  {
+    "id": "org_150",
+    "slug": "youth-drop-in-centre-summit-park",
+    "name": "Youth Drop-In Centre (Summit Park)",
+    "type": "Youth program",
+    "neighbourhood": "Summit Park",
+    "address": "590 Harbour Dr",
+    "postal_code": "T3K 5L4",
+    "suitable_ages": [
+      "14-17"
+    ],
+    "suitable_genders": [
+      "All"
+    ],
+    "description": "Safe evening drop-in space for teens with snacks, homework help, and a counsellor on site."
   }
 ]

@@ -1,31 +1,528 @@
 id,display_name,neighbourhood,postal_code,children_age_ranges,children_genders,parent_gender
-fam_001,Grace L.,Parkview,T2H 2C7,10-13,Girl,Woman
-fam_002,Aisha M.,Parkview,T2J 4C1,0-2|14-17,Girl|Boy,Woman
-fam_003,Maria J.,Parkview,T2H 2Z3,3-5|6-9|10-13,Girl|Girl|Girl,Woman
-fam_004,Rosa L.,Maple Hollow,T2B 7L2,3-5|6-9|14-17,Boy|Girl|Boy,Woman
-fam_005,Fatima J.,Lakeside,T3E 7Y7,3-5|10-13,Girl|Boy,Woman
-fam_006,Mei F.,Lakeside,T3C 7Z2,0-2,Girl,Woman
-fam_007,Ethan K.,Cedar Ridge,T3B 7H8,0-2|6-9|14-17,Boy|Boy|Girl,Woman
-fam_008,Daniel G.,Parkview,T2J 3P3,0-2|14-17,Girl|Boy,Woman
-fam_009,Bianca B.,Parkview,T2H 4Y2,0-2|6-9,Boy|Girl,Woman
-fam_010,Kenji T.,Riverbend,T2C 7J9,3-5|14-17,Boy|Girl,Woman
-fam_011,Sam C.,Cedar Ridge,T3B 6A9,6-9|10-13,Girl|Girl,Woman
-fam_012,Leila C.,Maple Hollow,T2A 9K5,0-2,Boy,Woman
-fam_013,Diego P.,Maple Hollow,T2A 6S7,0-2|10-13|14-17,Boy|Girl|Girl,Woman
-fam_014,Priya L.,Parkview,T2H 2K4,,,Woman
-fam_015,Colin W.,Riverbend,T2E 1C4,0-2|10-13,Boy|Girl,Woman
-fam_016,Tasha P.,Riverbend,T2C 9V3,0-2|3-5|10-13,Girl|Boy|Girl,Woman
-fam_017,Andre S.,Maple Hollow,T2A 9W3,0-2|6-9,,Woman
-fam_018,Tariq C.,Riverbend,T2C 4R2,,,Man
-fam_019,Amara J.,Cedar Ridge,T3A 4N4,14-17,Girl,Woman
-fam_020,Liam T.,Maple Hollow,T2B 5G6,0-2|3-5|14-17,Boy|Girl|Boy,Man
-fam_021,Ben T.,Parkview,T2J 1X5,14-17,Boy,Man
-fam_022,Omar J.,Maple Hollow,T2A 9V5,3-5|10-13|14-17,Girl|Girl|Boy,Man
-fam_023,Hannah F.,Parkview,T2H 8X7,0-2|14-17,Girl|Non-binary,Woman
-fam_024,Chloe B.,Maple Hollow,T2A 6J4,3-5|14-17,Girl|Girl,Woman
-fam_025,Jamal A.,Riverbend,T2E 3N7,3-5|14-17,Boy|Boy,Man
-fam_026,Yuna R.,Parkview,T2H 6M4,0-2|10-13,Boy|Girl,Woman
-fam_027,Noor A.,Cedar Ridge,T3B 2L3,6-9|10-13|14-17,Boy|Boy|Girl,Woman
-fam_028,Sofia D.,Lakeside,T3C 7Y4,6-9,Prefer not to say,Woman
-fam_029,Nadia L.,Parkview,T2H 2M9,3-5|6-9,Boy|Boy,Woman
-fam_030,Marcus F.,Riverbend,T2E 5R9,3-5|10-13,Girl|Boy,Man
+fam_001,Nadia A.,Maple Hollow,T2B 2Y7,0-2,Boy,Woman
+fam_002,Omar G.,Maple Hollow,T2A 7K8,3-5,Boy,Woman
+fam_003,Maria F.,Maple Hollow,T2B 7E6,6-9,,Man
+fam_004,Aaron J.,Maple Hollow,T2A 6Y4,0-2|10-13,Boy|Boy,Woman
+fam_005,Chloe H.,Maple Hollow,T2B 5C3,0-2|3-5|10-13,Boy|Girl|Girl,Woman
+fam_006,Arjun F.,Maple Hollow,T2B 6R5,3-5|6-9|14-17,Boy|Girl|Boy,Woman
+fam_007,Talia L.,Maple Hollow,T2A 3K9,10-13,,Woman
+fam_008,Wren P.,Maple Hollow,T2B 7Z2,0-2|3-5|10-13,Boy|Girl|Girl,Woman
+fam_009,Paloma R.,Maple Hollow,T2B 5S3,0-2|6-9|14-17,Boy|Boy|Girl,Woman
+fam_010,Lucas T.,Maple Hollow,T2A 4G6,6-9,Boy,Woman
+fam_011,Ravi T.,Maple Hollow,T2A 1K2,0-2|6-9,Boy|Girl,Woman
+fam_012,Ruth C.,Maple Hollow,T2A 4X4,3-5|14-17,Boy|Girl,Woman
+fam_013,Oscar M.,Maple Hollow,T2B 1Y9,3-5|14-17,,Woman
+fam_014,Bianca A.,Maple Hollow,T2A 2W4,0-2,Boy,Woman
+fam_015,Ruth G.,Maple Hollow,T2A 7P7,0-2|10-13|14-17,Boy|Girl|Girl,Woman
+fam_016,Jamal D.,Maple Hollow,T2A 8G7,0-2,Girl,Woman
+fam_017,Jasper H.,Maple Hollow,T2A 4H7,0-2|10-13|14-17,Boy|Girl|Girl,Woman
+fam_018,Colin N.,Maple Hollow,T2A 8M7,10-13,Boy,Woman
+fam_019,Musa S.,Maple Hollow,T2A 6B1,0-2,Boy,Woman
+fam_020,Mira T.,Maple Hollow,T2A 9C3,,,Woman
+fam_021,Fatima H.,Maple Hollow,T2B 9N5,0-2|3-5|6-9,,Woman
+fam_022,Simone H.,Maple Hollow,T2B 8Z2,6-9|10-13,Boy|Girl,Woman
+fam_023,Colin T.,Maple Hollow,T2B 3T9,0-2,Girl,Woman
+fam_024,Selin T.,Maple Hollow,T2A 3L5,0-2|3-5,Boy|Boy,Woman
+fam_025,Theo G.,Maple Hollow,T2B 7L1,0-2,,Woman
+fam_026,Tasha J.,Maple Hollow,T2A 3X1,0-2|10-13,,Man
+fam_027,Wren W.,Maple Hollow,T2A 1P4,6-9,Boy,Woman
+fam_028,Diego M.,Maple Hollow,T2B 1H6,3-5|14-17,Boy|Boy,Man
+fam_029,Sana H.,Maple Hollow,T2B 8P5,0-2|10-13,Girl|Boy,Man
+fam_030,Tariq H.,Maple Hollow,T2A 5P9,6-9,Non-binary,Woman
+fam_031,Clara L.,Maple Hollow,T2A 7P6,0-2|3-5|6-9,,Woman
+fam_032,Tomas D.,Maple Hollow,T2B 9J6,0-2,Girl,Woman
+fam_033,Ayesha L.,Maple Hollow,T2A 5X3,6-9,Girl,Woman
+fam_034,Lina F.,Maple Hollow,T2B 6T8,6-9|14-17,Boy|Boy,Woman
+fam_035,Lucia F.,Maple Hollow,T2A 4M4,6-9|14-17,,Man
+fam_036,Leila A.,Maple Hollow,T2A 7V7,0-2|10-13,Boy|Girl,Woman
+fam_037,Maria D.,Maple Hollow,T2B 4E8,10-13|14-17,,Woman
+fam_038,Jasper T.,Maple Hollow,T2B 4L9,6-9|10-13|14-17,Girl|Boy|Girl,Woman
+fam_039,Olivia J.,Maple Hollow,T2B 5K5,,,Woman
+fam_040,Ravi C.,Maple Hollow,T2A 7N9,3-5,Girl,Woman
+fam_041,Mei G.,Maple Hollow,T2B 7S9,0-2|10-13,Boy|Girl,Woman
+fam_042,Ravi H.,Maple Hollow,T2B 7H8,0-2,Boy,Man
+fam_043,Joel W.,Maple Hollow,T2A 1L7,0-2|14-17,Girl|Girl,Woman
+fam_044,Anika L.,Maple Hollow,T2B 1X1,10-13,Girl,Prefer not to say
+fam_045,Camila H.,Maple Hollow,T2A 1Z3,0-2|3-5,,Woman
+fam_046,Lucia D.,Maple Hollow,T2A 2H5,6-9,,Woman
+fam_047,Aisha K.,Maple Hollow,T2B 5Z2,0-2|3-5,,Man
+fam_048,Talia B.,Maple Hollow,T2B 7V2,0-2|6-9,,Woman
+fam_049,Naomi R.,Maple Hollow,T2A 6K2,6-9|10-13,Boy|Boy,Woman
+fam_050,Malik H.,Maple Hollow,T2B 6L6,0-2|6-9,Girl|Boy,Woman
+fam_051,Paloma J.,Maple Hollow,T2A 4V8,3-5,Boy,Woman
+fam_052,Sam C.,Maple Hollow,T2B 9N6,6-9|14-17,Boy|Girl,Woman
+fam_053,Ines K.,Maple Hollow,T2B 4J8,0-2|6-9,Boy|Boy,Woman
+fam_054,Idris T.,Maple Hollow,T2B 3L1,3-5|6-9,Girl|Boy,Prefer not to say
+fam_055,Ingrid K.,Maple Hollow,T2A 3B5,0-2|14-17,Girl|Girl,Man
+fam_056,Emeka D.,Maple Hollow,T2A 5C4,0-2,,Woman
+fam_057,Pablo H.,Maple Hollow,T2B 1Z2,14-17,Girl,Man
+fam_058,Noor G.,Maple Hollow,T2B 7T8,3-5,Girl,Woman
+fam_059,Tariq K.,Maple Hollow,T2B 4S2,3-5|6-9,Boy|Boy,Woman
+fam_060,Marcus J.,Maple Hollow,T2A 3M5,,,Woman
+fam_061,Elena N.,Riverbend,T2E 1C4,0-2|14-17,Boy|Boy,Non-binary
+fam_062,Nico A.,Riverbend,T2E 7V2,3-5|10-13,Girl|Girl,Woman
+fam_063,Sana L.,Riverbend,T2E 1T2,6-9|10-13|14-17,Boy|Girl|Boy,Woman
+fam_064,Felix D.,Riverbend,T2E 8T1,0-2|10-13,Girl|Girl,Woman
+fam_065,Ingrid E.,Riverbend,T2E 3M9,0-2|14-17,Boy|Girl,Woman
+fam_066,Sana C.,Riverbend,T2C 5S8,0-2|6-9|10-13,Boy|Boy|Boy,Prefer not to say
+fam_067,Arjun R.,Riverbend,T2C 9L1,0-2|3-5|14-17,Boy|Girl|Boy,Woman
+fam_068,Elena S.,Riverbend,T2C 4Y7,6-9|10-13,Girl|Girl,Woman
+fam_069,Sana B.,Riverbend,T2E 3V1,10-13|14-17,Boy|Boy,Woman
+fam_070,Idris L.,Riverbend,T2C 3S3,14-17,Girl,Woman
+fam_071,Lucas L.,Riverbend,T2E 2K5,3-5|10-13|14-17,Boy|Boy|Boy,Prefer not to say
+fam_072,Omar P.,Riverbend,T2C 5A1,0-2|10-13,,Woman
+fam_073,Mei K.,Riverbend,T2E 3H3,14-17,Boy,Woman
+fam_074,Lina H.,Riverbend,T2E 1T5,10-13,Girl,Woman
+fam_075,Grace C.,Riverbend,T2E 8E4,6-9|10-13|14-17,Boy|Girl|Girl,Woman
+fam_076,Dev K.,Riverbend,T2E 7L1,,,Woman
+fam_077,Jamal S.,Riverbend,T2E 5G2,6-9,Girl,Man
+fam_078,Chloe K.,Riverbend,T2E 6G2,,,Man
+fam_079,Felix P.,Riverbend,T2C 8M6,6-9|14-17,Girl|Boy,Man
+fam_080,Jasper C.,Riverbend,T2C 6C7,10-13,Boy,Woman
+fam_081,Clara D.,Riverbend,T2E 4V1,6-9|10-13,Boy|Girl,Woman
+fam_082,Musa L.,Riverbend,T2C 1M8,6-9|10-13,Girl|Girl,Woman
+fam_083,Olivia W.,Riverbend,T2C 3S2,14-17,Boy,Man
+fam_084,Selin P.,Riverbend,T2E 6J8,,,Woman
+fam_085,Olivia M.,Riverbend,T2C 5J2,6-9,,Man
+fam_086,Anika C.,Riverbend,T2C 4C9,0-2|14-17,Girl|Girl,Woman
+fam_087,Colin H.,Riverbend,T2E 9L3,0-2|14-17,Prefer not to say|Prefer not to say,Woman
+fam_088,Aisha E.,Riverbend,T2C 5B3,6-9|14-17,,Woman
+fam_089,Yusuf D.,Riverbend,T2C 9M8,0-2|14-17,Girl|Boy,Woman
+fam_090,Aisha B.,Riverbend,T2E 2C6,0-2,Boy,Woman
+fam_091,Fatima E.,Riverbend,T2E 7E2,6-9|10-13,Boy|Girl,Man
+fam_092,Ingrid G.,Riverbend,T2E 2N7,6-9,Girl,Woman
+fam_093,Zara M.,Riverbend,T2C 2P3,0-2|14-17,,Woman
+fam_094,Idris W.,Riverbend,T2E 5Z5,10-13,Boy,Woman
+fam_095,Nico T.,Riverbend,T2C 4S9,0-2|6-9,Girl|Boy,Prefer not to say
+fam_096,Aisha J.,Riverbend,T2C 7C3,6-9|14-17,Girl|Girl,Woman
+fam_097,Aisha C.,Riverbend,T2C 2B3,3-5|6-9,Girl|Boy,Woman
+fam_098,Joel B.,Riverbend,T2C 6S2,10-13|14-17,Girl|Boy,Woman
+fam_099,Idris S.,Riverbend,T2E 7Z1,,,Woman
+fam_100,Elena G.,Riverbend,T2C 7H3,0-2,,Woman
+fam_101,Tariq T.,Riverbend,T2E 1S1,,,Woman
+fam_102,Liam L.,Riverbend,T2E 1N3,6-9|10-13,,Man
+fam_103,Joel R.,Riverbend,T2E 2K7,,,Woman
+fam_104,Yusuf C.,Riverbend,T2E 9W4,3-5|6-9,Girl|Boy,Man
+fam_105,Camila M.,Riverbend,T2C 3C3,3-5,,Non-binary
+fam_106,Kai R.,Riverbend,T2E 5Y1,6-9|10-13|14-17,Girl|Girl|Boy,Woman
+fam_107,Liam K.,Riverbend,T2E 2Z9,6-9,,Woman
+fam_108,Chloe R.,Riverbend,T2C 2W3,0-2|3-5,Boy|Boy,Woman
+fam_109,Freya R.,Riverbend,T2C 6E9,3-5|10-13|14-17,Girl|Boy|Girl,Woman
+fam_110,Hana J.,Riverbend,T2C 3Z2,3-5|6-9,Boy|Boy,Woman
+fam_111,Lina L.,Riverbend,T2C 6M3,0-2|14-17,Girl|Girl,Non-binary
+fam_112,Theo S.,Riverbend,T2C 9X9,0-2,Boy,Woman
+fam_113,Theo E.,Riverbend,T2E 8B7,14-17,Girl,Woman
+fam_114,Olivia R.,Riverbend,T2E 4P8,3-5|14-17,Boy|Girl,Woman
+fam_115,Lina T.,Cedar Ridge,T3B 6X2,3-5|14-17,Girl|Boy,Woman
+fam_116,Esther D.,Cedar Ridge,T3B 3L8,,,Man
+fam_117,Leila P.,Cedar Ridge,T3A 7B7,10-13,Boy,Woman
+fam_118,Olivia N.,Cedar Ridge,T3A 3G1,0-2,Boy,Woman
+fam_119,Lucia E.,Cedar Ridge,T3B 4G9,0-2,,Man
+fam_120,Aaron T.,Cedar Ridge,T3B 4S8,6-9,,Woman
+fam_121,Kai W.,Cedar Ridge,T3A 7H2,3-5|6-9,Boy|Girl,Woman
+fam_122,Naomi C.,Cedar Ridge,T3A 6K2,6-9|10-13,Girl|Boy,Woman
+fam_123,Ayesha E.,Cedar Ridge,T3A 8H3,3-5,Boy,Woman
+fam_124,Anika B.,Cedar Ridge,T3B 9V5,0-2|6-9,Boy|Prefer not to say,Woman
+fam_125,Ethan K.,Cedar Ridge,T3B 7R8,6-9,Boy,Man
+fam_126,Victor L.,Cedar Ridge,T3A 3X5,6-9|14-17,Boy|Girl,Woman
+fam_127,Sofia L.,Cedar Ridge,T3B 6Z7,3-5|10-13,Girl|Girl,Woman
+fam_128,Mei C.,Cedar Ridge,T3B 8B3,0-2|3-5,,Woman
+fam_129,Naomi M.,Cedar Ridge,T3B 6T2,3-5,Boy,Woman
+fam_130,Yusuf M.,Cedar Ridge,T3B 3V9,0-2,,Woman
+fam_131,Musa D.,Cedar Ridge,T3B 3C8,3-5|6-9,Prefer not to say|Girl,Woman
+fam_132,Freya C.,Cedar Ridge,T3B 3P9,6-9|14-17,Boy|Boy,Woman
+fam_133,Amara E.,Cedar Ridge,T3A 9G2,14-17,Girl,Woman
+fam_134,Imani S.,Cedar Ridge,T3B 9P3,0-2|3-5,Boy|Girl,Man
+fam_135,Ingrid F.,Cedar Ridge,T3A 3H6,0-2|6-9|14-17,,Man
+fam_136,Bianca M.,Cedar Ridge,T3B 9C9,14-17,Boy,Woman
+fam_137,Idris E.,Cedar Ridge,T3A 1C1,6-9|14-17,Boy|Boy,Man
+fam_138,Nico J.,Cedar Ridge,T3A 5M8,0-2,Boy,Woman
+fam_139,Oscar K.,Cedar Ridge,T3B 1H8,,,Woman
+fam_140,Jasper G.,Cedar Ridge,T3B 7G6,6-9,Boy,Woman
+fam_141,Diego L.,Cedar Ridge,T3A 1M7,3-5,,Man
+fam_142,Grace L.,Cedar Ridge,T3B 8A2,14-17,Boy,Man
+fam_143,Mira R.,Cedar Ridge,T3A 8M9,0-2,Boy,Woman
+fam_144,Diego P.,Cedar Ridge,T3A 1Y9,6-9|10-13,,Woman
+fam_145,Liam N.,Cedar Ridge,T3B 2R6,14-17,Girl,Man
+fam_146,Theo W.,Cedar Ridge,T3B 1G6,14-17,Girl,Man
+fam_147,Esther R.,Cedar Ridge,T3A 5Y6,6-9|14-17,,Woman
+fam_148,Tomas W.,Cedar Ridge,T3B 7Y5,0-2,Boy,Man
+fam_149,Aisha S.,Cedar Ridge,T3B 7G4,3-5|14-17,Boy|Girl,Woman
+fam_150,Nadia G.,Cedar Ridge,T3A 8B3,10-13,Girl,Woman
+fam_151,Emeka T.,Cedar Ridge,T3B 5Z8,14-17,Girl,Woman
+fam_152,Arjun J.,Cedar Ridge,T3B 5M2,6-9|10-13|14-17,Boy|Girl|Girl,Woman
+fam_153,Ravi N.,Cedar Ridge,T3B 5V4,0-2|3-5|6-9,Boy|Girl|Girl,Woman
+fam_154,Clara J.,Cedar Ridge,T3B 4B2,3-5|14-17,Boy|Boy,Woman
+fam_155,Kenji A.,Cedar Ridge,T3A 5N5,6-9|10-13|14-17,,Woman
+fam_156,Omar H.,Cedar Ridge,T3A 7V3,3-5,Girl,Man
+fam_157,Mateo B.,Cedar Ridge,T3A 3W8,6-9|14-17,Boy|Boy,Woman
+fam_158,Nadia L.,Cedar Ridge,T3A 4H7,0-2|3-5,Boy|Boy,Man
+fam_159,Tomas L.,Cedar Ridge,T3A 1L7,3-5,Boy,Woman
+fam_160,Ines L.,Cedar Ridge,T3B 5H7,6-9|14-17,Girl|Girl,Woman
+fam_161,Raj D.,Cedar Ridge,T3B 6S9,3-5,Girl,Man
+fam_162,Clara G.,Cedar Ridge,T3A 2B9,0-2|10-13,Girl|Boy,Man
+fam_163,Amara W.,Cedar Ridge,T3A 1T3,0-2|6-9|10-13,Boy|Girl|Boy,Woman
+fam_164,Musa R.,Parkview,T2J 1S6,0-2,Boy,Woman
+fam_165,Ravi B.,Parkview,T2H 3S6,6-9|10-13,,Prefer not to say
+fam_166,Lina R.,Parkview,T2J 9R9,3-5|14-17,Girl|Girl,Woman
+fam_167,Sam K.,Parkview,T2J 5J2,10-13|14-17,Girl|Girl,Woman
+fam_168,Pablo A.,Parkview,T2H 1K1,0-2,Boy,Woman
+fam_169,Tariq W.,Parkview,T2H 6K5,3-5|6-9,Boy|Boy,Man
+fam_170,Esther H.,Parkview,T2J 7X8,14-17,Boy,Woman
+fam_171,Camila N.,Parkview,T2J 8K4,6-9,Boy,Woman
+fam_172,Leila R.,Parkview,T2H 6C9,3-5|10-13|14-17,Girl|Boy|Boy,Woman
+fam_173,Ethan B.,Parkview,T2J 9J8,0-2|14-17,,Woman
+fam_174,Ayesha K.,Parkview,T2H 4Z4,0-2,Boy,Woman
+fam_175,Felix K.,Parkview,T2J 8N4,6-9|14-17,Boy|Girl,Woman
+fam_176,Talia H.,Parkview,T2H 9Y7,,,Woman
+fam_177,Amara L.,Parkview,T2H 8T3,6-9|10-13,Boy|Non-binary,Woman
+fam_178,Dev F.,Parkview,T2H 1A7,0-2|14-17,Boy|Girl,Woman
+fam_179,Tariq C.,Parkview,T2H 9T6,,,Woman
+fam_180,Selin S.,Parkview,T2J 9X7,,,Woman
+fam_181,Yusuf J.,Parkview,T2J 7H2,,,Man
+fam_182,Yusuf E.,Parkview,T2H 8Y4,6-9|14-17,Girl|Boy,Prefer not to say
+fam_183,Bianca K.,Parkview,T2H 3C8,0-2|3-5|14-17,Boy|Girl|Girl,Man
+fam_184,Ayesha D.,Parkview,T2H 2L9,3-5|10-13|14-17,,Woman
+fam_185,Daniel F.,Parkview,T2J 4Y3,,,Woman
+fam_186,Imani C.,Parkview,T2J 7G2,10-13,Boy,Woman
+fam_187,Camila B.,Parkview,T2H 8V4,6-9|10-13,Girl|Boy,Woman
+fam_188,Lina P.,Parkview,T2H 3R3,0-2|6-9,Boy|Girl,Woman
+fam_189,Simone M.,Parkview,T2H 5T6,,,Woman
+fam_190,Diego E.,Parkview,T2H 2P9,14-17,Girl,Woman
+fam_191,Paloma L.,Parkview,T2J 7R2,,,Woman
+fam_192,Musa H.,Parkview,T2H 2H7,6-9,Boy,Woman
+fam_193,Liam M.,Parkview,T2J 7N7,3-5|10-13,Girl|Girl,Man
+fam_194,Ayesha R.,Parkview,T2J 8N3,3-5|14-17,Boy|Boy,Non-binary
+fam_195,Simone K.,Parkview,T2J 4Y9,6-9|10-13,Boy|Girl,Woman
+fam_196,Ingrid A.,Parkview,T2J 7V3,6-9,Girl,Woman
+fam_197,Marcus P.,Parkview,T2J 8Y7,,,Woman
+fam_198,Pablo W.,Parkview,T2H 2K6,14-17,Boy,Woman
+fam_199,Selin B.,Parkview,T2J 2L4,10-13,,Woman
+fam_200,Esther W.,Parkview,T2H 1V2,14-17,Girl,Woman
+fam_201,Sofia D.,Parkview,T2H 2T8,3-5,Girl,Woman
+fam_202,Elena B.,Parkview,T2H 6E3,,,Man
+fam_203,Arjun T.,Parkview,T2H 7H3,10-13,Girl,Woman
+fam_204,Hassan N.,Parkview,T2H 4J5,3-5|10-13|14-17,,Woman
+fam_205,Fatima D.,Parkview,T2H 9N7,0-2,Boy,Woman
+fam_206,Idris D.,Parkview,T2J 6E4,3-5|6-9,Boy|Boy,Woman
+fam_207,Rosa M.,Parkview,T2H 8X3,3-5,Girl,Woman
+fam_208,Ruth K.,Parkview,T2H 4R9,0-2|14-17,Boy|Boy,Woman
+fam_209,Kai P.,Parkview,T2J 1K5,3-5|10-13,,Woman
+fam_210,Bianca W.,Parkview,T2J 6X1,0-2|10-13,Girl|Boy,Woman
+fam_211,Freya W.,Parkview,T2H 8L6,3-5,Prefer not to say,Man
+fam_212,Omar R.,Parkview,T2H 7H3,14-17,Boy,Man
+fam_213,Noor B.,Parkview,T2J 9E3,3-5|6-9,Girl|Boy,Non-binary
+fam_214,Kwame E.,Parkview,T2H 7R8,3-5|10-13,Boy|Girl,Woman
+fam_215,Omar N.,Parkview,T2J 8P2,3-5|10-13|14-17,Boy|Boy|Girl,Man
+fam_216,Imani G.,Parkview,T2J 8N1,6-9|14-17,Boy|Boy,Woman
+fam_217,Anika A.,Parkview,T2H 7J3,10-13,,Man
+fam_218,Grace J.,Lakeside,T3C 1R5,6-9,Boy,Woman
+fam_219,Tariq P.,Lakeside,T3C 4W8,10-13,,Woman
+fam_220,Theo D.,Lakeside,T3E 2E6,3-5|10-13,,Woman
+fam_221,Elena E.,Lakeside,T3E 1Z3,3-5|14-17,,Woman
+fam_222,Colin E.,Lakeside,T3E 2G2,3-5,,Woman
+fam_223,Victor M.,Lakeside,T3E 5A5,6-9,Girl,Woman
+fam_224,Ethan N.,Lakeside,T3E 2W1,3-5|10-13,Girl|Boy,Prefer not to say
+fam_225,Simone E.,Lakeside,T3E 1Y2,3-5|6-9,Boy|Boy,Woman
+fam_226,Colin B.,Lakeside,T3C 7S7,6-9,Boy,Woman
+fam_227,Clara W.,Lakeside,T3C 3X6,14-17,Non-binary,Woman
+fam_228,Fatima K.,Lakeside,T3E 7E8,0-2|3-5,,Woman
+fam_229,Yuna D.,Lakeside,T3C 5H6,3-5|10-13,Boy|Boy,Woman
+fam_230,Ines D.,Lakeside,T3C 2V8,14-17,,Woman
+fam_231,Mei S.,Lakeside,T3C 2K9,0-2,Boy,Woman
+fam_232,Priya H.,Lakeside,T3C 1X7,3-5,,Woman
+fam_233,Arjun P.,Lakeside,T3E 1H4,6-9,,Man
+fam_234,Chloe N.,Lakeside,T3C 5Z4,0-2|6-9|14-17,Girl|Girl|Boy,Woman
+fam_235,Arjun E.,Lakeside,T3C 1N1,14-17,Boy,Woman
+fam_236,Lina K.,Lakeside,T3C 4W7,0-2|10-13|14-17,Girl|Girl|Girl,Woman
+fam_237,Jonah R.,Lakeside,T3C 3K5,0-2|10-13,Girl|Boy,Woman
+fam_238,Simone N.,Lakeside,T3E 2G2,0-2,Girl,Woman
+fam_239,Jasper L.,Lakeside,T3E 2C3,3-5,Girl,Man
+fam_240,Colin L.,Lakeside,T3C 4P7,,,Woman
+fam_241,Elena J.,Lakeside,T3C 7T9,,,Woman
+fam_242,Arjun D.,Lakeside,T3E 4G4,0-2|14-17,,Man
+fam_243,Jonah C.,Lakeside,T3E 8G2,0-2,,Man
+fam_244,Jamal F.,Lakeside,T3E 6J3,0-2,Girl,Woman
+fam_245,Malik E.,Lakeside,T3C 5R3,6-9|10-13,Boy|Girl,Woman
+fam_246,Yusuf H.,Lakeside,T3C 9N7,6-9|10-13,Boy|Boy,Woman
+fam_247,Aisha L.,Lakeside,T3C 5B8,,,Woman
+fam_248,Wren H.,Lakeside,T3C 7P3,0-2|6-9,Boy|Boy,Woman
+fam_249,Dev A.,Lakeside,T3E 9M3,3-5|14-17,Boy|Non-binary,Woman
+fam_250,Omar B.,Lakeside,T3C 4G6,10-13,,Woman
+fam_251,Felix B.,Lakeside,T3C 6R2,0-2|3-5,Boy|Non-binary,Woman
+fam_252,Felix E.,Lakeside,T3C 9Z6,10-13,Girl,Woman
+fam_253,Idris F.,Lakeside,T3E 7Y1,3-5|14-17,Boy|Boy,Woman
+fam_254,Talia D.,Lakeside,T3E 2N8,3-5|6-9,Girl|Boy,Woman
+fam_255,Noor H.,Lakeside,T3C 7V7,0-2|14-17,Boy|Non-binary,Woman
+fam_256,Lina D.,Lakeside,T3E 1N5,3-5|14-17,Boy|Girl,Non-binary
+fam_257,Andre N.,Lakeside,T3C 1S3,0-2|6-9,Boy|Boy,Woman
+fam_258,Hassan F.,Lakeside,T3C 9L5,3-5,Boy,Woman
+fam_259,Hannah B.,Lakeside,T3E 8J2,0-2|3-5,Girl|Girl,Woman
+fam_260,Andre K.,Lakeside,T3C 5C9,10-13,Boy,Woman
+fam_261,Jonah N.,Lakeside,T3E 5Y1,10-13,Girl,Woman
+fam_262,Hannah C.,Lakeside,T3E 7W7,14-17,Girl,Non-binary
+fam_263,Lucia H.,Lakeside,T3E 3E8,0-2,Boy,Woman
+fam_264,Andre G.,Lakeside,T3C 3Z5,10-13,Boy,Woman
+fam_265,Fatima C.,Lakeside,T3E 9S2,6-9|10-13,Girl|Boy,Woman
+fam_266,Leila D.,Lakeside,T3C 7L7,6-9,Boy,Woman
+fam_267,Aaron S.,Ironwood,T2K 1R6,14-17,Boy,Woman
+fam_268,Ines M.,Ironwood,T2K 4G5,6-9|14-17,Boy|Boy,Prefer not to say
+fam_269,Freya L.,Ironwood,T2L 8W6,0-2|3-5,Boy|Girl,Man
+fam_270,Tomas F.,Ironwood,T2K 4B4,0-2|3-5,,Woman
+fam_271,Jamal M.,Ironwood,T2K 6V8,10-13|14-17,Girl|Girl,Woman
+fam_272,Lucia W.,Ironwood,T2L 4K4,0-2|6-9,Girl|Girl,Woman
+fam_273,Ines P.,Ironwood,T2K 5L7,0-2|10-13|14-17,Boy|Girl|Girl,Man
+fam_274,Camila R.,Ironwood,T2L 2A9,14-17,Girl,Prefer not to say
+fam_275,Jonah W.,Ironwood,T2L 6L5,0-2,Girl,Woman
+fam_276,Marcus T.,Ironwood,T2K 8M5,10-13|14-17,Boy|Boy,Man
+fam_277,Oscar N.,Ironwood,T2K 6W5,3-5|6-9|10-13,Boy|Boy|Girl,Man
+fam_278,Musa F.,Ironwood,T2L 3L9,,,Woman
+fam_279,Rosa L.,Ironwood,T2K 6L5,6-9,Boy,Woman
+fam_280,Ben S.,Ironwood,T2K 7W5,0-2|14-17,Girl|Girl,Woman
+fam_281,Marcus E.,Ironwood,T2K 3N1,3-5|10-13|14-17,Girl|Girl|Girl,Woman
+fam_282,Kwame G.,Ironwood,T2K 7S7,0-2,,Woman
+fam_283,Emeka N.,Ironwood,T2K 4P1,,,Man
+fam_284,Yusuf G.,Ironwood,T2K 7W5,3-5|14-17,Girl|Girl,Woman
+fam_285,Mateo R.,Ironwood,T2L 3R1,3-5|6-9,Boy|Boy,Woman
+fam_286,Tasha G.,Ironwood,T2K 7L9,6-9,Boy,Woman
+fam_287,Paloma B.,Ironwood,T2K 9L8,0-2,Girl,Woman
+fam_288,Noor A.,Ironwood,T2L 3S2,14-17,Boy,Woman
+fam_289,Joel D.,Ironwood,T2L 9J6,3-5,Boy,Woman
+fam_290,Mateo F.,Ironwood,T2K 2E8,0-2|6-9|10-13,,Woman
+fam_291,Omar T.,Ironwood,T2K 5L8,6-9,Girl,Woman
+fam_292,Yuna B.,Ironwood,T2L 1A3,0-2|10-13,,Woman
+fam_293,Andre L.,Ironwood,T2L 5R8,0-2|3-5|6-9,Girl|Girl|Non-binary,Man
+fam_294,Andre D.,Ironwood,T2K 8Y8,3-5,,Woman
+fam_295,Lina M.,Ironwood,T2K 7T1,3-5|10-13|14-17,,Woman
+fam_296,Simone A.,Ironwood,T2K 7G9,0-2|6-9,Boy|Boy,Man
+fam_297,Priya F.,Ironwood,T2L 7R4,0-2|3-5|10-13,Non-binary|Girl|Girl,Woman
+fam_298,Omar S.,Ironwood,T2L 5W9,0-2|3-5|14-17,Boy|Girl|Girl,Woman
+fam_299,Naomi B.,Ironwood,T2K 6T2,14-17,Boy,Woman
+fam_300,Theo M.,Ironwood,T2L 3V3,0-2,,Man
+fam_301,Sana D.,Ironwood,T2L 4N2,10-13,Boy,Woman
+fam_302,Chloe D.,Ironwood,T2L 9S8,3-5|14-17,Girl|Boy,Man
+fam_303,Yuna F.,Ironwood,T2K 4L7,6-9|14-17,Girl|Non-binary,Non-binary
+fam_304,Kenji E.,Ironwood,T2L 4J4,6-9|10-13|14-17,Girl|Boy|Boy,Woman
+fam_305,Mateo M.,Ironwood,T2K 7X5,3-5|6-9,Boy|Boy,Man
+fam_306,Keira A.,Ironwood,T2K 3B1,,,Woman
+fam_307,Grace K.,Ironwood,T2L 6T2,6-9,Boy,Woman
+fam_308,Musa N.,Ironwood,T2K 6X1,0-2|6-9,Girl|Boy,Woman
+fam_309,Zara G.,Ironwood,T2L 3H9,3-5|6-9|14-17,Girl|Girl|Boy,Woman
+fam_310,Chloe P.,Ironwood,T2L 8G1,14-17,Girl,Woman
+fam_311,Selin K.,Ironwood,T2L 9H7,0-2|6-9,Boy|Boy,Woman
+fam_312,Oscar C.,Ironwood,T2L 9V9,6-9,Girl,Man
+fam_313,Priya D.,Ironwood,T2L 7L9,0-2|3-5|14-17,Girl|Boy|Boy,Woman
+fam_314,Aisha T.,Ironwood,T2L 2E3,0-2|10-13,Boy|Girl,Prefer not to say
+fam_315,Maria C.,Ironwood,T2K 7C3,0-2|10-13,Boy|Boy,Woman
+fam_316,Ayesha B.,Ironwood,T2K 3L9,,,Woman
+fam_317,Tariq J.,Ironwood,T2L 2X1,6-9|10-13,,Woman
+fam_318,Joel C.,Ironwood,T2K 5Z2,14-17,,Woman
+fam_319,Freya N.,Ironwood,T2L 7X5,3-5,Girl,Non-binary
+fam_320,Leila K.,Ironwood,T2L 1A7,14-17,,Woman
+fam_321,Sofia K.,Ironwood,T2K 5J2,3-5|6-9|10-13,Boy|Girl|Girl,Woman
+fam_322,Ingrid R.,Ironwood,T2K 8N6,0-2,,Woman
+fam_323,Olivia D.,Ironwood,T2L 6N7,3-5|6-9|10-13,Boy|Boy|Girl,Woman
+fam_324,Bianca P.,Ironwood,T2L 6M8,6-9,Girl,Woman
+fam_325,Aaron C.,Stonegate,T2N 2C1,14-17,,Man
+fam_326,Aisha N.,Stonegate,T2M 5G8,10-13|14-17,Girl|Girl,Woman
+fam_327,Naomi T.,Stonegate,T2M 3V6,3-5|14-17,Girl|Girl,Woman
+fam_328,Ruth H.,Stonegate,T2M 7V8,3-5,Boy,Man
+fam_329,Chloe L.,Stonegate,T2M 7P2,6-9|14-17,Boy|Girl,Woman
+fam_330,Esther N.,Stonegate,T2N 3T3,10-13,Girl,Woman
+fam_331,Tomas J.,Stonegate,T2M 4S6,14-17,Girl,Woman
+fam_332,Emeka S.,Stonegate,T2N 1G3,10-13,,Woman
+fam_333,Tomas B.,Stonegate,T2M 5H9,,,Non-binary
+fam_334,Paloma A.,Stonegate,T2N 3K7,14-17,Boy,Woman
+fam_335,Wren F.,Stonegate,T2N 4W9,0-2|10-13,Girl|Girl,Woman
+fam_336,Marcus D.,Stonegate,T2M 3Z9,0-2|14-17,,Man
+fam_337,Hassan T.,Stonegate,T2N 8R6,14-17,Boy,Woman
+fam_338,Nico D.,Stonegate,T2N 4A1,0-2|3-5,Boy|Girl,Woman
+fam_339,Ben T.,Stonegate,T2M 7Y5,6-9,Girl,Woman
+fam_340,Clara P.,Stonegate,T2N 8L5,3-5|10-13|14-17,Boy|Girl|Boy,Woman
+fam_341,Imani E.,Stonegate,T2M 9R6,3-5,,Man
+fam_342,Grace N.,Stonegate,T2M 5K6,10-13|14-17,,Woman
+fam_343,Daniel N.,Stonegate,T2N 8A4,0-2|14-17,Boy|Boy,Man
+fam_344,Esther K.,Stonegate,T2M 9W4,,,Woman
+fam_345,Daniel M.,Stonegate,T2M 2C9,0-2|3-5|6-9,Girl|Boy|Boy,Woman
+fam_346,Musa M.,Stonegate,T2N 7Y1,14-17,Girl,Woman
+fam_347,Sana T.,Stonegate,T2M 5T7,0-2|6-9,Boy|Boy,Woman
+fam_348,Arjun L.,Stonegate,T2N 4N7,0-2|10-13|14-17,Girl|Boy|Girl,Non-binary
+fam_349,Priya J.,Stonegate,T2M 3V6,6-9,,Woman
+fam_350,Rosa G.,Stonegate,T2N 4K6,3-5,Girl,Woman
+fam_351,Diego D.,Stonegate,T2M 8P6,0-2|14-17,Boy|Girl,Woman
+fam_352,Ruth F.,Stonegate,T2N 1W6,0-2|3-5,Girl|Boy,Woman
+fam_353,Yuna R.,Stonegate,T2M 6Z5,0-2|14-17,Girl|Girl,Woman
+fam_354,Lucas H.,Stonegate,T2N 6P7,3-5|6-9,Girl|Boy,Woman
+fam_355,Rosa E.,Stonegate,T2M 3V1,3-5|10-13,Girl|Boy,Woman
+fam_356,Kai E.,Stonegate,T2N 2H1,14-17,Girl,Woman
+fam_357,Zara S.,Stonegate,T2M 5P1,6-9,Boy,Woman
+fam_358,Camila G.,Stonegate,T2M 8C7,6-9,Boy,Woman
+fam_359,Jasper E.,Stonegate,T2M 6K6,0-2|10-13|14-17,,Woman
+fam_360,Mateo J.,Stonegate,T2N 8S3,6-9,Boy,Woman
+fam_361,Sam E.,Stonegate,T2M 1A7,0-2|3-5|14-17,Girl|Boy|Girl,Woman
+fam_362,Lucas E.,Stonegate,T2M 3A1,0-2|3-5|6-9,Girl|Girl|Boy,Woman
+fam_363,Felix S.,Stonegate,T2N 9H8,6-9|10-13,,Woman
+fam_364,Talia P.,Stonegate,T2N 5A1,0-2|3-5,Girl|Girl,Woman
+fam_365,Kenji M.,Stonegate,T2N 1S5,10-13,Girl,Woman
+fam_366,Maria W.,Stonegate,T2N 7R4,0-2|10-13|14-17,,Woman
+fam_367,Keira H.,Stonegate,T2N 2H3,6-9|10-13,,Woman
+fam_368,Anika R.,Stonegate,T2N 9A3,0-2|6-9,,Prefer not to say
+fam_369,Tasha R.,Stonegate,T2M 8P8,10-13,Girl,Woman
+fam_370,Ayesha C.,Birchwood,T2P 7C9,,,Woman
+fam_371,Ethan J.,Birchwood,T2R 4B4,3-5,Non-binary,Woman
+fam_372,Hannah T.,Birchwood,T2P 1X9,6-9|14-17,,Woman
+fam_373,Emeka K.,Birchwood,T2P 7N1,3-5,Girl,Woman
+fam_374,Kwame D.,Birchwood,T2R 3P2,0-2,Boy,Woman
+fam_375,Kai C.,Birchwood,T2R 4N9,0-2|3-5|14-17,Boy|Boy|Girl,Man
+fam_376,Ethan A.,Birchwood,T2R 5X8,0-2,Girl,Woman
+fam_377,Rosa W.,Birchwood,T2R 3T5,3-5|14-17,,Man
+fam_378,Ravi M.,Birchwood,T2R 9R3,,,Man
+fam_379,Joel M.,Birchwood,T2P 8X3,14-17,Girl,Woman
+fam_380,Fatima B.,Birchwood,T2P 7V9,0-2,Girl,Woman
+fam_381,Idris J.,Birchwood,T2P 2T1,0-2|14-17,Girl|Boy,Woman
+fam_382,Pablo M.,Birchwood,T2P 2J9,0-2,Boy,Woman
+fam_383,Victor G.,Birchwood,T2P 2Y6,3-5,Boy,Woman
+fam_384,Keira D.,Birchwood,T2P 6N9,6-9|14-17,Boy|Boy,Prefer not to say
+fam_385,Felix M.,Birchwood,T2R 4R9,6-9,Boy,Man
+fam_386,Malik R.,Birchwood,T2R 1M1,,,Woman
+fam_387,Elena A.,Birchwood,T2R 5X9,6-9,,Woman
+fam_388,Nico E.,Birchwood,T2P 6G3,,,Woman
+fam_389,Elena C.,Birchwood,T2R 3V2,0-2,Boy,Woman
+fam_390,Nico N.,Birchwood,T2P 1R1,3-5|6-9|14-17,Boy|Boy|Girl,Woman
+fam_391,Ravi E.,Birchwood,T2R 8Z9,0-2,Prefer not to say,Woman
+fam_392,Hassan K.,Birchwood,T2R 7L2,10-13,Girl,Woman
+fam_393,Hassan E.,Birchwood,T2P 9K4,10-13,Girl,Woman
+fam_394,Hassan L.,Birchwood,T2P 1M3,6-9,Girl,Prefer not to say
+fam_395,Selin R.,Birchwood,T2P 1K3,3-5|6-9|14-17,Boy|Boy|Girl,Man
+fam_396,Hana A.,Birchwood,T2R 9J4,10-13,Girl,Woman
+fam_397,Lucas W.,Birchwood,T2R 4Z5,0-2|6-9|10-13,Boy|Girl|Girl,Woman
+fam_398,Priya C.,Birchwood,T2R 7K7,0-2|6-9,,Woman
+fam_399,Hannah L.,Birchwood,T2R 1B4,3-5|14-17,Girl|Boy,Man
+fam_400,Raj L.,Birchwood,T2R 5K9,6-9,Girl,Woman
+fam_401,Mei J.,Birchwood,T2R 3C7,0-2|6-9,Girl|Girl,Woman
+fam_402,Selin H.,Birchwood,T2R 9G4,6-9,Girl,Woman
+fam_403,Raj T.,Birchwood,T2P 9E3,3-5|10-13|14-17,,Woman
+fam_404,Simone P.,Birchwood,T2R 5Z4,3-5|6-9,Girl|Girl,Woman
+fam_405,Tariq A.,Birchwood,T2R 8G9,,,Man
+fam_406,Lucia M.,Birchwood,T2P 1S1,3-5|14-17,,Man
+fam_407,Amara G.,Birchwood,T2P 1Z7,6-9|10-13|14-17,Girl|Girl|Girl,Woman
+fam_408,Imani W.,Birchwood,T2P 9R9,0-2|3-5,Girl|Boy,Woman
+fam_409,Jamal G.,Birchwood,T2R 3T8,0-2|6-9|10-13,Boy|Girl|Boy,Woman
+fam_410,Mira D.,Birchwood,T2P 4T2,3-5|10-13|14-17,Girl|Girl|Boy,Woman
+fam_411,Grace D.,Foxglen,T3G 7W3,6-9,,Woman
+fam_412,Lina B.,Foxglen,T3G 7M5,3-5|14-17,Girl|Boy,Woman
+fam_413,Malik K.,Foxglen,T3G 5A8,3-5,,Woman
+fam_414,Maria S.,Foxglen,T3G 9L9,10-13|14-17,Boy|Girl,Man
+fam_415,Mei M.,Foxglen,T3G 2B2,14-17,Girl,Woman
+fam_416,Hana W.,Foxglen,T3G 5N6,0-2|6-9,,Man
+fam_417,Fatima P.,Foxglen,T3G 4J1,6-9,Girl,Woman
+fam_418,Keira L.,Foxglen,T3H 3Z4,3-5|6-9|14-17,Boy|Boy|Boy,Woman
+fam_419,Ben A.,Foxglen,T3H 7B6,3-5,Prefer not to say,Woman
+fam_420,Colin A.,Foxglen,T3G 6A2,0-2,Boy,Woman
+fam_421,Theo N.,Foxglen,T3G 8B3,6-9,Girl,Woman
+fam_422,Anika W.,Foxglen,T3H 1J6,0-2|6-9,Boy|Boy,Man
+fam_423,Dev C.,Foxglen,T3G 7H2,10-13,Boy,Man
+fam_424,Daniel J.,Foxglen,T3H 4P8,,,Man
+fam_425,Yusuf K.,Foxglen,T3G 9G4,0-2|3-5,Girl|Boy,Woman
+fam_426,Esther E.,Foxglen,T3G 1Z2,0-2|14-17,,Woman
+fam_427,Noor L.,Foxglen,T3G 5G3,6-9,Boy,Woman
+fam_428,Priya W.,Foxglen,T3G 5Y4,6-9,Boy,Woman
+fam_429,Ravi R.,Foxglen,T3G 8Z6,0-2|14-17,Girl|Girl,Woman
+fam_430,Sofia R.,Foxglen,T3G 8E8,,,Woman
+fam_431,Jasper S.,Foxglen,T3G 3N6,14-17,Girl,Woman
+fam_432,Camila S.,Foxglen,T3H 2R2,6-9,Girl,Woman
+fam_433,Clara R.,Foxglen,T3H 7C6,3-5,Non-binary,Woman
+fam_434,Idris P.,Foxglen,T3H 2Y8,3-5,,Woman
+fam_435,Felix W.,Foxglen,T3G 2Z7,10-13,,Woman
+fam_436,Wren A.,Foxglen,T3G 6M5,6-9|10-13,Girl|Girl,Man
+fam_437,Hassan M.,Foxglen,T3G 9B1,10-13|14-17,Boy|Girl,Woman
+fam_438,Dev D.,Foxglen,T3H 7R7,14-17,Girl,Woman
+fam_439,Colin F.,Foxglen,T3H 3G1,6-9|10-13,,Woman
+fam_440,Ruth P.,Foxglen,T3G 7T7,,,Woman
+fam_441,Anika T.,Foxglen,T3H 1Y8,3-5|6-9,,Man
+fam_442,Olivia T.,Foxglen,T3H 2Y8,0-2|6-9,Boy|Boy,Non-binary
+fam_443,Sofia E.,Foxglen,T3H 8C9,14-17,,Man
+fam_444,Raj B.,Foxglen,T3H 6S6,10-13,Girl,Non-binary
+fam_445,Mateo K.,Foxglen,T3G 5Y5,,,Woman
+fam_446,Nico B.,Foxglen,T3H 9C5,6-9|10-13,,Woman
+fam_447,Selin J.,Foxglen,T3H 3T6,0-2,Boy,Man
+fam_448,Yusuf B.,Foxglen,T3H 3J6,3-5|10-13|14-17,Girl|Girl|Boy,Woman
+fam_449,Lucas D.,Foxglen,T3G 9K7,6-9,Boy,Woman
+fam_450,Victor S.,Foxglen,T3H 2X6,0-2|3-5|6-9,Girl|Boy|Boy,Non-binary
+fam_451,Hassan J.,Foxglen,T3H 4W6,6-9|10-13,Boy|Girl,Woman
+fam_452,Priya P.,Foxglen,T3G 2B4,3-5|6-9,Girl|Girl,Non-binary
+fam_453,Ben D.,Foxglen,T3G 2H5,14-17,Girl,Woman
+fam_454,Liam R.,Foxglen,T3H 2L1,6-9|14-17,,Woman
+fam_455,Lucas J.,Foxglen,T3G 8E3,3-5|10-13,,Woman
+fam_456,Hassan G.,Foxglen,T3G 5T1,0-2|14-17,,Man
+fam_457,Marcus A.,Foxglen,T3G 9V8,6-9,Boy,Woman
+fam_458,Fatima W.,Foxglen,T3G 8E9,,,Man
+fam_459,Dev L.,Foxglen,T3H 8M4,0-2|6-9,Non-binary|Girl,Woman
+fam_460,Victor D.,Foxglen,T3H 1Y4,0-2|3-5|10-13,,Woman
+fam_461,Raj S.,Foxglen,T3H 1R2,6-9,,Woman
+fam_462,Clara E.,Foxglen,T3G 1K3,3-5,Girl,Woman
+fam_463,Jamal K.,Foxglen,T3G 2E8,14-17,,Woman
+fam_464,Fatima G.,Foxglen,T3H 9G6,6-9|10-13,,Man
+fam_465,Ben J.,Foxglen,T3G 1G2,6-9,Girl,Man
+fam_466,Selin N.,Foxglen,T3G 8C1,,,Woman
+fam_467,Omar K.,Foxglen,T3H 7K3,3-5|10-13,Boy|Boy,Woman
+fam_468,Elena M.,Foxglen,T3H 4J2,,,Prefer not to say
+fam_469,Hannah M.,Foxglen,T3G 2G8,3-5|6-9,,Woman
+fam_470,Grace B.,Foxglen,T3G 8B2,10-13,Boy,Woman
+fam_471,Liam H.,Summit Park,T3K 4E6,3-5,Boy,Woman
+fam_472,Olivia P.,Summit Park,T3J 7G4,10-13,Girl,Man
+fam_473,Anika F.,Summit Park,T3K 1L3,3-5|6-9,Girl|Girl,Woman
+fam_474,Jasper R.,Summit Park,T3K 3Y9,6-9,Boy,Man
+fam_475,Esther S.,Summit Park,T3J 6S4,0-2|6-9,Boy|Girl,Man
+fam_476,Pablo B.,Summit Park,T3J 2T8,0-2|14-17,Girl|Boy,Woman
+fam_477,Musa A.,Summit Park,T3K 1V5,6-9,Prefer not to say,Woman
+fam_478,Kenji N.,Summit Park,T3J 2R6,10-13,Girl,Woman
+fam_479,Mateo P.,Summit Park,T3K 1W6,3-5|14-17,Girl|Boy,Man
+fam_480,Nadia N.,Summit Park,T3K 9C9,6-9,,Woman
+fam_481,Noor E.,Summit Park,T3K 4K6,10-13,Boy,Woman
+fam_482,Ines T.,Summit Park,T3K 2V9,6-9,Boy,Woman
+fam_483,Clara K.,Summit Park,T3K 3M2,0-2|3-5,Girl|Girl,Woman
+fam_484,Leila S.,Summit Park,T3J 8P7,0-2|6-9,Boy|Boy,Woman
+fam_485,Ethan C.,Summit Park,T3J 6N8,14-17,Girl,Woman
+fam_486,Yusuf W.,Summit Park,T3K 5B3,3-5|6-9,Girl|Girl,Woman
+fam_487,Joel F.,Summit Park,T3K 2B6,3-5,,Woman
+fam_488,Freya J.,Summit Park,T3K 3X5,0-2|6-9,Girl|Girl,Woman
+fam_489,Lucia K.,Summit Park,T3J 3X2,6-9|10-13,Boy|Boy,Woman
+fam_490,Oscar H.,Summit Park,T3K 4L4,14-17,Boy,Woman
+fam_491,Ruth L.,Summit Park,T3J 7P1,3-5,Girl,Woman
+fam_492,Camila K.,Summit Park,T3K 8M3,10-13,Girl,Man
+fam_493,Keira P.,Summit Park,T3J 6C7,3-5|14-17,Prefer not to say|Boy,Woman
+fam_494,Sana J.,Summit Park,T3K 7M9,3-5|14-17,,Woman
+fam_495,Elena K.,Summit Park,T3K 5V2,0-2|14-17,,Woman
+fam_496,Hana P.,Summit Park,T3J 5V2,0-2|3-5,,Woman
+fam_497,Naomi S.,Summit Park,T3K 5H1,0-2|10-13,Boy|Girl,Woman
+fam_498,Jamal J.,Summit Park,T3K 3E3,0-2|3-5|6-9,Boy|Girl|Girl,Woman
+fam_499,Hannah W.,Summit Park,T3K 7N3,14-17,Boy,Woman
+fam_500,Bianca G.,Summit Park,T3J 9N3,0-2|3-5|14-17,Girl|Girl|Boy,Woman
+fam_501,Aisha D.,Summit Park,T3J 3C7,3-5|6-9,,Woman
+fam_502,Nadia C.,Summit Park,T3J 9Y1,0-2|3-5,,Woman
+fam_503,Zara B.,Summit Park,T3J 4Y4,0-2,Boy,Woman
+fam_504,Camila A.,Summit Park,T3J 4W2,6-9|14-17,Boy|Boy,Woman
+fam_505,Andre W.,Summit Park,T3J 8P3,3-5,Boy,Woman
+fam_506,Diego F.,Summit Park,T3K 6E8,14-17,Girl,Woman
+fam_507,Kenji S.,Summit Park,T3K 5T4,0-2|14-17,Girl|Girl,Woman
+fam_508,Yuna A.,Summit Park,T3K 3R7,14-17,Girl,Woman
+fam_509,Fatima M.,Summit Park,T3J 5R6,0-2|10-13,Girl|Boy,Woman
+fam_510,Aaron N.,Summit Park,T3K 5V8,10-13,,Woman
+fam_511,Fatima S.,Summit Park,T3J 2C9,6-9,,Woman
+fam_512,Mateo S.,Summit Park,T3K 2R8,0-2|14-17,Girl|Girl,Woman
+fam_513,Musa K.,Summit Park,T3J 8X9,10-13,Girl,Woman
+fam_514,Grace T.,Summit Park,T3J 1G6,6-9|10-13,Girl|Girl,Woman
+fam_515,Hannah P.,Summit Park,T3K 5Y2,0-2,Girl,Man
+fam_516,Andre A.,Summit Park,T3K 7Y9,,,Man
+fam_517,Ines A.,Summit Park,T3K 6V9,3-5|10-13|14-17,Boy|Girl|Boy,Man
+fam_518,Theo F.,Summit Park,T3K 2X4,10-13,Non-binary,Woman
+fam_519,Bianca C.,Summit Park,T3J 4P2,14-17,Girl,Woman
+fam_520,Elena T.,Summit Park,T3K 9H1,3-5|10-13,Boy|Girl,Woman
+fam_521,Esther F.,Summit Park,T3K 1W4,6-9|10-13|14-17,Boy|Boy|Girl,Woman
+fam_522,Leila H.,Summit Park,T3J 4S5,10-13|14-17,Boy|Girl,Man
+fam_523,Paloma H.,Summit Park,T3K 8V9,0-2,Boy,Prefer not to say
+fam_524,Keira B.,Summit Park,T3J 9H1,6-9,Girl,Non-binary
+fam_525,Ruth A.,Summit Park,T3J 7P2,14-17,Girl,Woman
+fam_526,Kenji H.,Summit Park,T3J 6N7,0-2|6-9,Girl|Boy,Man
+fam_527,Colin J.,Summit Park,T3K 4L3,0-2|6-9|10-13,Boy|Girl|Girl,Woman
