@@ -49,3 +49,5 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+*.example
+.env.example
