@@ -8,6 +8,8 @@
  *  - "eligible" claims are softened to "may be eligible"
  * Returns null if nothing valid remains. Never throws. Does not save anything.
  */
+
+import "server-only";
 import { GoogleGenAI, ThinkingLevel } from "@google/genai";
 import { z } from "zod";
 import type { RankedResource } from "./retrieve";
@@ -47,10 +49,10 @@ Rules:
 - title: short. reason: one line on why this fits their situation. firstStep: one short action, e.g. "Ask about evening spots".`;
 
 async function callGemini(prompt: string, signal: AbortSignal): Promise<string> {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const credential = process.env.GEMINI_API_KEY;
   const model = process.env.GEMINI_MODEL;
-  if (!apiKey || !model) throw new Error("Gemini not configured");
-  const res = await new GoogleGenAI({ apiKey }).models.generateContent({
+  if (!credential || !model) throw new Error("AI integration is not configured");
+  const res = await new GoogleGenAI({ apiKey: credential }).models.generateContent({
     model,
     contents: prompt,
     config: {

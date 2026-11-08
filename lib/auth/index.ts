@@ -1,3 +1,5 @@
+import "server-only";
+
 import { redirect } from "next/navigation";
 
 import { getAuth0 } from "@/lib/auth/auth0-client";

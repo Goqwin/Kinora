@@ -23,17 +23,17 @@ const criteriaJsonSchema = (() => {
 
 async function callOnce(sanitizedText: string): Promise<AiCriteria> {
   const env = getEnv();
-  const apiKey = env.GEMINI_API_KEY;
+  const credential = env.GEMINI_API_KEY;
   const model = env.GEMINI_MODEL ?? "gemini-2.0-flash";
-  if (!apiKey) {
-    throw new Error("GEMINI_API_KEY missing");
+  if (!credential) {
+    throw new Error("AI integration is not configured");
   }
 
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
 
   try {
-    const client = new GoogleGenAI({ apiKey });
+    const client = new GoogleGenAI({ apiKey: credential });
     const res = await client.models.generateContent({
       model,
       contents: JSON.stringify({ message: sanitizedText.slice(0, 1000) }),

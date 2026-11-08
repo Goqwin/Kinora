@@ -4,6 +4,8 @@
  * failure. Gemini only sees the redacted text + toLlmSafeContext() (ages, no
  * location). The raw text is never stored or logged. Server-only.
  */
+
+import "server-only";
 import { GoogleGenAI, ThinkingLevel } from "@google/genai";
 import { z } from "zod";
 import { toLlmSafeContext } from "./build-user-context";
@@ -51,10 +53,10 @@ const INTENT_JSON_SCHEMA = (() => {
 })();
 
 async function callGemini(prompt: string, signal: AbortSignal): Promise<string> {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const credential = process.env.GEMINI_API_KEY;
   const model = process.env.GEMINI_MODEL;
-  if (!apiKey || !model) throw new Error("Gemini not configured");
-  const res = await new GoogleGenAI({ apiKey }).models.generateContent({
+  if (!credential || !model) throw new Error("AI integration is not configured");
+  const res = await new GoogleGenAI({ apiKey: credential }).models.generateContent({
     model,
     contents: prompt,
     config: {
