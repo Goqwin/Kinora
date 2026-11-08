@@ -1,31 +1,48 @@
 @import "tailwindcss";
 
 /**
- * Kinora color system — one teal family for light and dark.
+ * Kinora color system: pastel palette (Coral Glow, Frosted Blue, Lime Cream).
  * Soft borders and shadows (no harsh black/white brutal blocks).
+ *
+ * Pastels always carry dark text (--ink), never white.
+ * --accent is the app's long-standing brand token and is mostly used as TEXT
+ * (links, eyebrows), so it holds the AA-safe link teal, not the coral.
+ * Coral, blue and lime live in --primary, --secondary and --highlight and are
+ * exposed to Tailwind with shadcn names in @theme below. Note that Tailwind's
+ * `accent` (bg-accent) is the lime pastel, while var(--accent) is the teal.
  */
 :root {
-  --canvas: #f5f8f7;
-  --canvas-deep: #e7efec;
+  --canvas: #f7fdff;
+  --canvas-deep: #e3f3f7;
   --surface: #ffffff;
-  --surface-muted: #eef3f1;
-  --ink: #13201c;
-  --ink-muted: #5b6b66;
-  --border: #d5e0dc;
+  --surface-muted: #eaf7fa;
+  --ink: #1f2937;
+  --ink-muted: #4b5563;
+  --border: #cde7ec;
   --border-strong: #9eb0aa;
-  --accent: #0d9488;
-  --accent-hover: #0f766e;
-  --accent-fg: #f3fffc;
-  --trust: #0d9488;
-  --trust-muted: #d5f3ef;
+  --accent: #0b6477;
+  --accent-hover: #084f5e;
+  --accent-fg: #ffffff;
+  --trust: #0b6477;
+  --trust-muted: #acecf7;
   --warn-fg: #8a5a12;
   --warn-muted: #f7edd9;
-  --crisis-bg: #fff4f1;
-  --crisis-bg-hover: #ffe9e3;
-  --crisis-border: #e7c2b6;
-  --crisis-fg: #6b3023;
-  --ring: #0d9488;
-  --overlay: rgb(19 32 28 / 0.48);
+  --crisis-bg: #fef2f2;
+  --crisis-bg-hover: #fee2e2;
+  --crisis-border: #f5b5b5;
+  --crisis-fg: #b91c1c;
+  --ring: #0e7490;
+  --primary: #f48668;
+  --primary-fg: #1f2937;
+  --secondary: #acecf7;
+  --secondary-fg: #1f2937;
+  --highlight: #d7ffab;
+  --highlight-fg: #1f2937;
+  --link: #0b6477;
+  /* Crisis and errors only. */
+  --destructive: #b91c1c;
+  --destructive-fg: #ffffff;
+  --overlay: rgb(31 41 55 / 0.48);
   --play-pink: #e8f6f4;
   --play-pink-shadow: #9fd4cd;
   --play-teal: #0d9488;
@@ -35,14 +52,14 @@
   --radius-md: 12px;
   --radius-lg: 18px;
   --radius-pill: 9999px;
-  --shadow-xs: 0 1px 2px rgb(19 32 28 / 0.05);
-  --shadow-sm: 0 2px 8px rgb(19 32 28 / 0.06);
-  --shadow-md: 0 12px 32px rgb(19 32 28 / 0.08);
+  --shadow-xs: 0 1px 2px rgb(31 41 55 / 0.05);
+  --shadow-sm: 0 2px 8px rgb(31 41 55 / 0.06);
+  --shadow-md: 0 12px 32px rgb(31 41 55 / 0.08);
   --shadow-brutal: var(--shadow-sm);
   --shadow-brutal-sm: var(--shadow-xs);
   --hero-grid: radial-gradient(
     circle at 1px 1px,
-    rgb(13 148 136 / 0.1) 1px,
+    rgb(11 100 119 / 0.1) 1px,
     transparent 0
   );
   --map-marker-stroke: #ffffff;
@@ -50,27 +67,38 @@
   color-scheme: light;
 }
 
+/* Dark mode: derived from the pastel palette. Deep blue-grey surfaces, light
+   ink; pastels stay as accents and keep dark text on top of them. */
 .dark {
-  --canvas: #0e1614;
-  --canvas-deep: #0a100e;
-  --surface: #172220;
-  --surface-muted: #1f2d2a;
-  --ink: #e8f2ef;
-  --ink-muted: #9aada7;
-  --border: #2d3f3a;
-  --border-strong: #4a635c;
-  --accent: #2dd4bf;
-  --accent-hover: #5eead4;
-  --accent-fg: #042f2e;
-  --trust: #2dd4bf;
-  --trust-muted: #134e4a;
+  --canvas: #0f1a1e;
+  --canvas-deep: #0a1316;
+  --surface: #16242a;
+  --surface-muted: #1d2f36;
+  --ink: #e6f4f7;
+  --ink-muted: #a7bcc2;
+  --border: #2a4049;
+  --border-strong: #5a7a85;
+  --accent: #acecf7;
+  --accent-hover: #cff5fb;
+  --accent-fg: #1f2937;
+  --trust: #acecf7;
+  --trust-muted: #17414a;
   --warn-fg: #f0c27a;
   --warn-muted: #3a2f1c;
-  --crisis-bg: #2a1a17;
-  --crisis-bg-hover: #3a2420;
-  --crisis-border: #8a5a4e;
-  --crisis-fg: #f3c4b8;
-  --ring: #2dd4bf;
+  --crisis-bg: #2a1414;
+  --crisis-bg-hover: #3a1c1c;
+  --crisis-border: #7f2a2a;
+  --crisis-fg: #fca5a5;
+  --ring: #7dd3e3;
+  --primary: #f48668;
+  --primary-fg: #1f2937;
+  --secondary: #acecf7;
+  --secondary-fg: #1f2937;
+  --highlight: #d7ffab;
+  --highlight-fg: #1f2937;
+  --link: #acecf7;
+  --destructive: #b91c1c;
+  --destructive-fg: #ffffff;
   --overlay: rgb(0 0 0 / 0.55);
   --play-pink: #134e4a;
   --play-pink-shadow: #0d9488;
@@ -84,10 +112,10 @@
   --shadow-brutal-sm: var(--shadow-xs);
   --hero-grid: radial-gradient(
     circle at 1px 1px,
-    rgb(45 212 191 / 0.12) 1px,
+    rgb(172 236 247 / 0.12) 1px,
     transparent 0
   );
-  --map-marker-stroke: #0e1614;
+  --map-marker-stroke: #0f1a1e;
   --hero-veil: rgb(6 24 22);
   color-scheme: dark;
 }
@@ -95,6 +123,24 @@
 @theme inline {
   --color-background: var(--canvas);
   --color-foreground: var(--ink);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--ink);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-fg);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-fg);
+  --color-accent: var(--highlight);
+  --color-accent-foreground: var(--highlight-fg);
+  --color-muted: var(--surface-muted);
+  --color-muted-foreground: var(--ink-muted);
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: var(--ring);
+  --color-link: var(--link);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-fg);
   --font-sans: var(--font-body);
   --font-mono: var(--font-mono);
 }
@@ -226,7 +272,8 @@ body {
   --hero-ink: #07110f;
   --hero-notch: #050807;
   --hero-cream: #ebe9d6;
-  --hero-teal: #2dd4bf;
+  /* Name kept for existing classes; now Coral Glow on the always-dark hero. */
+  --hero-teal: #f48668;
 }
 
 @keyframes hero-kenburns {

@@ -8,6 +8,7 @@ import { ArrowRight, Search } from "lucide-react";
 import * as React from "react";
 
 import { WordsPullUp } from "@/components/ui/words-pull-up";
+import { stashPlanText } from "@/lib/plan-text-handoff";
 import { cn } from "@/lib/utils";
 
 const EXAMPLE_PROMPTS = [
@@ -34,11 +35,9 @@ export function KinoraHero({ seed }: KinoraHeroProps) {
   const [query, setQuery] = React.useState("");
   const [activeChip, setActiveChip] = React.useState<number | null>(null);
 
+  // The free text never goes in the URL; it is handed to /plan via sessionStorage.
   function buildPlanUrl(text: string) {
     const params = new URLSearchParams();
-    const trimmed = text.trim();
-    if (trimmed) params.set("text", trimmed.slice(0, 1000));
-
     if (seed?.postal) params.set("postal", seed.postal);
     if (seed?.openToMeetParents) params.set("openToMeetParents", "1");
     for (const band of seed?.childAgeBands ?? []) {
@@ -48,7 +47,9 @@ export function KinoraHero({ seed }: KinoraHeroProps) {
       params.set("categories", seed.categories[0] ?? "");
     }
 
-    return `/plan?${params.toString()}`;
+    const queryString = params.toString();
+    stashPlanText(queryString, text);
+    return queryString ? `/plan?${queryString}` : "/plan";
   }
 
   function onSubmit(event: React.FormEvent) {

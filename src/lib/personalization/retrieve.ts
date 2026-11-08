@@ -81,7 +81,10 @@ async function query(ctx: UserContext, radiusKm: number, relaxed: Set<Relaxation
     where.push(inArray(resources.category, ctx.needs));
   }
 
-  const { location: _l, searchTsv: _s, ...columns } = getTableColumns(resources);
+  // Every column except the raw PostGIS point and the search vector (bulky, unused by callers).
+  const columns = Object.fromEntries(
+    Object.entries(getTableColumns(resources)).filter(([key]) => key !== "location" && key !== "searchTsv"),
+  ) as Omit<typeof resources._.columns, "location" | "searchTsv">;
   return db
     .select({
       ...columns,

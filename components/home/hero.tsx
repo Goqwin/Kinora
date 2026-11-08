@@ -7,6 +7,7 @@ import { useState, type FormEvent } from "react";
 import { ArrowRight, Search } from "lucide-react";
 
 import { HeroNav } from "@/components/home/hero-nav";
+import { stashPlanText } from "@/lib/plan-text-handoff";
 import { cn } from "@/lib/utils";
 
 /** Compressed WebP of the Calgary park hero (under ~400 KB). */
@@ -35,11 +36,9 @@ export function Hero({ seed }: HeroProps) {
   const [q, setQ] = useState("");
   const [activeChip, setActiveChip] = useState<number | null>(null);
 
+  // The free text never goes in the URL; it is handed to /plan via sessionStorage.
   function buildPlanUrl(text: string) {
     const params = new URLSearchParams();
-    const trimmed = text.trim();
-    if (trimmed) params.set("text", trimmed.slice(0, 1000));
-
     if (seed?.postal) params.set("postal", seed.postal);
     if (seed?.openToMeetParents) params.set("openToMeetParents", "1");
     for (const band of seed?.childAgeBands ?? []) {
@@ -49,7 +48,9 @@ export function Hero({ seed }: HeroProps) {
       params.set("categories", seed.categories[0] ?? "");
     }
 
-    return `/plan?${params.toString()}`;
+    const query = params.toString();
+    stashPlanText(query, text);
+    return query ? `/plan?${query}` : "/plan";
   }
 
   function go(text: string) {
@@ -115,7 +116,8 @@ export function Hero({ seed }: HeroProps) {
               alone.
             </p>
 
-            <form role="search" onSubmit={onSubmit} className="mt-6">
+            {/* POST so a submit before hydration never puts the text in the URL. */}
+            <form role="search" method="post" onSubmit={onSubmit} className="mt-6">
               <label htmlFor="hero-q" className="sr-only">
                 Describe what would help
               </label>
