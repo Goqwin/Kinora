@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 import { setOpenToMeetParentsAction } from "@/app/actions/community";
 import { Label } from "@/components/ui/label";
+import { loginHref } from "@/lib/auth/paths";
 
 type CircleOptInProps = {
   signedIn: boolean;
@@ -16,7 +17,7 @@ export function CircleOptIn({ signedIn, initialOpen }: CircleOptInProps) {
     return (
       <p className="text-sm text-[var(--ink-muted)]">
         <a
-          href="/auth/login?returnTo=/community"
+          href={loginHref("/community")}
           className="font-medium text-[var(--accent)] underline-offset-2 hover:underline"
         >
           Sign in
