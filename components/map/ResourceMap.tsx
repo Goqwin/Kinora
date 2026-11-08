@@ -215,8 +215,12 @@ export default function ResourceMap({
     const map = mapRef.current;
     if (!map) return;
     // Double rAF so layout settles after fullscreen / sticky height changes.
+    // The map can be removed before the frames run (unmount, navigation, dev
+    // double-mount), and resize() on a removed map throws, so check it is still live.
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => map.resize());
+      requestAnimationFrame(() => {
+        if (mapRef.current === map) map.resize();
+      });
     });
   }, []);
 
@@ -226,6 +230,8 @@ export default function ResourceMap({
     }
 
     setMapError(null);
+    // React renders nothing inside the container, so leftovers are from a removed map.
+    containerRef.current.replaceChildren();
     const initialTheme = theme;
     themeAppliedRef.current = initialTheme;
 
