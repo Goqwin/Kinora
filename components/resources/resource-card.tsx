@@ -44,7 +44,7 @@ export function ResourceCard({ resource, className }: ResourceCardProps) {
 
       <p className="mt-4 text-sm text-[var(--ink-muted)]">
         <span className="font-medium text-[var(--ink)]">Eligibility: </span>
-        Potentially eligible.
+        May be eligible. Confirm with the provider.
       </p>
 
       <Link

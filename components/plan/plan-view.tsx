@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
+import type { ShownPlan } from "@/app/actions/plan";
 import { PageHeader } from "@/components/layout/page-header";
 import { PlanResultsWithMap } from "@/components/plan/plan-results-with-map";
 import { SavePlanButton } from "@/components/plan/save-plan-button";
@@ -11,9 +12,9 @@ import { CrisisCallout } from "@/components/safety/crisis-callout";
 import { Button } from "@/components/ui/button";
 import { CHILD_AGE_BANDS, type ChildAgeBand } from "@/lib/db/schema-constants";
 import { readPlanText } from "@/lib/matching/plan-text-handoff";
-import type { runSearch } from "@/lib/search/run-search";
+import { RESOURCE_CATEGORIES, type ResourceCategory } from "@/lib/resources/types";
+import type { SearchPayload } from "@/lib/search/run-search";
 
-type SearchPayload = Awaited<ReturnType<typeof runSearch>>;
 type SearchRequest = ReturnType<typeof buildRequest>;
 /** A finished request. `key` says which request it answers; any other key means "still loading". */
 type Result = { key: string; request: SearchRequest; payload: SearchPayload | null };
@@ -98,13 +99,20 @@ export function PlanView({ authReady, dbReady }: { authReady: boolean; dbReady: 
   const empty = payload.results.length === 0;
   const showMeetParentsNudge =
     Boolean(payload.criteria.openToMeetParents) || request.openToMeetParents;
-  const savePlanParams = {
-    text: request.text,
-    postal: request.postal,
-    radiusKm: searchParams.get("radiusKm") ?? undefined,
-    categories: searchParams.get("categories") ?? undefined,
-    childAgeYears: searchParams.get("childAgeYears") ?? undefined,
-    costPreference: searchParams.get("costPreference") ?? undefined,
+  // Save stores exactly what is on screen: structured data only, never the text.
+  const shownPlan: ShownPlan = {
+    criteria: {
+      categories: payload.criteria.categories.filter((c): c is ResourceCategory =>
+        (RESOURCE_CATEGORIES as readonly string[]).includes(c),
+      ),
+      childAgeBands: payload.criteria.childAgeBands,
+      costPreference: payload.criteria.costPreference,
+      urgency: payload.criteria.urgency,
+      language: payload.criteria.language,
+      radiusKm: payload.criteria.radiusKm,
+    },
+    summary: payload.plan.summary,
+    actions: payload.plan.actions,
   };
 
   return (
@@ -115,7 +123,7 @@ export function PlanView({ authReady, dbReady }: { authReady: boolean; dbReady: 
         description={payload.plan.summary}
       />
 
-      {payload.crisis.matched ? <CrisisCallout className="mt-6" /> : null}
+      {payload.crisis.matched ? <CrisisCallout className="mt-6" signals={payload.crisis.categories} /> : null}
 
       {payload.aiFallback ? (
         <p className="mt-4 rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-sm text-[var(--ink-muted)]">
@@ -179,7 +187,7 @@ export function PlanView({ authReady, dbReady }: { authReady: boolean; dbReady: 
       )}
 
       <div className="mt-10 flex flex-wrap items-start gap-3">
-        <SavePlanButton authReady={authReady} dbReady={dbReady} searchParams={savePlanParams} />
+        <SavePlanButton authReady={authReady} dbReady={dbReady} plan={shownPlan} />
         <Button asChild variant="secondary" className="rounded-full">
           <Link href="/start">Update my needs</Link>
         </Button>

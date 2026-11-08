@@ -118,13 +118,15 @@ export async function extractIntent(
   rawText: string,
   ctx: UserContext,
   generate: GenerateFn = callGemini,
+  timeoutMs: number = TIMEOUT_MS,
 ): Promise<IntentResult> {
   const crisis = detectCrisis(rawText); // before any Gemini call
   const prompt = JSON.stringify({ context: toLlmSafeContext(ctx), message: redactPii(rawText).slice(0, 2000) });
 
   let intent: StructuredIntent | null = null;
   try {
-    const parsed = structuredIntentSchema.safeParse(JSON.parse(await generate(prompt, AbortSignal.timeout(TIMEOUT_MS))));
+    const signal = AbortSignal.timeout(Math.max(1, Math.min(timeoutMs, TIMEOUT_MS)));
+    const parsed = structuredIntentSchema.safeParse(JSON.parse(await generate(prompt, signal)));
     if (parsed.success) intent = parsed.data;
     // Field paths only — never the text or Gemini's output.
     else console.warn("extract-intent: invalid Gemini output, using fallback:", parsed.error.issues.map((i) => i.path.join(".")));

@@ -12,7 +12,14 @@ import { BUDGET_COST_TYPES, REDUCED_COST_LABEL, type ScheduleTag, type UserConte
 
 export type Relaxation = "radius" | "budget" | "category";
 type Row = Omit<Resource, "location" | "searchTsv">;
-export type RankedResource = Row & { score: number; distanceKm: number | null; costLabel: string };
+export type RankedResource = Row & {
+  score: number;
+  distanceKm: number | null;
+  costLabel: string;
+  /** From the PostGIS point, for the map. */
+  longitude: number;
+  latitude: number;
+};
 
 export const DEFAULT_RADIUS_KM = 10;
 const DISTANCE_SCALE_KM = 20; // distance score reaches 0 at 20 km
@@ -88,6 +95,8 @@ async function query(ctx: UserContext, radiusKm: number, relaxed: Set<Relaxation
   return db
     .select({
       ...columns,
+      longitude: sql<number>`ST_X(${resources.location}::geometry)`,
+      latitude: sql<number>`ST_Y(${resources.location}::geometry)`,
       distanceKm: point ? sql<number>`ST_Distance(${resources.location}, ${point}) / 1000` : sql<null>`NULL`,
     })
     .from(resources)
@@ -109,9 +118,9 @@ export async function retrieveResources(
   }
 
   const results = rows
-    .map(({ distanceKm, ...r }) => {
+    .map(({ distanceKm, longitude, latitude, ...r }) => {
       const km = distanceKm === null ? null : Math.round(Number(distanceKm) * 10) / 10;
-      return { ...r, distanceKm: km, costLabel: costLabel(r.costType), score: scoreResource(r, km, ctx, opts.scheduleNeeds) };
+      return { ...r, longitude: Number(longitude), latitude: Number(latitude), distanceKm: km, costLabel: costLabel(r.costType), score: scoreResource(r, km, ctx, opts.scheduleNeeds) };
     })
     // Ties: nearer first, then name, so the order is stable.
     .sort((a, b) => b.score - a.score || (a.distanceKm ?? 99) - (b.distanceKm ?? 99) || a.name.localeCompare(b.name))

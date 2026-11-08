@@ -1,12 +1,15 @@
 import Link from "next/link";
 
-import { CRISIS_INTRO, CRISIS_RESOURCES } from "@/lib/safety/crisis";
+import { CRISIS_INTRO, crisisResourcesFor, toCrisisSignals } from "@/lib/safety/crisis";
 
 type CrisisCalloutProps = {
   className?: string;
+  /** Detected crisis signals or categories; ranks matching lines right after 911. */
+  signals?: string[];
 };
 
-export function CrisisCallout({ className }: CrisisCalloutProps) {
+export function CrisisCallout({ className, signals = [] }: CrisisCalloutProps) {
+  const ranked = crisisResourcesFor(toCrisisSignals(signals));
   return (
     <section
       className={className}
@@ -24,7 +27,7 @@ export function CrisisCallout({ className }: CrisisCalloutProps) {
           {CRISIS_INTRO}
         </p>
         <ul className="mt-4 space-y-2 text-sm">
-          {CRISIS_RESOURCES.slice(0, 4).map((item) => (
+          {ranked.slice(0, 4).map((item) => (
             <li key={item.name}>
               <span className="font-medium text-[var(--crisis-fg)]">
                 {item.name}:{" "}

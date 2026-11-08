@@ -17,7 +17,7 @@ export type SupportPlanResult = {
 };
 
 const ELIGIBILITY_TAIL =
-  "Potentially eligible. Confirm with the provider.";
+  "May be eligible. Confirm with the provider.";
 
 function templateReason(resource: CatalogResource): string {
   const age =

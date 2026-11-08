@@ -93,7 +93,7 @@ export function PlanResultList({
                   {row.name}
                 </Link>
                 <p className="mt-1 text-sm text-[var(--ink-muted)]">
-                  Score {Math.round(row.score)}. Potentially eligible.{" "}
+                  Score {Math.round(row.score)}. May be eligible. Confirm with the provider.{" "}
                   {row.eligibilitySummary}
                 </p>
               </button>

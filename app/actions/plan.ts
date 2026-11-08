@@ -5,21 +5,40 @@ import { z } from "zod";
 import { getOptionalUser } from "@/lib/auth";
 import { isDatabaseConfigured } from "@/lib/db";
 import { persistSupportPlan } from "@/lib/db/queries/plans";
-import type { SupportPlanCriteria } from "@/lib/db/schema-constants";
-import { runSearch } from "@/lib/search/run-search";
-import type { SearchRequest } from "@/lib/search/parse-request";
+import { CHILD_AGE_BANDS, type SupportPlanCriteria } from "@/lib/db/schema-constants";
+import { RESOURCE_CATEGORIES } from "@/lib/resources/types";
 
-const persistSchema = z.object({
-  text: z.string().optional(),
-  postal: z.string().optional(),
-  radiusKm: z.coerce.number().optional(),
-  categories: z.string().optional(),
-  childAgeYears: z.coerce.number().nullable().optional(),
-  costPreference: z.enum(["free", "subsidized"]).nullable().optional(),
+/**
+ * The plan the parent is already looking at: structured data only. The
+ * parent's free text is never sent here, and nothing is re-run.
+ */
+const shownPlanSchema = z.object({
+  criteria: z.object({
+    categories: z.array(z.enum(RESOURCE_CATEGORIES)).max(8),
+    childAgeBands: z.array(z.enum(CHILD_AGE_BANDS)).max(5),
+    costPreference: z.enum(["free", "subsidized", "any"]).nullable(),
+    urgency: z.enum(["low", "medium", "high"]).nullable(),
+    language: z.string().max(10).nullable(),
+    radiusKm: z.number().min(1).max(50),
+  }),
+  summary: z.string().max(300),
+  actions: z
+    .array(
+      z.object({
+        resourceSlug: z.string().min(1).max(200),
+        title: z.string().min(1).max(200),
+        reason: z.string().max(600),
+        firstStep: z.string().max(300),
+        priority: z.number().int().min(1).max(10),
+      }),
+    )
+    .max(6),
 });
 
-export async function persistPlanFromSearchAction(
-  input: z.infer<typeof persistSchema>,
+export type ShownPlan = z.infer<typeof shownPlanSchema>;
+
+export async function saveShownPlanAction(
+  input: ShownPlan,
 ): Promise<{ ok: true; planId: string } | { ok: false; error: string }> {
   if (!isDatabaseConfigured()) {
     return { ok: false, error: "Database is not connected." };
@@ -30,36 +49,24 @@ export async function persistPlanFromSearchAction(
     return { ok: false, error: "Sign in to save your plan." };
   }
 
-  const parsed = persistSchema.safeParse(input);
+  const parsed = shownPlanSchema.safeParse(input);
   if (!parsed.success) {
     return { ok: false, error: "Invalid plan input." };
   }
 
-  const searchInput: SearchRequest = {
-    text: parsed.data.text,
-    postal: parsed.data.postal,
-    radiusKm: parsed.data.radiusKm ?? 15,
-    categories: parsed.data.categories ? [parsed.data.categories] : undefined,
-    childAgeYears: parsed.data.childAgeYears ?? null,
-    costPreference: parsed.data.costPreference ?? null,
+  const { criteria: c, summary, actions } = parsed.data;
+  const criteria: SupportPlanCriteria = {
+    categories: c.categories,
+    child_age_bands: c.childAgeBands,
+    cost_preference: c.costPreference,
+    urgency: c.urgency,
+    language: c.language,
+    summary,
+    radius_km: c.radiusKm,
   };
 
   try {
-    const payload = await runSearch(searchInput);
-    const criteria: SupportPlanCriteria = {
-      categories: payload.criteria.categories as SupportPlanCriteria["categories"],
-      child_age_bands: payload.criteria.childAgeBands,
-      cost_preference: payload.criteria.costPreference,
-      urgency: payload.criteria.urgency,
-      language: payload.criteria.language,
-      summary: payload.plan.summary,
-      radius_km: payload.criteria.radiusKm,
-    };
-    const planId = await persistSupportPlan({
-      userId: user.id,
-      criteria,
-      actions: payload.plan.actions,
-    });
+    const planId = await persistSupportPlan({ userId: user.id, criteria, actions });
     return { ok: true, planId };
   } catch {
     return { ok: false, error: "Could not save your plan. Try again later." };

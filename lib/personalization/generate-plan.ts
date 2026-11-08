@@ -117,6 +117,7 @@ export async function generatePlan(
   intent: StructuredIntent,
   resources: RankedResource[],
   generate: GenerateFn = callGemini,
+  timeoutMs: number = TIMEOUT_MS,
 ): Promise<SupportPlan | null> {
   if (!resources.length) return null;
   const allowed = new Set(resources.map((r) => r.id));
@@ -130,7 +131,8 @@ export async function generatePlan(
 
   let rawSteps: unknown[];
   try {
-    const json = JSON.parse(await generate(prompt, AbortSignal.timeout(TIMEOUT_MS)));
+    const signal = AbortSignal.timeout(Math.max(1, Math.min(timeoutMs, TIMEOUT_MS)));
+    const json = JSON.parse(await generate(prompt, signal));
     rawSteps = Array.isArray(json?.steps) ? json.steps : [];
   } catch (e) {
     console.warn("generate-plan: Gemini failed:", e instanceof Error ? e.name : typeof e, (e as { status?: number })?.status ?? "");
