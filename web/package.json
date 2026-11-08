@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^4.33.0",
     "@turf/circle": "^7.4.0",
     "mapbox-gl": "^3.34.2",
     "next": "16.4.5",
