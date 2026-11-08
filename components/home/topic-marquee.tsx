@@ -4,11 +4,13 @@ import { motion, useAnimationFrame, useMotionValue, useReducedMotion } from "fra
 import { Pause, Play } from "lucide-react";
 import { useRef, useState } from "react";
 
-const PIXELS_PER_SECOND = 40;
+const PIXELS_PER_SECOND = 90;
+/** Three identical copies in sequence keep the band full on wide screens; the loop wraps after one copy. */
+const COPIES = 3;
 
 /**
- * Infinite moving band of help topics. The list renders twice and wraps after
- * the first copy scrolls past, so the loop is seamless. It pauses on hover and
+ * Infinite moving band of help topics. The list renders three times in sequence
+ * and wraps after one copy scrolls past, so the loop is seamless. It pauses on hover and
  * focus and has a pause button (WCAG 2.2.2); reduced motion shows a still list.
  */
 export function TopicMarquee({ topics, label }: { topics: readonly string[]; label: string }) {
@@ -21,7 +23,7 @@ export function TopicMarquee({ topics, label }: { topics: readonly string[]; lab
   useAnimationFrame((_, delta) => {
     const track = trackRef.current;
     if (reduce || paused || hovering.current || !track) return;
-    const loopWidth = track.scrollWidth / 2;
+    const loopWidth = track.scrollWidth / COPIES;
     if (loopWidth <= 0) return;
     let next = x.get() - (PIXELS_PER_SECOND * delta) / 1000;
     if (-next >= loopWidth) next += loopWidth;
@@ -65,12 +67,16 @@ export function TopicMarquee({ topics, label }: { topics: readonly string[]; lab
           style={{ x }}
           className="flex w-max text-xs font-bold uppercase tracking-[0.16em] text-[#13243b]"
         >
-          <ul aria-label={label} className="flex shrink-0 pl-6">
-            {items(0)}
-          </ul>
-          <ul aria-hidden className="flex shrink-0 pl-6">
-            {items(1)}
-          </ul>
+          {Array.from({ length: COPIES }, (_, copy) => (
+            <ul
+              key={copy}
+              aria-label={copy === 0 ? label : undefined}
+              aria-hidden={copy === 0 ? undefined : true}
+              className="flex shrink-0 pl-6"
+            >
+              {items(copy)}
+            </ul>
+          ))}
         </motion.div>
       </div>
       <button

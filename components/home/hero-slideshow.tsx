@@ -76,7 +76,7 @@ export function HeroSlideshow() {
           type="button"
           onClick={() => setPaused((p) => !p)}
           aria-label={paused ? "Play background slideshow" : "Pause background slideshow"}
-          className="absolute right-4 top-24 z-20 grid size-11 place-items-center rounded-full border border-white/30 bg-[rgb(8_36_46/0.7)] text-white backdrop-blur-sm hover:bg-[rgb(8_36_46/0.9)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hero-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:right-6"
+          className="absolute right-4 top-24 z-20 grid size-11 place-items-center rounded-full border border-white/30 bg-[rgb(10_30_48/0.7)] text-white backdrop-blur-sm hover:bg-[rgb(10_30_48/0.9)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hero-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:right-6"
         >
           {paused ? <Play aria-hidden className="size-4" /> : <Pause aria-hidden className="size-4" />}
         </button>

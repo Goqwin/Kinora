@@ -72,11 +72,11 @@ export function Hero({ seed }: HeroProps) {
         <HeroSlideshow />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(120%_80%_at_72%_18%,rgba(255,170,80,0.22),transparent_55%)] mix-blend-soft-light"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(120%_80%_at_72%_18%,rgba(244,134,104,0.18),transparent_55%)] mix-blend-soft-light"
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(55%_45%_at_88%_8%,rgb(244_134_104/0.38),transparent_70%),radial-gradient(45%_40%_at_8%_92%,rgb(172_236_247/0.28),transparent_70%),linear-gradient(to_top,rgb(10_68_82/0.92)_0%,rgb(10_68_82/0.45)_45%,rgb(11_100_119/0.25)_100%)]"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(55%_45%_at_88%_8%,rgb(244_134_104/0.38),transparent_70%),radial-gradient(45%_40%_at_8%_92%,rgb(172_236_247/0.28),transparent_70%),linear-gradient(to_top,rgb(12_58_84/0.92)_0%,rgb(12_58_84/0.45)_45%,rgb(11_90_124/0.25)_100%)]"
         />
         <div
           aria-hidden
@@ -95,14 +95,14 @@ export function Hero({ seed }: HeroProps) {
           </p>
 
           {/* Near-solid panel keeps every line of hero text at WCAG AA contrast, whatever part of the photo sits behind it. */}
-          <div className="hero-anim-column w-full max-w-xl rounded-[var(--radius-lg)] border border-white/10 bg-[rgb(8_36_46/0.85)] p-5 backdrop-blur-md sm:p-7 lg:ml-8 lg:w-[min(36rem,40vw)]">
+          <div className="hero-anim-column w-full max-w-xl rounded-[var(--radius-lg)] border border-white/10 bg-[rgb(10_30_48/0.85)] p-5 backdrop-blur-md sm:p-7 lg:ml-8 lg:w-[min(36rem,40vw)]">
             <p className="text-xs font-medium uppercase tracking-[0.28em] text-[var(--hero-teal)]">
               Connection Closer to Home
             </p>
             <h1 className="mt-3 text-pretty font-[family-name:var(--font-display)] text-xl font-semibold leading-snug text-[var(--hero-cream)] sm:text-2xl">
               Tell us what you need. Find childcare, benefits, food, housing,
               and parents to hang out with nearby. You do not have to{" "}
-              <span className="underline decoration-[var(--hero-teal)] decoration-2 underline-offset-[6px]">
+              <span className="underline decoration-[var(--coral)] decoration-2 underline-offset-[6px]">
                 figure this out alone.
               </span>
             </h1>
@@ -112,7 +112,7 @@ export function Hero({ seed }: HeroProps) {
               <label htmlFor="hero-q" className="sr-only">
                 Describe what would help
               </label>
-              <div className="flex items-center gap-2 rounded-full border border-white/20 bg-[rgb(10_40_50/0.82)] p-1.5 pl-5 transition focus-within:border-[var(--hero-teal)] focus-within:ring-2 focus-within:ring-[var(--hero-teal)]">
+              <div className="flex items-center gap-2 rounded-full border border-white/20 bg-[rgb(10_34_54/0.82)] p-1.5 pl-5 transition focus-within:border-[var(--hero-teal)] focus-within:ring-2 focus-within:ring-[var(--hero-teal)]">
                 <Search
                   aria-hidden
                   className="size-5 shrink-0 text-[var(--hero-teal)]"

@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import { LazyResourceMap } from "@/components/map/LazyResourceMap";
-import { PlanResultList } from "@/components/plan/plan-result-list";
+import { RankedMatches, SupportPlanSteps } from "@/components/plan/plan-result-list";
 import type { PlanAction } from "@/lib/matching/plan";
 import type { ScoredResource } from "@/lib/matching/score";
 import type { LngLat } from "@/lib/mapbox/radius";
@@ -26,23 +26,23 @@ export function PlanResultsWithMap({
   );
 
   return (
-    <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start">
-      <div className="min-w-0 lg:order-1">
-        <PlanResultList
-          actions={actions}
-          results={results}
-          selectedSlug={selectedSlug}
-          onSelectResult={setSelectedSlug}
-        />
+    <div className="mt-10 space-y-12">
+      <div className="max-w-4xl">
+        <SupportPlanSteps actions={actions} />
       </div>
-      <div className="lg:sticky lg:top-24 lg:order-2 lg:self-start">
-        <LazyResourceMap
-          resources={results}
-          selectedId={selectedSlug}
-          onSelect={setSelectedSlug}
-          userPoint={userPoint}
-          radiusKm={radiusKm}
-        />
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start">
+        <div className="lg:sticky lg:top-24 lg:self-start">
+          <LazyResourceMap
+            resources={results}
+            selectedId={selectedSlug}
+            onSelect={setSelectedSlug}
+            userPoint={userPoint}
+            radiusKm={radiusKm}
+          />
+        </div>
+        <div className="min-w-0">
+          <RankedMatches results={results} selectedSlug={selectedSlug} onSelectResult={setSelectedSlug} />
+        </div>
       </div>
     </div>
   );

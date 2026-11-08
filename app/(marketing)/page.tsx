@@ -218,7 +218,7 @@ export default function HomePage() {
           className="object-cover object-center"
         />
         <div
-          className="absolute inset-0 bg-[linear-gradient(115deg,rgb(10_68_82/0.9)_0%,rgb(11_100_119/0.72)_55%,rgb(244_134_104/0.5)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(115deg,rgb(12_58_84/0.9)_0%,rgb(11_90_124/0.72)_55%,rgb(244_134_104/0.5)_100%)]"
           aria-hidden
         />
         <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-4 py-16 sm:flex-row sm:items-center sm:justify-between sm:gap-12 sm:px-6 sm:py-20">
@@ -235,7 +235,7 @@ export default function HomePage() {
             href="/start"
             className={cn(
               "sticker inline-flex shrink-0 items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-[var(--lime)] px-7 py-3.5 text-base font-bold text-[#13243b]",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(10_68_82)]",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(12_58_84)]",
             )}
           >
             Start with filters

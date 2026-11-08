@@ -17,11 +17,11 @@
   --navy: #13243b;
   --pale-blue: #eef6fa;
   --off-white: #fbfaf6;
-  --deep: #0a4452;
-  --deep-2: #0b6477;
+  --deep: #0c3a54;
+  --deep-2: #0b5a7c;
   --series-1: #0388a6;
   --series-2: #d9573a;
-  --grad-deep: linear-gradient(135deg, #0a4452 0%, #0b6477 55%, #c9634a 100%);
+  --grad-deep: linear-gradient(135deg, #0c3a54 0%, #0b5a7c 55%, #f48668 100%);
   --grad-soft: linear-gradient(135deg, #e6f8fc 0%, #fdf1ec 55%, #f1ffe2 100%);
   --blob-sky: rgb(172 236 247 / 0.6);
   --blob-coral: rgb(244 134 104 / 0.3);
@@ -37,11 +37,11 @@
   --ink: var(--navy);
   --ink-muted: #4a5d70;
   --border: #d7e6ee;
-  --border-strong: #0a4452;
-  --accent: #0b6477;
-  --accent-hover: #084f5e;
+  --border-strong: #0c3a54;
+  --accent: #0b5a7c;
+  --accent-hover: #084868;
   --accent-fg: #ffffff;
-  --trust: #0b6477;
+  --trust: #0b5a7c;
   --trust-muted: #acecf7;
   --warn-fg: #8a5a12;
   --warn-muted: #fff2d6;
@@ -49,14 +49,14 @@
   --crisis-bg-hover: #fee2e2;
   --crisis-border: #f5b5b5;
   --crisis-fg: #b91c1c;
-  --ring: #0b6477;
+  --ring: #0b5a7c;
   --primary: #f48668;
   --primary-fg: #13243b;
   --secondary: #acecf7;
   --secondary-fg: #13243b;
   --highlight: #d7ffab;
   --highlight-fg: #13243b;
-  --link: #0b6477;
+  --link: #0b5a7c;
   /* Crisis and errors only. */
   --destructive: #b91c1c;
   --destructive-fg: #ffffff;
@@ -77,7 +77,7 @@
   --shadow-brutal-sm: 0 1px 2px rgb(19 36 59 / 0.06);
   --hero-grid: radial-gradient(
     circle at 1px 1px,
-    rgb(11 100 119 / 0.1) 1px,
+    rgb(11 90 124 / 0.1) 1px,
     transparent 0
   );
   --map-marker-stroke: #ffffff;
@@ -92,11 +92,11 @@
   --navy: #0d1726;
   --pale-blue: #1b2c42;
   --off-white: #0d1726;
-  --deep: #0a3440;
-  --deep-2: #0b4f5e;
+  --deep: #0a2c45;
+  --deep-2: #0b4362;
   --series-1: #1898b4;
   --series-2: #e0623f;
-  --grad-deep: linear-gradient(135deg, #0a3440 0%, #0b4f5e 55%, #8f4636 100%);
+  --grad-deep: linear-gradient(135deg, #0a2c45 0%, #0b4362 55%, #b8604a 100%);
   --grad-soft: linear-gradient(135deg, #12303a 0%, #2c2026 55%, #1f2c22 100%);
   --blob-sky: rgb(172 236 247 / 0.1);
   --blob-coral: rgb(244 134 104 / 0.14);
@@ -115,9 +115,9 @@
   --border-strong: #5a7a85;
   --accent: #acecf7;
   --accent-hover: #cff5fb;
-  --accent-fg: #0a3440;
+  --accent-fg: #0a2c45;
   --trust: #acecf7;
-  --trust-muted: #17414a;
+  --trust-muted: #163a52;
   --warn-fg: #f6cf86;
   --warn-muted: #3a3020;
   --crisis-bg: #2a1414;
@@ -126,11 +126,11 @@
   --crisis-fg: #fca5a5;
   --ring: #7dd3e3;
   --primary: #f48668;
-  --primary-fg: #0a3440;
+  --primary-fg: #0a2c45;
   --secondary: #acecf7;
-  --secondary-fg: #0a3440;
+  --secondary-fg: #0a2c45;
   --highlight: #d7ffab;
-  --highlight-fg: #0a3440;
+  --highlight-fg: #0a2c45;
   --link: #acecf7;
   --destructive: #b91c1c;
   --destructive-fg: #ffffff;
@@ -340,11 +340,11 @@ h3 {
 
 /* Cinematic landing hero (always dark card, independent of theme) */
 :root {
-  --hero-ink: #0a4452;
-  --hero-notch: #0a4452;
+  --hero-ink: #0c3a54;
+  --hero-notch: #0c3a54;
   --hero-cream: #fffcf5;
   /* Name kept for existing classes; now Coral Glow on the always-dark hero. */
-  --hero-teal: #ffb39e;
+  --hero-teal: #acecf7;
 }
 
 @keyframes hero-rise {
