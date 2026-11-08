@@ -3,12 +3,12 @@ type Part = { name: string; pct: number; color: string; textColor: string };
 export function SegmentedBar({ label, parts }: { label: string; parts: readonly Part[] }) {
   return (
     <figure>
-      <div className="flex h-7 gap-0.5" role="img" aria-label={`${label}: ${parts.map((p) => `${p.name} ${p.pct}%`).join(", ")}`}>
+      <div className="flex h-9 gap-0.5" role="img" aria-label={`${label}: ${parts.map((p) => `${p.name} ${p.pct}%`).join(", ")}`}>
         {parts.map((p) => (
           <div
             key={p.name}
             title={`${p.name}: ${p.pct}%`}
-            className="flex items-center rounded px-2 text-sm font-bold"
+            className="flex items-center rounded px-2 text-[1.25rem] font-bold"
             style={{ width: `${p.pct}%`, background: p.color, color: p.textColor }}
           >
             {p.pct >= 12 && `${p.pct}%`}

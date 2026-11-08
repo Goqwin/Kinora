@@ -22,7 +22,7 @@ const MapPlaceholder = ({
 }) => (
   <div
     className={cn(
-      "grid min-h-[min(70vh,28rem)] place-items-center rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-8 text-center text-sm text-[var(--ink-muted)]",
+      "grid min-h-[min(60svh,28rem)] place-items-center rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-8 text-center text-sm text-[var(--ink-muted)]",
       className,
     )}
     role="region"
@@ -86,7 +86,7 @@ export function LazyResourceMap(props: ResourceMapProps) {
   }
 
   return (
-    <div className="h-[min(78vh,40rem)] overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border)] shadow-[var(--shadow-md)] lg:h-[min(82vh,48rem)]">
+    <div className="h-[min(60svh,28rem)] overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border)] shadow-[var(--shadow-md)] lg:h-[min(calc(100svh-8rem),34rem)]">
       <ResourceMap {...props} />
     </div>
   );

@@ -1,17 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { ArrowRight, Search } from "lucide-react";
 
 import { HeroNav } from "@/components/home/hero-nav";
+import { HeroSlideshow } from "@/components/home/hero-slideshow";
 import { stashPlanText } from "@/lib/matching/plan-text-handoff";
 import { cn } from "@/lib/utils";
 
 /** Compressed WebP of the Calgary park hero (under ~400 KB). */
-const HERO_IMAGE = "/images/landing/calgary-park.webp";
 
 const EXAMPLES = [
   "Parents to hang out or go shopping with nearby",
@@ -70,21 +69,14 @@ export function Hero({ seed }: HeroProps) {
   return (
     <section className="bg-[image:var(--grad-deep)] p-2 sm:p-3">
       <div className="relative isolate flex min-h-[min(calc(100svh-1rem),56rem)] flex-col overflow-hidden rounded-[1.75rem] sm:min-h-[min(calc(100svh-1.5rem),56rem)] sm:rounded-[2.25rem]">
-        <Image
-          src={HERO_IMAGE}
-          alt="Calgary skyline reflected in the Bow River in autumn"
-          fill
-          priority
-          sizes="100vw"
-          className="hero-anim-image -z-10 object-cover object-[center_35%]"
+        <HeroSlideshow />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-[radial-gradient(120%_80%_at_72%_18%,rgba(244,134,104,0.18),transparent_55%)] mix-blend-soft-light"
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(120%_80%_at_72%_18%,rgba(255,170,80,0.22),transparent_55%)] mix-blend-soft-light"
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(55%_45%_at_88%_8%,rgb(244_134_104/0.38),transparent_70%),radial-gradient(45%_40%_at_8%_92%,rgb(172_236_247/0.28),transparent_70%),linear-gradient(to_top,rgb(10_68_82/0.92)_0%,rgb(10_68_82/0.45)_45%,rgb(11_100_119/0.25)_100%)]"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(55%_45%_at_88%_8%,rgb(244_134_104/0.38),transparent_70%),radial-gradient(45%_40%_at_8%_92%,rgb(172_236_247/0.28),transparent_70%),linear-gradient(to_top,rgb(12_58_84/0.92)_0%,rgb(12_58_84/0.45)_45%,rgb(11_90_124/0.25)_100%)]"
         />
         <div
           aria-hidden
@@ -97,27 +89,30 @@ export function Hero({ seed }: HeroProps) {
 
         <HeroNav />
 
-        <div className="relative z-10 mx-auto mt-auto flex w-full max-w-7xl flex-col gap-8 px-5 pb-6 pt-32 sm:px-10 sm:pb-10 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
-          <h1 className="hero-anim-wordmark select-none font-[family-name:var(--font-display)] text-[clamp(5.5rem,26vw,12rem)] font-semibold leading-[0.78] tracking-[-0.05em] text-[var(--hero-cream)] lg:text-[clamp(7rem,15vw,16rem)]">
+        <div className="relative z-10 mx-auto mt-auto flex w-full max-w-7xl flex-col gap-10 px-5 pb-6 pt-32 sm:px-10 sm:pb-10 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+          <p className="hero-anim-wordmark select-none font-[family-name:var(--font-display)] text-[clamp(5.5rem,26vw,12rem)] font-semibold leading-[0.78] tracking-[-0.05em] text-[var(--hero-cream)] lg:text-[clamp(7rem,15vw,16rem)]">
             Kinora
-          </h1>
+          </p>
 
-          <div className="hero-anim-column w-full max-w-xl lg:w-[min(36rem,40vw)] lg:pb-2">
+          {/* Near-solid panel keeps every line of hero text at WCAG AA contrast, whatever part of the photo sits behind it. */}
+          <div className="hero-anim-column w-full max-w-xl rounded-[var(--radius-lg)] border border-white/10 bg-[rgb(10_30_48/0.85)] p-5 backdrop-blur-md sm:p-7 lg:ml-8 lg:w-[min(36rem,40vw)]">
             <p className="text-xs font-medium uppercase tracking-[0.28em] text-[var(--hero-teal)]">
               Connection Closer to Home
             </p>
-            <p className="mt-3 text-pretty text-base leading-relaxed text-[var(--hero-cream)]/90 sm:text-lg">
+            <h1 className="mt-3 text-pretty font-[family-name:var(--font-display)] text-xl font-semibold leading-snug text-[var(--hero-cream)] sm:text-2xl">
               Tell us what you need. Find childcare, benefits, food, housing,
-              and parents to hang out with nearby. You do not have to figure
-              this out alone.
-            </p>
+              and parents to hang out with nearby. You do not have to{" "}
+              <span className="underline decoration-[var(--coral)] decoration-2 underline-offset-[6px]">
+                figure this out alone.
+              </span>
+            </h1>
 
             {/* POST so a submit before hydration never puts the text in the URL. */}
             <form role="search" method="post" onSubmit={onSubmit} className="mt-6">
               <label htmlFor="hero-q" className="sr-only">
                 Describe what would help
               </label>
-              <div className="flex items-center gap-2 rounded-full border border-white/15 bg-black/45 p-1.5 pl-5 backdrop-blur-xl transition focus-within:border-[var(--hero-teal)]/70 focus-within:shadow-[0_0_0_4px_rgba(215,255,171,0.2)]">
+              <div className="flex items-center gap-2 rounded-full border border-white/20 bg-[rgb(10_34_54/0.82)] p-1.5 pl-5 transition focus-within:border-[var(--hero-teal)] focus-within:ring-2 focus-within:ring-[var(--hero-teal)]">
                 <Search
                   aria-hidden
                   className="size-5 shrink-0 text-[var(--hero-teal)]"
@@ -133,7 +128,7 @@ export function Hero({ seed }: HeroProps) {
                   maxLength={1000}
                   autoComplete="off"
                   placeholder="Describe what would help..."
-                  className="min-w-0 flex-1 bg-transparent py-3 text-base text-white outline-none placeholder:text-white/60"
+                  className="min-w-0 flex-1 bg-transparent py-3 text-base text-white outline-none placeholder:text-white/80"
                 />
                 <button
                   type="submit"

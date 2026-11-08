@@ -4,7 +4,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { Hero, type HeroSeed } from "@/components/home/hero";
-import { PlacesCarousel } from "@/components/home/places-carousel";
+import { TopicMarquee } from "@/components/home/topic-marquee";
+import { CategoryGrid } from "@/components/home/category-grid";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import { getOptionalUser, isAuthConfigured } from "@/lib/auth";
@@ -13,6 +14,25 @@ import { getPreferencesByUserId } from "@/lib/db/queries/preferences";
 import { cn } from "@/lib/utils";
 
 const CARD_TINTS = ["bg-[var(--sky)]", "bg-[var(--coral)]", "bg-[var(--lime)]"] as const;
+const CARD_SOFT = ["bg-[var(--sky-soft)]", "bg-[var(--coral-soft)]", "bg-[var(--lime-soft)]"] as const;
+
+const HELP_TOPICS = [
+  "Childcare",
+  "Food",
+  "Housing",
+  "Benefits",
+  "Electricity bills",
+  "Employment",
+  "Mental wellness",
+  "Parent groups",
+  "Kids' activities",
+] as const;
+
+const COLLAGE = [
+  { src: "/images/landing/parent-walk.jpg", alt: "A mother and child walking together down a park path", position: "center 55%" },
+  { src: "/images/landing/parent-child.jpg", alt: "A mother holding her child in a field at golden hour", position: "center 40%" },
+  { src: "/images/landing/parent-grocery.jpg", alt: "A mother and daughter coming home with groceries", position: "center 35%" },
+] as const;
 
 const VALUE_CARDS = [
   {
@@ -29,49 +49,6 @@ const VALUE_CARDS = [
     index: "03",
     title: "Parents helping parents.",
     body: "Find peer groups to hang out, shop, or share ideas in a moderated community.",
-  },
-] as const;
-
-const SUPPORT_AREAS = [
-  {
-    index: "01",
-    title: "Childcare",
-    body: "Licensed care, subsidies, and after-school options near you.",
-    href: "/start?mode=nearby",
-    image: "/images/landing/parent-walk.jpg",
-    alt: "A parent and child walking together on a park path",
-  },
-  {
-    index: "02",
-    title: "Money and benefits",
-    body: "Aid programs and ways to ease month-to-month pressure.",
-    href: "/start?mode=needs",
-    image: "/images/landing/parent-grocery.jpg",
-    alt: "A parent and child carrying groceries home together",
-  },
-  {
-    index: "03",
-    title: "Food and groceries",
-    body: "Food banks, meal programs, and community kitchens.",
-    href: "/resources",
-    image: "/images/landing/groceries.jpg",
-    alt: "Fresh produce at a community market stall",
-  },
-  {
-    index: "04",
-    title: "Housing",
-    body: "Shelters, rent help, and housing navigation.",
-    href: "/resources",
-    image: "/images/landing/calgary-day.jpg",
-    alt: "Calgary skyline across open ground on a clear day",
-  },
-  {
-    index: "05",
-    title: "Hang out with parents",
-    body: "Peer groups and community posts for company, coffee, and shopping trips. Posts are opinions, not verified listings.",
-    href: "/community",
-    image: "/images/landing/parent-child.jpg",
-    alt: "A parent holding a child while walking outdoors",
   },
 ] as const;
 
@@ -105,25 +82,67 @@ export default function HomePage() {
         <HomeHero />
       </Suspense>
 
+      <TopicMarquee topics={HELP_TOPICS} label="Kinds of help on Kinora" />
+
       <section className="bg-[var(--canvas)] px-4 py-14 sm:px-6 sm:py-20">
         <div className="mx-auto grid w-full max-w-6xl gap-4 sm:grid-cols-3 sm:gap-5">
           {VALUE_CARDS.map((card, i) => (
-            <Reveal key={card.index} from={i === 0 ? "left" : i === 2 ? "right" : "up"} delay={i * 0.08}>
+            <Reveal key={card.index} delay={i * 0.08}>
             <article
-              className={cn("sticker h-full rounded-[var(--radius-lg)] p-6 text-[#10323c] sm:p-8", CARD_TINTS[i])}
+              className={cn("sticker h-full rounded-[var(--radius-lg)] p-6 text-[var(--ink)] sm:p-8", CARD_SOFT[i])}
             >
-              <p className="grid size-10 place-items-center rounded-full bg-white/70 font-[family-name:var(--font-display)] text-base font-semibold">
+              <p className={cn("grid size-10 place-items-center rounded-full font-[family-name:var(--font-display)] text-base font-semibold text-[#13243b]", CARD_TINTS[i])}>
                 {card.index}
               </p>
               <h2 className="mt-4 font-[family-name:var(--font-display)] text-xl font-semibold sm:text-2xl">
                 {card.title}
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-[#10323c]/85 sm:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-[var(--ink-muted)] sm:text-base">
                 {card.body}
               </p>
             </article>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-[var(--deep)] px-4 py-14 text-white sm:px-6 sm:py-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[3fr_2fr]">
+          <div className="grid grid-cols-3 gap-3 sm:gap-4">
+            {COLLAGE.map((photo, i) => (
+              <div
+                key={photo.src}
+                className={cn("relative aspect-[3/4] overflow-hidden rounded-[var(--radius-lg)]", i === 1 && "translate-y-4 sm:translate-y-6")}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(max-width: 1024px) 33vw, 22vw"
+                  className="object-cover"
+                  style={{ objectPosition: photo.position }}
+                />
+              </div>
+            ))}
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--hero-teal)]">Made for single parents</p>
+            <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold leading-tight sm:text-4xl">
+              Support that puts{" "}
+              <span className="underline decoration-[var(--coral)] decoration-[3px] underline-offset-[6px]">your family first.</span>
+            </h2>
+            <p className="mt-4 leading-relaxed text-white/85">
+              Childcare, money help, food, housing and other parents, in one calm place close to home in Calgary. Every
+              listing shows where it came from and when it was last checked.
+            </p>
+            <Link
+              href="/start?mode=needs"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full bg-[var(--lime)] px-6 font-semibold text-[#13243b] hover:bg-[#c9f598] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--deep)]"
+            >
+              Tell us what you need
+              <ArrowRight aria-hidden className="size-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -135,7 +154,8 @@ export default function HomePage() {
               What we help with
             </p>
             <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-[var(--ink)] sm:text-4xl">
-              Start anywhere. One step is enough.
+              Start anywhere.{" "}
+              <span className="underline decoration-[var(--coral)] decoration-[3px] underline-offset-[6px]">One step is enough.</span>
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-[var(--ink-muted)] sm:pb-1">
@@ -144,7 +164,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <PlacesCarousel places={SUPPORT_AREAS} />
+        <CategoryGrid />
         </div>
       </section>
 
@@ -152,8 +172,8 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-0 lg:grid-cols-2">
           <div className="relative min-h-[17rem] border-b border-[var(--border)] lg:min-h-[24rem] lg:border-b-0 lg:border-r">
             <Image
-              src="/images/landing/parent-child.jpg"
-              alt="A parent holding a young child outdoors in soft evening light"
+              src="/images/landing/groceries.jpg"
+              alt="Fresh produce at a community market stall"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover object-[center_42%]"
@@ -198,7 +218,7 @@ export default function HomePage() {
           className="object-cover object-center"
         />
         <div
-          className="absolute inset-0 bg-[linear-gradient(115deg,rgb(10_68_82/0.9)_0%,rgb(11_100_119/0.72)_55%,rgb(244_134_104/0.5)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(115deg,rgb(12_58_84/0.9)_0%,rgb(11_90_124/0.72)_55%,rgb(244_134_104/0.5)_100%)]"
           aria-hidden
         />
         <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-4 py-16 sm:flex-row sm:items-center sm:justify-between sm:gap-12 sm:px-6 sm:py-20">
@@ -214,8 +234,8 @@ export default function HomePage() {
           <Link
             href="/start"
             className={cn(
-              "sticker inline-flex shrink-0 items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-[var(--lime)] px-7 py-3.5 text-base font-bold text-[#10323c]",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(10_68_82)]",
+              "sticker inline-flex shrink-0 items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-[var(--lime)] px-7 py-3.5 text-base font-bold text-[#13243b]",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(12_58_84)]",
             )}
           >
             Start with filters

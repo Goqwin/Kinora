@@ -22,7 +22,7 @@ export function PageHeader({
           {eyebrow}
         </p>
       ) : null}
-      <h1 className="font-[family-name:var(--font-display)] text-[1.85rem] font-semibold leading-[1.1] tracking-[-0.03em] text-[var(--ink)] sm:text-4xl">
+      <h1 className="break-words font-[family-name:var(--font-display)] text-[1.85rem] font-semibold leading-[1.1] tracking-[-0.03em] text-[var(--ink)] sm:text-4xl">
         {title}
       </h1>
       {description ? (

@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/layout/page-header";
 import { PageShell } from "@/components/layout/page-shell";
+import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { ResourceFeedbackForm } from "@/components/resources/resource-feedback-form";
 import { SaveResourceButton } from "@/components/resources/save-resource-button";
 import { getOptionalUser, isAuthConfigured } from "@/lib/auth";
@@ -52,6 +53,7 @@ export default async function ResourceDetailPage({
 
   return (
     <PageShell>
+      <ScrollToTop />
       <PageHeader eyebrow="Verified resource" title={resource.name}>
         <div className="flex flex-wrap gap-2 pt-1">
           <Badge variant="default">Verified</Badge>
