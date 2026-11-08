@@ -72,3 +72,31 @@ describe("shouldSeedOpenToMeet", () => {
     expect(open).toBeLessThan(90);
   });
 });
+
+describe("applyCircleFloor", () => {
+  const circle = (parentCount: number) => ({
+    fsa: "T3G",
+    label: "Tuscany / Arbour Lake",
+    parentCount,
+    openToMeetCount: Math.min(parentCount, 2),
+    ageBands: [{ band: "6-9", count: 3 }],
+  });
+
+  it("keeps exact counts at 5 parents or more", async () => {
+    const { applyCircleFloor, MIN_CIRCLE_PARENTS } = await import("../lib/community/circle-privacy");
+    expect(MIN_CIRCLE_PARENTS).toBe(5);
+    expect(applyCircleFloor(circle(5))).toMatchObject({
+      belowFloor: false,
+      parentCount: 5,
+      openToMeetCount: 2,
+      ageBands: [{ band: "6-9", count: 3 }],
+    });
+  });
+
+  it.each([0, 1, 4])("hides every number for %i parents", async (n) => {
+    const { applyCircleFloor } = await import("../lib/community/circle-privacy");
+    const floored = applyCircleFloor(circle(n));
+    expect(floored).toMatchObject({ belowFloor: true, parentCount: 0, openToMeetCount: 0, ageBands: [] });
+    expect(floored.fsa).toBe("T3G"); // the area itself still shows
+  });
+});

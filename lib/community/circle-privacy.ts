@@ -6,6 +6,28 @@ export type AgeBandCount = {
   count: number;
 };
 
+/** Minimum parents in an area before we show any exact count for it. */
+export const MIN_CIRCLE_PARENTS = 5;
+
+type CircleCounts = {
+  parentCount: number;
+  openToMeetCount: number;
+  ageBands: AgeBandCount[];
+};
+
+/**
+ * Areas with fewer than MIN_CIRCLE_PARENTS parents (including zero) get no
+ * exact numbers: counts are zeroed and age bands dropped before anything
+ * reaches the page, and `belowFloor` tells the UI to say "Fewer than 5 parents".
+ */
+export function applyCircleFloor<T extends CircleCounts>(
+  circle: T,
+  minParents: number = MIN_CIRCLE_PARENTS,
+): T & { belowFloor: boolean } {
+  if (circle.parentCount >= minParents) return { ...circle, belowFloor: false };
+  return { ...circle, parentCount: 0, openToMeetCount: 0, ageBands: [], belowFloor: true };
+}
+
 /**
  * Drop age-band buckets below the privacy floor and sort by count desc.
  */
