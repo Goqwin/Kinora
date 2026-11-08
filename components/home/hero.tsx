@@ -100,10 +100,6 @@ export function Hero({ seed }: HeroProps) {
         <div className="relative z-10 mx-auto mt-auto flex w-full max-w-7xl flex-col gap-8 px-5 pb-6 pt-32 sm:px-10 sm:pb-10 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
           <h1 className="hero-anim-wordmark select-none font-[family-name:var(--font-display)] text-[clamp(5.5rem,26vw,12rem)] font-semibold leading-[0.78] tracking-[-0.05em] text-[var(--hero-cream)] lg:text-[clamp(7rem,15vw,16rem)]">
             Kinora
-            <span
-              aria-hidden
-              className="ml-[0.04em] inline-block size-[0.13em] -translate-y-[0.55em] rounded-full border-[0.025em] border-[var(--hero-teal)] align-top"
-            />
           </h1>
 
           <div className="hero-anim-column w-full max-w-xl lg:w-[min(36rem,40vw)] lg:pb-2">
