@@ -10,10 +10,6 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: "@/lib/personalization",
-        replacement: path.resolve(__dirname, "src/lib/personalization"),
-      },
-      {
         find: "@",
         replacement: path.resolve(__dirname, "."),
       },

@@ -12,8 +12,6 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    // Legacy Mapbox prototype from remote; canonical app is repo root.
-    "web/**",
   ]),
 ]);
 

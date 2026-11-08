@@ -1,6 +1,6 @@
 # AGENTS.md: Personalized Support Navigator
 
-Instructions for AI coding agents working in this repository. Read this fully before writing code. The product spec is in `prd.md`. If this file and `prd.md` conflict, stop and ask.
+Instructions for AI coding agents working in this repository. Read this fully before writing code. The product spec is in `docs/PRD.md`. If this file and `docs/PRD.md` conflict, stop and ask.
 
 (If your tool expects `AGENTS.md` or `CLAUDE.md`, copy or rename this file.)
 
@@ -14,7 +14,7 @@ A Calgary-focused web app helping single parents find childcare, financial aid, 
 
 1. **Never invent resources.** The model never generates resource names, addresses, phone numbers, URLs, or eligibility. Resource facts come only from the database.
 2. **Never send PII to Gemini.** Sanitize first. No names, emails, phone numbers, street addresses, or full postal codes. Always `store: false`.
-3. **Crisis content is static.** Crisis text and numbers live in `lib/crisis.ts`. Never generate or alter them with AI.
+3. **Crisis content is static.** Crisis text and numbers live in `lib/safety/crisis.ts`. Never generate or alter them with AI.
 4. **Eligibility is always "potentially eligible."** Never write copy that promises approval.
 5. **The app works without AI.** Every AI call has a timeout and a non-AI fallback.
 6. **Community content is opinion.** It never enters matching, plans, or the catalog, and is always visually separate from verified content.
@@ -22,7 +22,7 @@ A Calgary-focused web app helping single parents find childcare, financial aid, 
 8. **Authorization is server-side.** All DB access goes through Drizzle on the server. No Supabase client in the browser. RLS is enabled with no policies on every table. Every mutation verifies the caller and ownership.
 9. **Secrets stay on the server.** Only `NEXT_PUBLIC_MAPBOX_TOKEN` may be public, and it must be URL-restricted.
 10. **No free-text user input in logs or analytics.**
-11. **Do not add out-of-scope features** (see `prd.md` section 3.3). No DMs, notifications, image uploads, Redis, pgvector, or separate backend.
+11. **Do not add out-of-scope features** (see `docs/PRD.md` section 3.3). No DMs, notifications, image uploads, Redis, pgvector, or separate backend.
 12. **Do not guess APIs.** For Next.js, Auth0, Drizzle, Supabase, Gemini, and Mapbox, read the installed package's current docs or types before writing code. Do not rely on memory for SDK signatures.
 
 ## 3. Stack
@@ -98,7 +98,7 @@ Run `pnpm typecheck && pnpm lint && pnpm test` before declaring any slice done. 
 ## 6. Coding conventions
 
 - TypeScript strict mode. No `any` without a comment explaining why.
-- Validate every external input (forms, route handlers, server actions, AI output, env vars) with Zod. Validate env at startup in `lib/env.ts`.
+- Validate every external input (forms, route handlers, server actions, AI output, env vars) with Zod. Validate env at startup in `lib/env/index.ts`.
 - Prefer Server Components. Use `"use client"` only for interactivity (forms, map, voting, toggles).
 - Mutations use Server Actions. Each action: parse with Zod, `requireUser()`, check ownership, run query, revalidate.
 - DB queries live in `lib/db/queries/`, not inline in components.
@@ -134,7 +134,7 @@ Run `pnpm typecheck && pnpm lint && pnpm test` before declaring any slice done. 
 
 ## 9. Safety and moderation rules
 
-- `lib/safety.ts` exports `detectCrisis(text): { matched: boolean; categories: string[] }`. Over-inclusive on purpose. Needs 15 or more test phrases.
+- `lib/safety/index.ts` exports `detectCrisis(text): { matched: boolean; categories: string[] }`. Over-inclusive on purpose. Needs 15 or more test phrases.
 - The crisis panel renders before results whenever `matched` is true, and is reachable from the header on every page.
 - Community create flow order: Zod validation, rate limit, display name and rules accepted, regex PII block, sanitizer, Gemini moderation, status decision. Any AI failure leads to `pending`.
 - Auto-hide content at 3 or more open reports.
@@ -165,11 +165,11 @@ Write tests alongside code, not at the end.
 - Unit: scoring, plan builder, sanitizer, crisis detection, regex PII block, rate limits, geo rounding.
 - Integration: search route with `AI_ENABLED=false`, authorization on saved items, tasks, posts, replies, votes, reports, admin actions.
 - Authorization tests must prove user A cannot read or modify user B's data and that non-admins cannot hit admin actions.
-- Persona test: a script runs the 12 personas from `prd.md` section 12 and prints the top 3 for each.
+- Persona test: a script runs the 12 personas from `docs/PRD.md` section 12 and prints the top 3 for each.
 
 ## 13. Working method
 
-1. Work one slice at a time in the order in `prd.md` section 17. Do not start the next slice until the current one builds, passes lint, typecheck, and tests.
+1. Work one slice at a time in the order in `docs/PRD.md` section 17. Do not start the next slice until the current one builds, passes lint, typecheck, and tests.
 2. At the start of each slice, state in 3 to 5 lines what you will build and which files you will touch.
 3. Make small, focused commits with clear messages (`feat:`, `fix:`, `test:`, `chore:`).
 4. If something in the spec is ambiguous, pick the safest option consistent with the non-negotiable rules, note the assumption in `DECISIONS.md`, and continue. Stop and ask only if the choice affects privacy, safety, or data model.
@@ -192,7 +192,7 @@ Write tests alongside code, not at the end.
 - Never expose the Supabase anon or service key to the browser.
 - Never let AI output reach the database or UI without Zod validation.
 - Never publish community content when moderation failed.
-- Never add features outside `prd.md` scope without asking.
+- Never add features outside `docs/PRD.md` scope without asking.
 - Never write seed data from memory. Seed records come from `data/resources.csv` with sources.
 
 <!-- BEGIN:nextjs-agent-rules -->

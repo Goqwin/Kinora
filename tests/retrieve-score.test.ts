@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { costLabel, scoreResource } from "../src/lib/personalization/retrieve";
-import type { ScheduleTag } from "../src/lib/personalization/types";
+import { costLabel, scoreResource } from "../lib/personalization/retrieve";
+import type { ScheduleTag } from "../lib/personalization/types";
 
 const base = {
   category: "childcare",

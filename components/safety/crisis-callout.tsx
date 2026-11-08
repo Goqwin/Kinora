@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { CRISIS_INTRO, CRISIS_RESOURCES } from "@/lib/crisis";
+import { CRISIS_INTRO, CRISIS_RESOURCES } from "@/lib/safety/crisis";
 
 type CrisisCalloutProps = {
   className?: string;

@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     default: "Kinora | Calgary single parents",
     template: "%s | Kinora",
   },
+  icons: { icon: "/brand/kinora-mark.svg" },
   description:
     "Kinora helps single parents in Calgary find childcare, financial aid, and community supports. Calm, plain guidance when you need a next step.",
 };

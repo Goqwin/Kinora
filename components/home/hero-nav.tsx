@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 
-import { KinoraLogo } from "@/components/brand/kinora-logo";
+import { KinoraLogo } from "@/components/layout/kinora-logo";
 import { CrisisPanel } from "@/components/safety/crisis-panel";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Button } from "@/components/ui/button";

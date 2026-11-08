@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { KinoraLogo } from "@/components/brand/kinora-logo";
+import { KinoraLogo } from "@/components/layout/kinora-logo";
 
 export function SiteFooter() {
   return (

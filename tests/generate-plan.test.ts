@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
-import { generatePlan, stripContactInfo, type GenerateFn } from "../src/lib/personalization/generate-plan";
-import type { RankedResource } from "../src/lib/personalization/retrieve";
-import type { StructuredIntent } from "../src/lib/personalization/types";
+import { generatePlan, stripContactInfo, type GenerateFn } from "../lib/personalization/generate-plan";
+import type { RankedResource } from "../lib/personalization/retrieve";
+import type { StructuredIntent } from "../lib/personalization/types";
 
 const ID_A = "11111111-1111-4111-8111-111111111111";
 const ID_B = "22222222-2222-4222-8222-222222222222";

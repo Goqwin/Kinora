@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("server-only", () => ({}));
-vi.mock("../src/lib/personalization/context-store", async () => {
-  const { buildUserContext } = await import("../src/lib/personalization/build-user-context");
+vi.mock("../lib/personalization/context-store", async () => {
+  const { buildUserContext } = await import("../lib/personalization/build-user-context");
   return {
     resolveUserContext: vi.fn(async ({ auth0Sub, onboarding }: { auth0Sub: string | null; onboarding?: unknown }) => ({
       context: buildUserContext(onboarding),
@@ -10,18 +10,18 @@ vi.mock("../src/lib/personalization/context-store", async () => {
     })),
   };
 });
-vi.mock("../src/lib/personalization/retrieve", () => ({
+vi.mock("../lib/personalization/retrieve", () => ({
   retrieveResources: vi.fn(async () => ({
     results: [{ id: "res-1", name: "Sunny Days Child Care", score: 0.83, distanceKm: 8.5, costLabel: "May be eligible for reduced cost" }],
     relaxed: ["radius", "budget"],
   })),
 }));
-vi.mock("../src/lib/personalization/save-plan", () => ({ savePlan: vi.fn(async () => "plan-uuid-1") }));
+vi.mock("../lib/personalization/save-plan", () => ({ savePlan: vi.fn(async () => "plan-uuid-1") }));
 
-const { buildSupportPlan } = await import("../src/lib/personalization/support-plan");
-const { savePlan } = await import("../src/lib/personalization/save-plan");
-const { toPlanActionRows } = await vi.importActual<typeof import("../src/lib/personalization/save-plan")>(
-  "../src/lib/personalization/save-plan",
+const { buildSupportPlan } = await import("../lib/personalization/support-plan");
+const { savePlan } = await import("../lib/personalization/save-plan");
+const { toPlanActionRows } = await vi.importActual<typeof import("../lib/personalization/save-plan")>(
+  "../lib/personalization/save-plan",
 );
 
 const NIGHT_SHIFT = "I work nights and can't afford daycare for my 4-year-old";

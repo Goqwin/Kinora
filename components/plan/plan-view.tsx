@@ -10,7 +10,7 @@ import { SavePlanButton } from "@/components/plan/save-plan-button";
 import { CrisisCallout } from "@/components/safety/crisis-callout";
 import { Button } from "@/components/ui/button";
 import { CHILD_AGE_BANDS, type ChildAgeBand } from "@/lib/db/schema-constants";
-import { readPlanText } from "@/lib/plan-text-handoff";
+import { readPlanText } from "@/lib/matching/plan-text-handoff";
 import type { runSearch } from "@/lib/search/run-search";
 
 type SearchPayload = Awaited<ReturnType<typeof runSearch>>;

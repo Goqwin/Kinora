@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { detectCrisis } from "../src/lib/personalization/crisis";
+import { detectCrisis } from "../lib/personalization/crisis";
 
 describe("detectCrisis", () => {
   it.each([
