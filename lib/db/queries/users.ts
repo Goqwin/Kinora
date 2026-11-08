@@ -28,18 +28,22 @@ export async function upsertUserFromAuth0(input: {
       .set({
         email: input.email ?? existing.email,
         role: input.role,
+        // Keep an existing community handle. Never overwrite with Auth0/Google
+        // names — those collide on users_display_name_key.
       })
       .where(eq(users.id, existing.id))
       .returning();
     return updated ?? existing;
   }
 
+  // Pseudonyms are chosen later (before first post). Auth0 "name" is not unique
+  // and must not be written into display_name.
   const [created] = await db
     .insert(users)
     .values({
       auth0Sub: input.auth0Sub,
       email: input.email,
-      displayName: input.displayName,
+      displayName: null,
       role: input.role,
     })
     .returning();

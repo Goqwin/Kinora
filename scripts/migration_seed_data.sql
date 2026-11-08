@@ -78,7 +78,10 @@ ALTER TABLE public.user_preferences
       ARRAY['Woman','Man','Non-binary','Prefer not to say'])) NOT VALID,
   ADD CONSTRAINT user_prefs_child_age_bands_check
     CHECK (child_age_bands IS NULL OR child_age_bands::text[] <@
-      ARRAY['0-2','3-5','6-9','10-13','14-17']) NOT VALID,
+      ARRAY[
+        '0-2','3-5','6-9','10-13','14-17',
+        'ages_0_3','ages_3_8','ages_8_12','ages_12_17','ages_18_plus'
+      ]) NOT VALID,
   ADD CONSTRAINT user_prefs_child_genders_check
     CHECK (child_genders IS NULL OR child_genders <@
       ARRAY['Girl','Boy','Non-binary','Prefer not to say']) NOT VALID,
