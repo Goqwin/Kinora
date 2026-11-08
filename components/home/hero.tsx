@@ -69,7 +69,7 @@ export function Hero({ seed }: HeroProps) {
 
   return (
     <section className="bg-[image:var(--grad-deep)] p-2 sm:p-3">
-      <div className="relative isolate flex min-h-[calc(100svh-1rem)] flex-col overflow-hidden rounded-[1.75rem] sm:min-h-[calc(100svh-1.5rem)] sm:rounded-[2.25rem]">
+      <div className="relative isolate flex min-h-[min(calc(100svh-1rem),56rem)] flex-col overflow-hidden rounded-[1.75rem] sm:min-h-[min(calc(100svh-1.5rem),56rem)] sm:rounded-[2.25rem]">
         <Image
           src={HERO_IMAGE}
           alt="Calgary skyline reflected in the Bow River in autumn"
@@ -97,7 +97,7 @@ export function Hero({ seed }: HeroProps) {
 
         <HeroNav />
 
-        <div className="relative z-10 mt-auto flex flex-col gap-8 px-5 pb-6 pt-32 sm:px-10 sm:pb-10 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
+        <div className="relative z-10 mx-auto mt-auto flex w-full max-w-7xl flex-col gap-8 px-5 pb-6 pt-32 sm:px-10 sm:pb-10 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
           <h1 className="hero-anim-wordmark select-none font-[family-name:var(--font-display)] text-[clamp(5.5rem,26vw,12rem)] font-semibold leading-[0.78] tracking-[-0.05em] text-[var(--hero-cream)] lg:text-[clamp(7rem,15vw,16rem)]">
             Kinora
             <span

@@ -185,6 +185,17 @@
   }
 }
 
+/* Fluid base size: every rem-based size scales from 15px on phones to 18px on large screens. */
+html {
+  font-size: clamp(15px, 13.5px + 0.3vw, 18px);
+  scrollbar-width: none;
+}
+
+/* Scrolling still works by wheel, trackpad, touch and keyboard; only the bar is hidden. */
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background: var(--canvas);
   color: var(--ink);

@@ -29,7 +29,7 @@ export function HeroNav() {
 
   return (
     <header className="absolute inset-x-0 top-0 z-30">
-      <div className="relative flex items-start justify-between px-5 pt-5 sm:px-8 sm:pt-6">
+      <div className="relative mx-auto flex w-full max-w-7xl items-start justify-between px-5 pt-5 sm:px-8 sm:pt-6">
         <Link
           href="/"
           className="relative z-10 flex items-center gap-3 text-[var(--hero-cream)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hero-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
