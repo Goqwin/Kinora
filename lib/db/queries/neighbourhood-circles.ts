@@ -1,6 +1,7 @@
 import { sql } from "drizzle-orm";
 
 import {
+  applyCircleFloor,
   filterAgeBandsForDisplay,
   type AgeBandCount,
 } from "@/lib/community/circle-privacy";
@@ -10,9 +11,12 @@ import { CALGARY_FSA_CENTROIDS } from "@/lib/personalization/calgary-areas";
 export type NeighbourhoodCircle = {
   fsa: string;
   label: string;
+  /** 0 when belowFloor: the exact count is never passed on. */
   parentCount: number;
   openToMeetCount: number;
   ageBands: AgeBandCount[];
+  /** Fewer than MIN_CIRCLE_PARENTS parents: show "Fewer than 5 parents" only. */
+  belowFloor: boolean;
 };
 
 function fsaLabel(fsa: string): string {
@@ -89,25 +93,19 @@ export async function getCircleForFsa(
   const summary = rows[0];
 
   const parentCount = Number(summary?.parent_count ?? 0);
-  if (parentCount === 0) {
-    return {
-      fsa,
-      label: fsaLabel(fsa),
-      parentCount: 0,
-      openToMeetCount: 0,
-      ageBands: [],
-    };
-  }
-
-  const ageByFsa = await loadAgeBandsForFsas([fsa]);
-
-  return {
+  const counts = {
     fsa,
     label: fsaLabel(fsa),
     parentCount,
     openToMeetCount: Number(summary?.open_to_meet_count ?? 0),
-    ageBands: ageByFsa.get(fsa) ?? [],
+    ageBands: [] as AgeBandCount[],
   };
+  // Small areas: skip the age-band query entirely; the floor hides them anyway.
+  const floored = applyCircleFloor(counts);
+  if (floored.belowFloor) return floored;
+
+  const ageByFsa = await loadAgeBandsForFsas([fsa]);
+  return { ...floored, ageBands: ageByFsa.get(fsa) ?? [] };
 }
 
 export async function listTopCircles(
@@ -134,13 +132,15 @@ export async function listTopCircles(
   const fsas = summaries.map((row) => row.postal_fsa);
   const ageByFsa = await loadAgeBandsForFsas(fsas);
 
-  return summaries.map((row) => ({
-    fsa: row.postal_fsa,
-    label: fsaLabel(row.postal_fsa),
-    parentCount: Number(row.parent_count),
-    openToMeetCount: Number(row.open_to_meet_count),
-    ageBands: ageByFsa.get(row.postal_fsa) ?? [],
-  }));
+  return summaries.map((row) =>
+    applyCircleFloor({
+      fsa: row.postal_fsa,
+      label: fsaLabel(row.postal_fsa),
+      parentCount: Number(row.parent_count),
+      openToMeetCount: Number(row.open_to_meet_count),
+      ageBands: ageByFsa.get(row.postal_fsa) ?? [],
+    }),
+  );
 }
 
 export { normalizeFsa as normalizeCircleFsa };

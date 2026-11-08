@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { CircleOptIn } from "@/components/community/circle-opt-in";
-import { ageBandDisplayLabel } from "@/lib/community/circle-privacy";
+import { ageBandDisplayLabel, MIN_CIRCLE_PARENTS } from "@/lib/community/circle-privacy";
 import type { NeighbourhoodCircle } from "@/lib/db/queries/neighbourhood-circles";
 import type { CommunityPostListItem } from "@/lib/db/queries/community";
 import type { CatalogResource } from "@/lib/resources/types";
@@ -43,22 +43,29 @@ export function NeighbourhoodCircles({
         </p>
       </div>
 
-      {activeCircle && activeCircle.parentCount > 0 ? (
+      {activeCircle ? (
         <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-xs)]">
           <p className="text-xs font-medium uppercase tracking-[0.16em] text-[var(--ink-muted)]">
             {viewerFsa === activeCircle.fsa ? "Your circle" : "This circle"}
           </p>
           <p className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--ink)]">
-            About {activeCircle.parentCount} parents near {activeCircle.label}
+            {activeCircle.belowFloor
+              ? `Fewer than ${MIN_CIRCLE_PARENTS} parents near ${activeCircle.label}`
+              : `About ${activeCircle.parentCount} parents near ${activeCircle.label}`}
           </p>
           <p className="mt-1 text-sm text-[var(--ink-muted)]">
             {activeCircle.fsa}
-            {activeCircle.openToMeetCount > 0
+            {!activeCircle.belowFloor && activeCircle.openToMeetCount > 0
               ? ` · ${activeCircle.openToMeetCount} open to hang out, shop, or share company`
               : null}
           </p>
 
-          {activeCircle.ageBands.length > 0 ? (
+          {activeCircle.belowFloor ? (
+            <p className="mt-4 text-sm text-[var(--ink-muted)]">
+              Counts and age details stay hidden until at least{" "}
+              {MIN_CIRCLE_PARENTS} parents share this area.
+            </p>
+          ) : activeCircle.ageBands.length > 0 ? (
             <ul className="mt-4 flex flex-wrap gap-2">
               {activeCircle.ageBands.map((band) => (
                 <li
@@ -119,8 +126,11 @@ export function NeighbourhoodCircles({
                       {circle.label}
                     </p>
                     <p className="mt-1 text-xs text-[var(--ink-muted)]">
-                      {circle.fsa} · {circle.parentCount} parents
-                      {circle.openToMeetCount > 0
+                      {circle.fsa} ·{" "}
+                      {circle.belowFloor
+                        ? `Fewer than ${MIN_CIRCLE_PARENTS} parents`
+                        : `${circle.parentCount} parents`}
+                      {!circle.belowFloor && circle.openToMeetCount > 0
                         ? ` · ${circle.openToMeetCount} open to meet`
                         : ""}
                     </p>

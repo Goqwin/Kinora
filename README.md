@@ -16,12 +16,13 @@ A single parent who needs childcare, money, food or housing help usually has to 
 
 ## Features
 
-- **Describe your situation** (`/start`): a free-text box plus optional filters for postal code, distance, category, child's age and cost. The home hero has the same short form.
+- **Describe your situation** (`/start`): a free-text box plus optional filters for postal code, distance, category (including "Parent hangouts"), child's age and cost, and an "Include parent hangouts" checkbox. The home hero has the same short form.
 - **Personalized, ranked matches** (`/plan`): results ranked by category, distance, cost, child age and urgency, shown as a list and on a Mapbox map.
-- **Support plan**: 3–6 steps written by Gemini from the matched resources, or up to four template steps when AI isn't used. Each step has a reason and a first step. Signed-in parents can save the plan they see.
+- **Support plan**: 3–6 steps written by Gemini from the matched resources, or up to five template steps when AI isn't used. When the parent asks for parent hangouts, the template plan includes a peer group if one matches. Each step has a reason and a first step. Signed-in parents can save the plan they see.
 - **Crisis help**: a crisis button in the header on every page opens emergency and helpline contacts. If the parent's text contains crisis words, a crisis callout appears at the top of their plan, above the results. It lists 911 first, then the lines that match what was detected.
 - **Resources** (`/resources`): a browsable catalog with a map, a detail page for each resource, and a form to report outdated information.
 - **Community** (`/community`): parents can ask questions, reply, vote posts helpful and report content. New posts are held for review in an admin moderation queue (`/admin/moderation`), and posts with emails, phone numbers or street addresses are blocked.
+- **Neighbourhood circles** (`/community`): anonymous counts of parents by postal area (first 3 characters of the postal code), with how many are open to meet and their kids' age bands. A "City pulse" list links to the busiest areas, and the page also shows hangout posts and peer groups from the catalog. Signed-in parents can tick "I am open to meet nearby parents"; there are no DMs or profiles.
 - **Saved items** (`/saved`): saved resources and a simple task checklist for signed-in parents. Browsing works without an account.
 - **Account** (`/account`): sign in with Auth0, set preferences (such as children's age bands), and see your posts.
 - **Stats** (`/stats`): Statistics Canada figures on one-parent families in Canada, Alberta and Calgary, with charts and linked sources.
@@ -70,6 +71,7 @@ Guarantees, enforced in code:
   - Gemini's plan text is rewritten from "eligible" to "may be eligible".
 - **Crisis resources come first.** The crisis check runs before any AI call. Crisis contacts are static, never generated or changed by AI.
 - **Community posts are opinions, not verified information.** They are held for moderation and blocked if they contain contact details.
+- **Neighbourhood circles show counts only.** No names, emails or exact locations. An area with fewer than 5 parents shows only "Fewer than 5 parents", with no "open to meet" count or age bands. In larger areas, an age band is shown only when at least 3 parents share it. Being "open to meet" is opt-in and needs a sign-in.
 
 ## Tech stack
 
@@ -122,6 +124,8 @@ pnpm db:seed:personalization
 ```
 
 This upserts the sample organizations from `data/organizations.json` into `resources`. `pnpm db:seed` upserts the placeholder rows in `data/resources.csv`, and `pnpm db:verify` checks PostGIS, row-level security (RLS) and the resource count.
+
+`pnpm db:seed:community` adds demo community posts from fake authors. It also overwrites the "open to meet" flag (about 28% on) on every row in `user_preferences`, so don't run it once real parents have opted in.
 
 > The team's Supabase schema is managed by its owner. Don't run `pnpm db:migrate`, `pnpm db:generate` or `drizzle-kit push` against the shared database.
 

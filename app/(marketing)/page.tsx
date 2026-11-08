@@ -23,7 +23,7 @@ const VALUE_CARDS = [
   {
     index: "02",
     title: "Your plan in about a minute.",
-    body: "Describe your situation and get 4 to 5 clear next steps.",
+    body: "Describe your situation and get a few clear next steps.",
   },
   {
     index: "03",
