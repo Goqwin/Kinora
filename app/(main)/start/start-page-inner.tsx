@@ -1,6 +1,6 @@
 import { PageHeader } from "@/components/layout/page-header";
 import { PageShell } from "@/components/layout/page-shell";
-import { StartIntakeForm } from "@/components/start/start-intake-form";
+import { StartIntakeForm } from "@/components/plan/start-intake-form";
 
 type StartPageInnerProps = {
   searchParams: Promise<{ mode?: string }>;

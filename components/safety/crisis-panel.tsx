@@ -12,7 +12,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { CRISIS_INTRO, CRISIS_RESOURCES } from "@/lib/crisis";
+import { CRISIS_INTRO, CRISIS_RESOURCES } from "@/lib/safety/crisis";
 
 type CrisisPanelProps = {
   trigger?: React.ReactNode;

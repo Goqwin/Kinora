@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 
 import { LazyResourceMap } from "@/components/map/LazyResourceMap";
-import { ResourceCard } from "@/components/resource/resource-card";
+import { ResourceCard } from "@/components/resources/resource-card";
 import type { CatalogResource } from "@/lib/resources/types";
 
 type ResourcesCatalogWithMapProps = {

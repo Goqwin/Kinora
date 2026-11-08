@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { CRISIS_RESOURCES } from "@/lib/crisis";
-import { getPlaceholderResources } from "@/lib/placeholder-resources";
+import { CRISIS_RESOURCES } from "@/lib/safety/crisis";
+import { getPlaceholderResources } from "@/lib/resources/placeholder";
 import { cn } from "@/lib/utils";
 
 describe("smoke", () => {

@@ -7,7 +7,7 @@ import { useState, type FormEvent } from "react";
 import { ArrowRight, Search } from "lucide-react";
 
 import { HeroNav } from "@/components/home/hero-nav";
-import { stashPlanText } from "@/lib/plan-text-handoff";
+import { stashPlanText } from "@/lib/matching/plan-text-handoff";
 import { cn } from "@/lib/utils";
 
 /** Compressed WebP of the Calgary park hero (under ~400 KB). */

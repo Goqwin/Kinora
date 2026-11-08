@@ -41,7 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 # drizzle kit pull output (optional local)
-/drizzle-pull
+/drizzle/pull
 
 # python / seed tooling leftovers
 .Python

@@ -2,7 +2,7 @@
  * Prints top 3 matched resources for the 12 PRD personas (SC-2).
  * Forces AI off so results stay deterministic for demos.
  */
-import { loadEnvLocal } from "../lib/load-env-local";
+import { loadEnvLocal } from "../lib/env/load-env-local";
 
 loadEnvLocal();
 process.env.AI_ENABLED = "false";

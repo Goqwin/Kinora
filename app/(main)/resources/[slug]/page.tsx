@@ -6,12 +6,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/layout/page-header";
 import { PageShell } from "@/components/layout/page-shell";
-import { ResourceFeedbackForm } from "@/components/resource/resource-feedback-form";
-import { SaveResourceButton } from "@/components/resource/save-resource-button";
+import { ResourceFeedbackForm } from "@/components/resources/resource-feedback-form";
+import { SaveResourceButton } from "@/components/resources/save-resource-button";
 import { getOptionalUser, isAuthConfigured } from "@/lib/auth";
 import { isDatabaseConfigured } from "@/lib/db";
 import { isResourceSavedByUser } from "@/lib/db/queries/saved";
-import { isResourceStale } from "@/lib/resource-verified";
+import { isResourceStale } from "@/lib/resources/verified";
 import {
   categoryLabel,
   getCatalogResourceBySlug,

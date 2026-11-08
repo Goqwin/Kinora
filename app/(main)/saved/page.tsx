@@ -3,7 +3,7 @@ import { Bookmark } from "lucide-react";
 
 import { PageHeader } from "@/components/layout/page-header";
 import { PageShell } from "@/components/layout/page-shell";
-import { TaskList } from "@/components/saved/task-list";
+import { TaskList } from "@/components/plan/task-list";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getOptionalUser, isAuthConfigured } from "@/lib/auth";

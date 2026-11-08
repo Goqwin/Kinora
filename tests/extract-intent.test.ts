@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
-import { buildUserContext } from "../src/lib/personalization/build-user-context";
-import { extractIntent, redactPii, type GenerateFn } from "../src/lib/personalization/extract-intent";
+import { buildUserContext } from "../lib/personalization/build-user-context";
+import { extractIntent, redactPii, type GenerateFn } from "../lib/personalization/extract-intent";
 
 const NIGHT_SHIFT = "I work nights and can't afford daycare for my 4-year-old";
 const ctx = buildUserContext({ postalCode: "T2R 0A1", kidsAges: [4], needs: ["food"] });

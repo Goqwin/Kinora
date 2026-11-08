@@ -1,4 +1,4 @@
-import { ModerationActions } from "@/components/admin/moderation-actions";
+import { ModerationActions } from "@/components/community/moderation-actions";
 import { PageHeader } from "@/components/layout/page-header";
 import { PageShell } from "@/components/layout/page-shell";
 import { requireAdmin } from "@/lib/auth";

@@ -1,4 +1,4 @@
-import { loadEnvLocal } from "@/lib/load-env-local";
+import { loadEnvLocal } from "@/lib/env/load-env-local";
 
 loadEnvLocal();
 import { readFileSync } from "node:fs";
