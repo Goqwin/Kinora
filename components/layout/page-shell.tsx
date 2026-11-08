@@ -29,7 +29,7 @@ export function PageShell({
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 -top-6 h-40 bg-[radial-gradient(ellipse_at_top,rgb(13_148_136/0.08),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_top,rgb(45_212_191/0.1),transparent_70%)]"
+        className="pointer-events-none absolute inset-x-0 -top-6 h-40 bg-[radial-gradient(ellipse_at_top,rgb(172_236_247/0.35),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_top,rgb(172_236_247/0.08),transparent_70%)]"
       />
       <div className="relative">{children}</div>
     </main>
