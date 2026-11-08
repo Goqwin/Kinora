@@ -1,7 +1,9 @@
 import { Suspense } from "react";
 
 import { PageShell } from "@/components/layout/page-shell";
+import { EnergyAssistance } from "@/components/household/energy-assistance";
 import { HouseholdTools } from "@/components/household/household-tools";
+import { ListSkeleton } from "@/components/layout/list-skeleton";
 import { PlanSkeleton, PlanView } from "@/components/plan/plan-view";
 import { isAuthConfigured } from "@/lib/auth";
 import { isDatabaseConfigured } from "@/lib/db";
@@ -41,6 +43,9 @@ export default function PlanPage() {
           discover practical ways to save.
         </p>
         <HouseholdTools />
+        <Suspense fallback={<ListSkeleton />}>
+          <EnergyAssistance />
+        </Suspense>
       </section>
     </PageShell>
   );

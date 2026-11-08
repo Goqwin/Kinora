@@ -45,7 +45,7 @@ export function HeroNav() {
 
         <nav
           aria-label="Main"
-          className="hero-notch absolute left-1/2 top-0 hidden -translate-x-1/2 items-center gap-1 px-3 pb-3 pt-3 md:flex"
+          className="hero-notch absolute left-1/2 top-0 hidden -translate-x-1/2 items-center gap-1 px-3 pb-3 pt-3 lg:flex"
         >
           {LINKS.map((link) => {
             const active = pathname === link.href;
@@ -68,7 +68,7 @@ export function HeroNav() {
         </nav>
 
         <div className="relative z-10 flex items-center gap-2 sm:gap-3">
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <ThemeToggle className="border-white/20 bg-black/35 text-[var(--hero-cream)] hover:bg-black/50" />
           </div>
           <CrisisPanel
@@ -84,7 +84,7 @@ export function HeroNav() {
           />
           <Link
             href="/account"
-            className="hidden rounded-full px-3 py-2 text-sm font-medium text-[var(--hero-cream)]/85 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hero-teal)] md:inline-block"
+            className="hidden rounded-full px-3 py-2 text-sm font-medium text-[var(--hero-cream)]/85 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hero-teal)] lg:inline-block"
           >
             Account
           </Link>
@@ -92,7 +92,7 @@ export function HeroNav() {
           <Sheet>
             <SheetTrigger
               aria-label="Open menu"
-              className="grid size-10 place-items-center rounded-full border border-white/20 bg-black/40 text-white backdrop-blur md:hidden"
+              className="grid size-10 place-items-center rounded-full border border-white/20 bg-black/40 text-white backdrop-blur lg:hidden"
             >
               <Menu className="size-5" />
             </SheetTrigger>

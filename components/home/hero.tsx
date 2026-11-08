@@ -1,17 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { ArrowRight, Search } from "lucide-react";
 
 import { HeroNav } from "@/components/home/hero-nav";
+import { HeroSlideshow } from "@/components/home/hero-slideshow";
 import { stashPlanText } from "@/lib/matching/plan-text-handoff";
 import { cn } from "@/lib/utils";
 
 /** Compressed WebP of the Calgary park hero (under ~400 KB). */
-const HERO_IMAGE = "/images/landing/calgary-park.webp";
 
 const EXAMPLES = [
   "Parents to hang out or go shopping with nearby",
@@ -70,14 +69,7 @@ export function Hero({ seed }: HeroProps) {
   return (
     <section className="bg-[image:var(--grad-deep)] p-2 sm:p-3">
       <div className="relative isolate flex min-h-[min(calc(100svh-1rem),56rem)] flex-col overflow-hidden rounded-[1.75rem] sm:min-h-[min(calc(100svh-1.5rem),56rem)] sm:rounded-[2.25rem]">
-        <Image
-          src={HERO_IMAGE}
-          alt="Calgary skyline reflected in the Bow River in autumn"
-          fill
-          priority
-          sizes="100vw"
-          className="hero-anim-image -z-10 object-cover object-[center_35%]"
-        />
+        <HeroSlideshow />
         <div
           aria-hidden
           className="absolute inset-0 -z-10 bg-[radial-gradient(120%_80%_at_72%_18%,rgba(255,170,80,0.22),transparent_55%)] mix-blend-soft-light"
@@ -109,8 +101,10 @@ export function Hero({ seed }: HeroProps) {
             </p>
             <h1 className="mt-3 text-pretty font-[family-name:var(--font-display)] text-xl font-semibold leading-snug text-[var(--hero-cream)] sm:text-2xl">
               Tell us what you need. Find childcare, benefits, food, housing,
-              and parents to hang out with nearby. You do not have to figure
-              this out alone.
+              and parents to hang out with nearby. You do not have to{" "}
+              <span className="underline decoration-[var(--hero-teal)] decoration-2 underline-offset-[6px]">
+                figure this out alone.
+              </span>
             </h1>
 
             {/* POST so a submit before hydration never puts the text in the URL. */}
@@ -118,7 +112,7 @@ export function Hero({ seed }: HeroProps) {
               <label htmlFor="hero-q" className="sr-only">
                 Describe what would help
               </label>
-              <div className="flex items-center gap-2 rounded-full border border-white/20 bg-[rgb(10_40_50/0.82)] p-1.5 pl-5 transition focus-within:border-[var(--hero-teal)]/70 focus-within:shadow-[0_0_0_4px_rgba(215,255,171,0.2)]">
+              <div className="flex items-center gap-2 rounded-full border border-white/20 bg-[rgb(10_40_50/0.82)] p-1.5 pl-5 transition focus-within:border-[var(--hero-teal)] focus-within:ring-2 focus-within:ring-[var(--hero-teal)]">
                 <Search
                   aria-hidden
                   className="size-5 shrink-0 text-[var(--hero-teal)]"

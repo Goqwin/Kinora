@@ -115,3 +115,17 @@ describe("formatCad", () => {
     expect(formatCad(-500)).toBe("-$500.00");
   });
 });
+
+describe("energy assistance matching", async () => {
+  const { isEnergyAssistance } = await import("@/components/household/energy-assistance");
+  const r = (name: string, description = "", subcategory = "") => ({ name, description, subcategory });
+  it("matches utility and energy bill help", () => {
+    expect(isEnergyAssistance(r("Utility Payment Help"))).toBe(true);
+    expect(isEnergyAssistance(r("Fund", "Help with electricity and heating costs"))).toBe(true);
+    expect(isEnergyAssistance(r("Fund", "", "power bill assistance"))).toBe(true);
+  });
+  it("ignores unrelated financial programs", () => {
+    expect(isEnergyAssistance(r("Child Care Subsidy Office", "Fee subsidies for child care"))).toBe(false);
+    expect(isEnergyAssistance(r("Electrician apprenticeship"))).toBe(false);
+  });
+});

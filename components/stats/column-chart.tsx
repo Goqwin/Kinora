@@ -62,6 +62,7 @@ export function ColumnChart({ labels, values, color, name }: Props) {
                 height={plotH}
                 fill="transparent"
                 tabIndex={0}
+                role="img"
                 aria-label={`${labels[i]}: ${formatFull(v)}`}
                 onMouseEnter={() => setActive(i)}
                 onMouseLeave={() => setActive(null)}

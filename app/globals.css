@@ -17,6 +17,7 @@
   --navy: #13243b;
   --pale-blue: #eef6fa;
   --off-white: #fbfaf6;
+  --sand: #f4ece1;
   --deep: #0a4452;
   --deep-2: #0b6477;
   --series-1: #0388a6;
@@ -92,6 +93,7 @@
   --navy: #0d1726;
   --pale-blue: #1b2c42;
   --off-white: #0d1726;
+  --sand: #1c2a3d;
   --deep: #0a3440;
   --deep-2: #0b4f5e;
   --series-1: #1898b4;
@@ -339,15 +341,6 @@ h3 {
   --hero-teal: #ffb39e;
 }
 
-@keyframes hero-kenburns {
-  from {
-    transform: scale(1.04) translate3d(0, 0, 0);
-  }
-  to {
-    transform: scale(1.13) translate3d(-1.2%, -1%, 0);
-  }
-}
-
 @keyframes hero-rise {
   from {
     opacity: 0;
@@ -412,10 +405,6 @@ h3 {
   );
 }
 
-.hero-anim-image {
-  animation: hero-kenburns 30s ease-in-out infinite alternate;
-}
-
 .hero-anim-wordmark {
   animation: hero-rise 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
@@ -433,7 +422,6 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-anim-image,
   .hero-anim-wordmark,
   .hero-anim-column {
     animation: none;

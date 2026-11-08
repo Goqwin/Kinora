@@ -78,6 +78,7 @@ export function GrowthLineChart({ years, series }: Props) {
             height={plotH}
             fill="transparent"
             tabIndex={0}
+            role="img"
             aria-label={`${year}: ${series.map((s) => `${s.name} ${formatFull(s.values[i])}`).join(", ")}`}
             onMouseEnter={() => setActive(i)}
             onMouseLeave={() => setActive(null)}
