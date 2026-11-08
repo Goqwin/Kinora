@@ -82,7 +82,7 @@ export default function StatsPage() {
         <Reveal from="left" className="lg:col-span-2">
           <ChartCard
             title={`Alberta is growing about twice as fast`}
-            subtitle={`One-parent families since ${YEARS[0]}, indexed so ${YEARS[0]} = 100. Alberta ${formatSignedPct(albertaGrowth)}, Canada ${formatSignedPct(canadaGrowth)}.`}
+            subtitle={`One-parent families since ${YEARS[0]}, shown as percent change from ${YEARS[0]}. Alberta ${formatSignedPct(albertaGrowth)}, Canada ${formatSignedPct(canadaGrowth)}.`}
           >
             <GrowthLineChart
               years={YEARS}
