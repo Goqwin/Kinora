@@ -66,3 +66,36 @@ export async function upsertPreferences(
   if (!row) throw new Error("Preferences upsert failed");
   return row;
 }
+
+/** Flip only the meet-parents flag; create a sparse prefs row if needed. */
+export async function setOpenToMeetParents(
+  userId: string,
+  openToMeetParents: boolean,
+): Promise<UserPreferences> {
+  const existing = await getPreferencesByUserId(userId);
+  if (existing) {
+    const db = getDb();
+    const [row] = await db
+      .update(userPreferences)
+      .set({
+        openToMeetParents,
+        updatedAt: new Date(),
+      })
+      .where(eq(userPreferences.userId, userId))
+      .returning();
+    if (!row) throw new Error("Preferences update failed");
+    return row;
+  }
+
+  return upsertPreferences({
+    userId,
+    postalFsa: null,
+    childAgeBands: [],
+    categories: [],
+    interestTags: [],
+    childFirstNames: [],
+    openToMeetParents,
+    budgetBand: null,
+    language: "en",
+  });
+}

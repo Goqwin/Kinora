@@ -135,11 +135,12 @@ export function PlanView({ authReady, dbReady }: { authReady: boolean; dbReady: 
             From parents
           </p>
           <p className="mt-2 font-[family-name:var(--font-display)] text-lg font-semibold text-[var(--ink)]">
-            Looking to connect with similar parents?
+            Hang out with other single parents
           </p>
           <p className="mt-1 text-sm text-[var(--ink-muted)]">
-            Community posts are opinions, not verified information. You can ask
-            about chore shares, isolation, or local parent tips there.
+            Your plan includes peer groups when we find them. You can also ask
+            about coffee, shopping trips, or chore shares on the community
+            board. Posts are opinions, not verified information.
           </p>
           <Button asChild variant="secondary" size="sm" className="mt-4 rounded-full">
             <Link href="/community">Browse community</Link>

@@ -14,8 +14,8 @@ import { cn } from "@/lib/utils";
 const HERO_IMAGE = "/images/landing/calgary-park.webp";
 
 const EXAMPLES = [
-  "Volunteer groups with coding activities for my kid",
-  "Ways to share chores with other parents nearby",
+  "Parents to hang out or go shopping with nearby",
+  "Coffee or a walk with other single parents",
   "Affordable after-school care near me",
   "Food help and childcare for a 4 year old",
 ] as const;
@@ -112,8 +112,8 @@ export function Hero({ seed }: HeroProps) {
             </p>
             <p className="mt-3 text-pretty text-base leading-relaxed text-[var(--hero-cream)]/90 sm:text-lg">
               Tell us what you need. Find childcare, benefits, food, housing,
-              and other parents nearby. You do not have to figure this out
-              alone.
+              and parents to hang out with nearby. You do not have to figure
+              this out alone.
             </p>
 
             {/* POST so a submit before hydration never puts the text in the URL. */}

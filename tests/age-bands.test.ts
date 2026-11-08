@@ -43,7 +43,7 @@ describe("Kinora age bands", () => {
 });
 
 describe("search keyword fallback", () => {
-  it("maps coding and chores text to activities and meet-parents", async () => {
+  it("maps coding to activities and chores hangouts to community", async () => {
     const coding = await buildSearchCriteria({
       text: "Volunteer groups with coding activities for my kid",
       radiusKm: 15,
@@ -54,8 +54,17 @@ describe("search keyword fallback", () => {
       text: "Ways to share chores with other parents nearby",
       radiusKm: 15,
     });
-    expect(chores.criteria.categories).toContain("activities");
+    expect(chores.criteria.categories).toContain("community");
     expect(chores.criteria.openToMeetParents).toBe(true);
+  });
+
+  it("maps hangout and shopping text to community and meet-parents", async () => {
+    const hangout = await buildSearchCriteria({
+      text: "Parents to hang out or go shopping with nearby",
+      radiusKm: 15,
+    });
+    expect(hangout.criteria.categories).toContain("community");
+    expect(hangout.criteria.openToMeetParents).toBe(true);
   });
 
   it("accepts new child age band query values", async () => {

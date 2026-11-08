@@ -32,4 +32,16 @@ describe("matching score", () => {
     expect(food).toBeTruthy();
     expect(food!.scoreParts.other).toBeGreaterThan(0);
   });
+
+  it("boosts community when openToMeetParents is set", () => {
+    const without = rankResources(getCatalogResourcesSync(), baseCriteria);
+    const withHangout = rankResources(getCatalogResourcesSync(), {
+      ...baseCriteria,
+      openToMeetParents: true,
+    });
+    const communityWithout = without.find((r) => r.category === "community");
+    const communityWith = withHangout.find((r) => r.category === "community");
+    if (!communityWithout || !communityWith) return;
+    expect(communityWith.score).toBeGreaterThan(communityWithout.score);
+  });
 });

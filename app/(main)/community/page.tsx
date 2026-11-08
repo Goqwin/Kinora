@@ -1,26 +1,99 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import { NeighbourhoodCircles } from "@/components/community/neighbourhood-circles";
 import { PageHeader } from "@/components/layout/page-header";
 import { PageShell } from "@/components/layout/page-shell";
 import { Button } from "@/components/ui/button";
+import { getOptionalUser, isAuthConfigured } from "@/lib/auth";
+import { isHangoutCommunityPost } from "@/lib/community/circle-privacy";
 import { isDatabaseConfigured } from "@/lib/db";
 import { listPublishedCommunityPosts } from "@/lib/db/queries/community";
+import {
+  getCircleForFsa,
+  listTopCircles,
+  normalizeCircleFsa,
+} from "@/lib/db/queries/neighbourhood-circles";
+import { getPreferencesByUserId } from "@/lib/db/queries/preferences";
+import { CALGARY_FSA_CENTROIDS } from "@/lib/personalization/calgary-areas";
+import { getCatalogResources } from "@/lib/resources/catalog";
 
 export const metadata = {
   title: "Community",
 };
 
-export default async function CommunityPage() {
+type CommunityPageProps = {
+  searchParams: Promise<{ fsa?: string; postal?: string }>;
+};
+
+export default async function CommunityPage({
+  searchParams,
+}: CommunityPageProps) {
+  const params = await searchParams;
   const dbReady = isDatabaseConfigured();
+  const authReady = isAuthConfigured();
+  const user = authReady ? await getOptionalUser() : null;
+
   let posts: Awaited<ReturnType<typeof listPublishedCommunityPosts>> = [];
+  let topCircles: Awaited<ReturnType<typeof listTopCircles>> = [];
+  let activeCircle: Awaited<ReturnType<typeof getCircleForFsa>> = null;
+  let viewerFsa: string | null = null;
+  let viewerOpenToMeet = false;
+  let peerGroups: Awaited<ReturnType<typeof getCatalogResources>> = [];
+
   if (dbReady) {
     try {
       posts = await listPublishedCommunityPosts();
     } catch {
       posts = [];
     }
+
+    try {
+      topCircles = await listTopCircles(6);
+    } catch {
+      topCircles = [];
+    }
+
+    if (user && /^[0-9a-f-]{36}$/i.test(user.id)) {
+      try {
+        const prefs = await getPreferencesByUserId(user.id);
+        viewerFsa = prefs?.postalFsa ?? null;
+        viewerOpenToMeet = Boolean(prefs?.openToMeetParents);
+      } catch {
+        viewerFsa = null;
+        viewerOpenToMeet = false;
+      }
+    }
+
+    const queryFsa = normalizeCircleFsa(params.fsa ?? params.postal ?? null);
+    const resolvedFsa = queryFsa ?? viewerFsa;
+
+    if (resolvedFsa) {
+      try {
+        activeCircle = await getCircleForFsa(resolvedFsa);
+      } catch {
+        activeCircle = null;
+      }
+
+      const centroid = CALGARY_FSA_CENTROIDS[resolvedFsa];
+      if (centroid) {
+        try {
+          peerGroups = (
+            await getCatalogResources({
+              userLat: centroid.lat,
+              userLon: centroid.lng,
+              radiusKm: 15,
+              categories: ["community"],
+            })
+          ).slice(0, 3);
+        } catch {
+          peerGroups = [];
+        }
+      }
+    }
   }
+
+  const hangoutPosts = posts.filter(isHangoutCommunityPost);
 
   return (
     <PageShell>
@@ -47,6 +120,18 @@ export default async function CommunityPage() {
         </p>
       ) : null}
 
+      {dbReady ? (
+        <NeighbourhoodCircles
+          activeCircle={activeCircle}
+          topCircles={topCircles}
+          hangoutPosts={hangoutPosts}
+          peerGroups={peerGroups}
+          signedIn={Boolean(user)}
+          viewerOpenToMeet={viewerOpenToMeet}
+          viewerFsa={viewerFsa}
+        />
+      ) : null}
+
       {dbReady && posts.length === 0 ? (
         <div
           className="mt-10 rounded-3xl border border-dashed border-[var(--border)] bg-[var(--surface)] px-6 py-14 text-center"
@@ -63,32 +148,37 @@ export default async function CommunityPage() {
       ) : null}
 
       {posts.length > 0 ? (
-        <ul className="mt-10 space-y-4">
-          {posts.map((post) => (
-            <li key={post.id}>
-              <Link
-                href={`/community/${post.id}`}
-                className="block rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-xs)] transition hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:shadow-[var(--shadow-sm)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]"
-              >
-                <p className="text-xs font-medium uppercase tracking-[0.16em] text-[var(--accent)]">
-                  {post.category.replaceAll("_", " ")}
-                </p>
-                <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--ink)]">
-                  {post.title}
-                </h2>
-                <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[var(--ink-muted)]">
-                  {post.body}
-                </p>
-                <p className="mt-4 text-xs text-[var(--ink-muted)]">
-                  {post.authorLabel}
-                  {typeof post.helpfulCount === "number"
-                    ? ` · ${post.helpfulCount} helpful`
-                    : null}
-                </p>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="mt-12">
+          <h2 className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--ink)]">
+            All posts
+          </h2>
+          <ul className="mt-4 space-y-4">
+            {posts.map((post) => (
+              <li key={post.id}>
+                <Link
+                  href={`/community/${post.id}`}
+                  className="block rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-xs)] transition hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:shadow-[var(--shadow-sm)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]"
+                >
+                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-[var(--accent)]">
+                    {post.category.replaceAll("_", " ")}
+                  </p>
+                  <h3 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--ink)]">
+                    {post.title}
+                  </h3>
+                  <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[var(--ink-muted)]">
+                    {post.body}
+                  </p>
+                  <p className="mt-4 text-xs text-[var(--ink-muted)]">
+                    {post.authorLabel}
+                    {typeof post.helpfulCount === "number"
+                      ? ` · ${post.helpfulCount} helpful`
+                      : null}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       ) : null}
     </PageShell>
   );

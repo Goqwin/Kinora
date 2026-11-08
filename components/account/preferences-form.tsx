@@ -187,11 +187,11 @@ export function PreferencesForm({ defaults }: PreferencesFormProps) {
         />
         <div>
           <Label htmlFor="meetParents" className="font-medium">
-            Open to meeting similar parents
+            Open to hangouts with other parents
           </Label>
           <p className="mt-1 text-xs text-[var(--ink-muted)]">
-            When on, your plan can suggest the community board for peer
-            connection. No DMs and no public profile matching.
+            When on, your plan can include peer groups for coffee, shopping,
+            or company. No DMs and no public profile matching.
           </p>
         </div>
       </div>

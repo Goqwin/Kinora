@@ -29,10 +29,15 @@ const KEYWORD_CATEGORIES: { pattern: RegExp; category: string }[] = [
   { pattern: /\b(financ|money|benefit|subsidy|income)\b/i, category: "financial" },
   { pattern: /\b(food|grocer|hungry|meal)\b/i, category: "food" },
   { pattern: /\b(hous|rent|shelter|evict)\b/i, category: "housing" },
-  { pattern: /\b(counsell|mental|health|isolat)\b/i, category: "health_family" },
+  { pattern: /\b(counsell|mental|health)\b/i, category: "health_family" },
   {
     pattern:
-      /\b(activit|summer camp|recreation|coding|stem|robotic|volunteer|chore|other parents|meet parents)\b/i,
+      /\b(hang\s*out|hangout|coffee|shopping|meetup|meet[\s-]?up|chill|friends?|lonely|isolation|isolat(?:ed|ion)|other parents|meet parents|parent\s*group|peer\s*group|single\s*parents?|chore\s*share)\b/i,
+    category: "community",
+  },
+  {
+    pattern:
+      /\b(activit|summer camp|recreation|coding|stem|robotic|volunteer)\b/i,
     category: "activities",
   },
 ];
@@ -72,7 +77,7 @@ function inferUrgency(text: string): SearchCriteria["urgency"] {
 }
 
 function inferMeetParents(text: string): boolean {
-  return /\b(other parents|meet parents|isolation|lonely|chore\s*share|parent\s*group)\b/i.test(
+  return /\b(other parents|meet parents|isolation|isolat(?:ed|ion)|lonely|chore\s*share|parent\s*group|peer\s*group|hang\s*out|hangout|coffee|shopping|meetup|meet[\s-]?up|chill|friends?|single\s*parents?)\b/i.test(
     text,
   );
 }
