@@ -2,6 +2,14 @@ import Link from "next/link";
 
 import { KinoraLogo } from "@/components/layout/kinora-logo";
 
+const FOOTER_LINKS = [
+  { href: "/resources", label: "Resources" },
+  { href: "/start", label: "Get started" },
+  { href: "/plan", label: "My plan" },
+  { href: "/community", label: "Community" },
+  { href: "/stats", label: "Stats" },
+] as const;
+
 export function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-[var(--border)] bg-[var(--canvas-deep)]">
@@ -19,30 +27,15 @@ export function SiteFooter() {
             className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium"
             aria-label="Footer"
           >
-            <Link
-              href="/resources"
-              className="text-[var(--ink-muted)] transition-colors hover:text-[var(--accent)]"
-            >
-              Resources
-            </Link>
-            <Link
-              href="/start"
-              className="text-[var(--ink-muted)] transition-colors hover:text-[var(--accent)]"
-            >
-              Get started
-            </Link>
-            <Link
-              href="/plan"
-              className="text-[var(--ink-muted)] transition-colors hover:text-[var(--accent)]"
-            >
-              My plan
-            </Link>
-            <Link
-              href="/community"
-              className="text-[var(--ink-muted)] transition-colors hover:text-[var(--accent)]"
-            >
-              Community
-            </Link>
+            {FOOTER_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[var(--ink-muted)] transition-colors hover:text-[var(--accent)]"
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
         </div>
         <p className="mt-12 border-t border-[var(--border)] pt-6 text-xs leading-relaxed text-[var(--ink-muted)]">

@@ -21,6 +21,7 @@ const NAV_LINKS = [
   { href: "/plan", label: "My plan" },
   { href: "/community", label: "Community" },
   { href: "/saved", label: "Saved" },
+  { href: "/stats", label: "Stats" },
 ] as const;
 
 export function SiteHeader() {
