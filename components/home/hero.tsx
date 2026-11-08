@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 
 const EXAMPLES = [
   "Parents to hang out or go shopping with nearby",
-  "Coffee or a walk with other single parents",
+  "Meet other parents",
   "Affordable after-school care near me",
   "Food help and childcare for a 4 year old",
 ] as const;
@@ -97,7 +97,7 @@ export function Hero({ seed }: HeroProps) {
           {/* Near-solid panel keeps every line of hero text at WCAG AA contrast, whatever part of the photo sits behind it. */}
           <div className="hero-anim-column w-full max-w-xl rounded-[var(--radius-lg)] border border-white/10 bg-[rgb(10_30_48/0.85)] p-5 backdrop-blur-md sm:p-7 lg:ml-8 lg:w-[min(36rem,40vw)]">
             <p className="text-xs font-medium uppercase tracking-[0.28em] text-[var(--hero-teal)]">
-              Connection Closer to Home
+              Let us help you, search
             </p>
             <h1 className="mt-3 text-pretty font-[family-name:var(--font-display)] text-xl font-semibold leading-snug text-[var(--hero-cream)] sm:text-2xl">
               Tell us what you need. Find childcare, benefits, food, housing,
